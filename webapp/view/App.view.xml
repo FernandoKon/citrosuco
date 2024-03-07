@@ -1,0 +1,29 @@
+<mvc:View controllerName="com.lab2dev.citrosuco.controller.App"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+
+    <IconTabBar
+        id="iconTabBar"
+        select="onTabSelect"
+        class="sapUiResponsiveContentPadding sapUiNoContentPadding"
+        applyContentPadding="false"
+        >
+        <layoutData>
+            <OverflowToolbarLayoutData priority="NeverOverflow" shrinkable="true"/>
+        </layoutData>
+        <items>
+            <IconTabFilter key="Home" text="Fluxo de Caixa"/>
+            <IconTabFilter key="Partners" text="Sócios"/>
+            <IconTabFilter key="Contracts" text="Contratos"/>
+            <IconTabFilter key="Portion" text="Parcelas"/>
+            <IconTabFilter key="Event" text="Contra Entrega"/>
+            <IconTabFilter key="Quato" text="Cota"/>
+            <IconTabFilter key="Credti" text="Crédito"/>
+            <IconTabFilter key="Debit" text="Débito"/>
+        </items>
+    </IconTabBar>
+
+    <App id="app">
+    </App>
+</mvc:View>
