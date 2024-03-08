@@ -83,6 +83,13 @@
                     "target": [
                         "TargetHome"
                     ]
+                },
+                {
+                    "name": "Partners",
+                    "pattern": "Partners",
+                    "target": [
+                        "TargetPartners"
+                    ]
                 }
             ],
             "targets": {
@@ -92,6 +99,13 @@
                     "clearControlAggregation": false,
                     "viewId": "Home",
                     "viewName": "Home"
+                },
+                "TargetPartners": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Partners",
+                    "viewName": "Partners"
                 }
             }
         },

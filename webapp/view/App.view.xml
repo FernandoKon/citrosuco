@@ -13,7 +13,7 @@
             <OverflowToolbarLayoutData priority="NeverOverflow" shrinkable="true"/>
         </layoutData>
         <items>
-            <IconTabFilter key="Home" text="Fluxo de Caixa"/>
+            <IconTabFilter key="RouteHome" text="Fluxo de Caixa"/>
             <IconTabFilter key="Partners" text="Sócios"/>
             <IconTabFilter key="Contracts" text="Contratos"/>
             <IconTabFilter key="Portion" text="Parcelas"/>

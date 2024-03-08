@@ -1,0 +1,12 @@
+[
+    {
+        "global_supplier": 123456,
+        "description": "Descrição do fornecedor global",
+        "partner_code": 1234567,
+        "description2": "Descrição do sócio",
+        "partner_function": 25,
+        "descriptio3": "Descrição da função",
+        "CPF": "12312312312",
+        "RG": "1212312312"
+    } 
+    ]
