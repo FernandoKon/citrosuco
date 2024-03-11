@@ -9,6 +9,41 @@ xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
     <Page id="Partners" title="{i18n>title}" showHeader="false">
                  
+        <content>
+            <Panel class="sapUiSmallMarginBottom">
+                <smartFilterBar:SmartFilterBar id="smartFilterBarPartners" entitySet="CaixasContratadas" >
+                        <smartFilterBar:controlConfiguration>
+                            <smartFilterBar:ControlConfiguration key="PROPOSTA" visibleInAdvancedArea="true"/>
+                            <smartFilterBar:ControlConfiguration key="CONTRATO" visibleInAdvancedArea="true"/>
+                        </smartFilterBar:controlConfiguration>
+                        <smartFilterBar:layoutData>
+                            <FlexItemData shrinkFactor="0"/>
+                        </smartFilterBar:layoutData>
+                    </smartFilterBar:SmartFilterBar>
+            </Panel>
+            <smartTable:SmartTable 
+            id="SmartTablePartners" 
+            entitySet="CaixasContratadas" 
+            smartFilterId="smartFilterBarPartners" 
+            useExportToExcel="true" 
+            beforeExport="onBeforeExport"
+            useTablePersonalisation="true" 
+            header="Sócios" 
+            showRowCount="true" 
+            noData="Para começar, defina os filtros relevantes."
+            tableType="TreeTable"
+            enableAutoBinding="false" 
+            class="sapUiResponsiveContentPadding" 
+            initiallyVisibleFields="PROPOSTA,SAFRA,CONTRATO,IMOVEL,VARIEDADE"
+            wrap="NoWrap"
+            >
+                <smartTable:layoutData>
+                    <FlexItemData growFactor="2" baseSize="0%"/>
+                </smartTable:layoutData>
+                <Table id="oTablePartners" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dadaos."
+                mode="SingleSelectMaster"/>
+            </smartTable:SmartTable>
+        </content>
 
     </Page>
 </mvc:View>
