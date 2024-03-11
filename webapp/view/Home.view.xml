@@ -1,7 +1,53 @@
 <mvc:View controllerName="com.lab2dev.citrosuco.controller.Home"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:l="sap.ui.layout"
+    xmlns:t="sap.ui.table"
+    xmlns:core="sap.ui.core"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}" showHeader="false">
-        <content />
+        
+        <VBox fitContainer="true" class="sapUiSmallMargin">
+            <Panel class="sapUiSmallMarginBottom">
+                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CaixasContratadas" persistencyKey="SmartFilter_Explored">
+                        <smartFilterBar:controlConfiguration>
+                            <smartFilterBar:ControlConfiguration key="PROPOSTA">
+                                <!-- <smartFilterBar:defaultFilterValues>
+                                    <smartFilterBar:SelectOption low="0001">
+                                    </smartFilterBar:SelectOption>
+                                </smartFilterBar:defaultFilterValues> -->
+                            </smartFilterBar:ControlConfiguration>
+                            <smartFilterBar:ControlConfiguration key="modifiedAt">
+                                <!-- <smartFilterBar:defaultFilterValues>
+                                    <smartFilterBar:SelectOption low="2014">
+                                    </smartFilterBar:SelectOption>
+                                </smartFilterBar:defaultFilterValues> -->
+                            </smartFilterBar:ControlConfiguration>
+                        </smartFilterBar:controlConfiguration>
+                    </smartFilterBar:SmartFilterBar>
+            </Panel>
+            <smartTable:SmartTable id="LineItemsSmartTable" 
+            entitySet="CaixasContratadas" 
+            smartFilterId="smartFilterBar" 
+            useExportToExcel="true" 
+            beforeExport="onBeforeExport" 
+            useVariantManagement="true" 
+            useTablePersonalisation="true" 
+            header="Caixas Contratadas" 
+            showRowCount="true" 
+            enableAutoBinding="true" 
+            class="sapUiResponsiveContentPadding" 
+            enableAutoColumnWidth="true" 
+            editTogglable="true" 
+            app:useSmartToggle="true"
+            >
+                <smartTable:layoutData>
+                    <FlexItemData growFactor="1" baseSize="0%"/>
+                </smartTable:layoutData>
+            </smartTable:SmartTable>
+        </VBox>
+
     </Page>
 </mvc:View>
