@@ -3,7 +3,8 @@
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
 
-    <IconTabBar
+    <VBox id="VBOXAPP">
+        <IconTabBar
         id="iconTabBar"
         select="onTabSelect"
         class="sapUiResponsiveContentPadding sapUiNoContentPadding"
@@ -26,4 +27,5 @@
 
     <App id="app">
     </App>
+    </VBox>
 </mvc:View>

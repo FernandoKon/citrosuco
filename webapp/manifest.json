@@ -169,6 +169,13 @@
                     "target": [
                         "TargetDebit"
                     ]
+                },
+                {
+                    "name": "HomeDetail",
+                    "pattern": "HomeDetail({supplierId})",
+                    "target": [
+                        "TargetHomeDetail"
+                    ]
                 }
             ],
             "targets": {
@@ -227,6 +234,13 @@
                     "clearControlAggregation": false,
                     "viewId": "Debit",
                     "viewName": "Debit"
+                },
+                "TargetHomeDetail": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "HomeDetail",
+                    "viewName": "HomeDetail"
                 }
             }
         },

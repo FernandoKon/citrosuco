@@ -1,0 +1,16 @@
+<mvc:View
+    controllerName="com.lab2dev.citrosuco.controller.HomeDetail"
+	height="100%"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Page
+		title="Bar can center a Title."
+		titleLevel="H2"
+		class="sapUiContentPadding"
+		showNavButton="true" >
+		<headerContent>
+			<Button icon="sap-icon://action" />
+		</headerContent>
+		
+	</Page>
+</mvc:View>
