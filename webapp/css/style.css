@@ -1,7 +1,6 @@
 /* Enter your custom styles here */
 
-.customToolbar {
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
+.customBorder {
+    border-radius: 15px;
     margin-bottom: 3px;
 }

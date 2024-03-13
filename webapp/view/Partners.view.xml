@@ -5,45 +5,49 @@ xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns:core="sap.ui.core"
     xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
 	xmlns:smartTable="sap.ui.comp.smarttable"
-    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
     xmlns="sap.m">
     <Page id="Partners" title="{i18n>title}" showHeader="false">
                  
-        <content>
-            <Panel class="sapUiSmallMarginBottom">
-                <smartFilterBar:SmartFilterBar id="smartFilterBarPartners" entitySet="CaixasContratadas" >
-                        <smartFilterBar:controlConfiguration>
-                            <smartFilterBar:ControlConfiguration key="PROPOSTA" visibleInAdvancedArea="true"/>
-                            <smartFilterBar:ControlConfiguration key="CONTRATO" visibleInAdvancedArea="true"/>
-                        </smartFilterBar:controlConfiguration>
-                        <smartFilterBar:layoutData>
-                            <FlexItemData shrinkFactor="0"/>
-                        </smartFilterBar:layoutData>
-                    </smartFilterBar:SmartFilterBar>
-            </Panel>
-            <smartTable:SmartTable 
-            id="SmartTablePartners" 
-            entitySet="CaixasContratadas" 
-            smartFilterId="smartFilterBarPartners" 
-            useExportToExcel="true" 
-            beforeExport="onBeforeExport"
-            useTablePersonalisation="true" 
-            header="Sócios" 
-            showRowCount="true" 
-            noData="Para começar, defina os filtros relevantes."
-            tableType="TreeTable"
-            enableAutoBinding="false" 
-            class="sapUiResponsiveContentPadding" 
-            initiallyVisibleFields="PROPOSTA,SAFRA,CONTRATO,IMOVEL,VARIEDADE"
-            wrap="NoWrap"
-            >
-                <smartTable:layoutData>
-                    <FlexItemData growFactor="2" baseSize="0%"/>
-                </smartTable:layoutData>
-                <Table id="oTablePartners" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dadaos."
-                mode="SingleSelectMaster"/>
-            </smartTable:SmartTable>
-        </content>
+        <VBox class="sapUiSmallMargin" fitContainer="true" backgroundDesign="Transparent">
+            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CaixasContratadas" class="customBorder" >
+                <smartFilterBar:controlConfiguration>
+                    <smartFilterBar:ControlConfiguration key="PROPOSTA" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration key="CONTRATO" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration key="MOEDA" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration key="FORNECEDOR" visibleInAdvancedArea="true"/>
+                </smartFilterBar:controlConfiguration>
+                <smartFilterBar:layoutData>
+                    <FlexItemData shrinkFactor="0"/>
+                </smartFilterBar:layoutData>
+            </smartFilterBar:SmartFilterBar>
+
+            <VBox height="calc(100% - 80px)" class="sapUiSmallMarginTopBottom customBorder" backgroundDesign="Solid"> 
+                <smartTable:SmartTable 
+                    backgroundDesign="Translucent"
+                    id="SmartTable" 
+                    entitySet="CaixasContratadas" 
+                    smartFilterId="smartFilterBar" 
+                    useExportToExcel="true" 
+                    beforeExport="onBeforeExport"
+                    useTablePersonalisation="true" 
+                    header="Sócios" 
+                    showRowCount="true" 
+                    noData="Para começar, defina os filtros relevantes."
+                    tableType="ResponsiveTable"
+                    enableAutoBinding="false" 
+                    alignContent="Center"
+                    class="sapUiResponsiveContentPadding" 
+                    initiallyVisibleFields="PROPOSTA,CONTRATO,MOEDA,FORNECEDOR,VARIEDADE"
+                    wrap="NoWrap"
+                    >
+                    <smartTable:layoutData>
+                        <FlexItemData growFactor="2" baseSize="0%"/>
+                    </smartTable:layoutData>
+                    <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dadaos."
+                    mode="SingleSelectMaster"/>
+                </smartTable:SmartTable>
+            </VBox>
+        </VBox>
 
     </Page>
 </mvc:View>

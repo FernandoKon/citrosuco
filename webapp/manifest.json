@@ -101,7 +101,7 @@
             },
             "routes": [
                 {
-                    "name": "RouteHome",
+                    "name": "Home",
                     "pattern": ":?query:",
                     "target": [
                         "TargetHome"
@@ -112,6 +112,62 @@
                     "pattern": "Partners",
                     "target": [
                         "TargetPartners"
+                    ]
+                },
+                {
+                    "name": "Contracts",
+                    "pattern": "Contracts",
+                    "target": [
+                        "TargetContracts"
+                    ]
+                },
+                {
+                    "name": "Contracts",
+                    "pattern": "Contracts",
+                    "target": [
+                        "TargetContracts"
+                    ]
+                },
+                {
+                    "name": "Portion",
+                    "pattern": "Portion",
+                    "target": [
+                        "TargetPortion"
+                    ]
+                },
+                {
+                    "name": "Portion",
+                    "pattern": "Portion",
+                    "target": [
+                        "TargetPortion"
+                    ]
+                },
+                {
+                    "name": "Event",
+                    "pattern": "Event",
+                    "target": [
+                        "TargetEvent"
+                    ]
+                },
+                {
+                    "name": "Quota",
+                    "pattern": "Quota",
+                    "target": [
+                        "TargetQuota"
+                    ]
+                },
+                {
+                    "name": "Credit",
+                    "pattern": "Credit",
+                    "target": [
+                        "TargetCredit"
+                    ]
+                },
+                {
+                    "name": "Debit",
+                    "pattern": "Debit",
+                    "target": [
+                        "TargetDebit"
                     ]
                 }
             ],
@@ -129,6 +185,48 @@
                     "clearControlAggregation": false,
                     "viewId": "Partners",
                     "viewName": "Partners"
+                },
+                "TargetContracts": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Contracts",
+                    "viewName": "Contracts"
+                },
+                "TargetPortion": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Portion",
+                    "viewName": "Portion"
+                },
+                "TargetEvent": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Event",
+                    "viewName": "Event"
+                },
+                "TargetQuota": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Quota",
+                    "viewName": "Quota"
+                },
+                "TargetCredit": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Credit",
+                    "viewName": "Credit"
+                },
+                "TargetDebit": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Debit",
+                    "viewName": "Debit"
                 }
             }
         },
@@ -136,7 +234,7 @@
             "viewName": "com.lab2dev.citrosuco.view.App",
             "type": "XML",
             "async": true,
-            "id": "App"
+            "id": "app"
         }
     },
     "sap.cloud": {

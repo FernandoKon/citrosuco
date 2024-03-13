@@ -5,22 +5,21 @@
     xmlns:core="sap.ui.core"
     xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
 	xmlns:smartTable="sap.ui.comp.smarttable"
-    xmlns="sap.m"
-    xmlns:f="sap.f">
-    <Page id="Page" title="{i18n>title}" showHeader="false"> 
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}" showHeader="false"> 
         
         <VBox class="sapUiSmallMargin" fitContainer="true" backgroundDesign="Transparent">
-            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CaixasContratadas" class="customBorder" >
-                <smartFilterBar:controlConfiguration>
-                    <smartFilterBar:ControlConfiguration key="PROPOSTA" visibleInAdvancedArea="true"/>
-                    <smartFilterBar:ControlConfiguration key="CONTRATO" visibleInAdvancedArea="true"/>
-                    <smartFilterBar:ControlConfiguration key="MOEDA" visibleInAdvancedArea="true"/>
-                    <smartFilterBar:ControlConfiguration key="FORNECEDOR" visibleInAdvancedArea="true"/>
-                </smartFilterBar:controlConfiguration>
-                <smartFilterBar:layoutData>
-                    <FlexItemData shrinkFactor="0"/>
-                </smartFilterBar:layoutData>
-            </smartFilterBar:SmartFilterBar>
+                    <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CaixasContratadas" class="customBorder" >
+                        <smartFilterBar:controlConfiguration>
+                            <smartFilterBar:ControlConfiguration key="PROPOSTA" visibleInAdvancedArea="true"/>
+                            <smartFilterBar:ControlConfiguration key="CONTRATO" visibleInAdvancedArea="true"/>
+                            <smartFilterBar:ControlConfiguration key="MOEDA" visibleInAdvancedArea="true"/>
+                            <smartFilterBar:ControlConfiguration key="FORNECEDOR" visibleInAdvancedArea="true"/>
+                        </smartFilterBar:controlConfiguration>
+                        <smartFilterBar:layoutData>
+                            <FlexItemData shrinkFactor="0"/>
+                        </smartFilterBar:layoutData>
+                    </smartFilterBar:SmartFilterBar>
 
             <VBox height="calc(100% - 80px)" class="sapUiSmallMarginTopBottom customBorder" backgroundDesign="Solid"> 
                 <smartTable:SmartTable 
@@ -31,7 +30,7 @@
                     useExportToExcel="true" 
                     beforeExport="onBeforeExport"
                     useTablePersonalisation="true" 
-                    header="Caixas Contratadas" 
+                    header="Débito" 
                     showRowCount="true" 
                     noData="Para começar, defina os filtros relevantes."
                     tableType="ResponsiveTable"
