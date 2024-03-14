@@ -19,8 +19,8 @@
             <IconTabFilter key="Contracts" text="Contratos"/>
             <IconTabFilter key="Portion" text="Parcelas"/>
             <IconTabFilter key="Event" text="Contra Entrega"/>
-            <IconTabFilter key="Quato" text="Cota"/>
-            <IconTabFilter key="Credti" text="Crédito"/>
+            <IconTabFilter key="Quota" text="Cota"/>
+            <IconTabFilter key="Credit" text="Crédito"/>
             <IconTabFilter key="Debit" text="Débito"/>
         </items>
     </IconTabBar>

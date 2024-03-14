@@ -2,15 +2,75 @@
     controllerName="com.lab2dev.citrosuco.controller.HomeDetail"
 	height="100%"
 	xmlns:mvc="sap.ui.core.mvc"
-	xmlns="sap.m">
-	<Page
-		title="Bar can center a Title."
-		titleLevel="H2"
-		class="sapUiContentPadding"
-		showNavButton="true" >
-		<headerContent>
-			<Button icon="sap-icon://action" />
-		</headerContent>
-		
-	</Page>
+	xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout"
+    xmlns="sap.m"
+    xmlns:ff="sap.ui.layout.form"   
+    xmlns:core="sap.ui.core"
+    xmlns:main="sap.ui.webc.main">
+	<f:DynamicPage id="OrderDetailPage" showNavButton="true" navButtonPress="onNavBack">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="Fornecedor 012301"/>
+                </f:heading>
+                <f:navigationActions>
+                    <OverflowToolbarButton type="Transparent" icon="sap-icon://undo" press="navBack"  tooltip="Close about page" />
+                </f:navigationActions>
+            </f:DynamicPageTitle>
+        </f:title>
+
+
+        <f:content>
+            <VBox fitContainer="true">
+                <Table
+                    id="idProductsTable"
+                    sticky="HeaderToolbar,ColumnHeaders"
+                    inset="false"
+                    items=""
+                    class="sapFDynamicPageAlignContent"
+                    width="auto">
+                    <headerToolbar>
+                        <Toolbar>
+                            <Title text="Sócios desse fornecedor" level="H2"/>
+                        </Toolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                            <Text text="Código" />
+                        </Column>
+                        <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                            <Text text="Nome" />
+                        </Column>
+                        <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                            <Text text="Descrição" />
+                        </Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                            <Text text="Função" />
+                        </Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                            <Text text="Descrição 2" />
+                        </Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                            <Text text="CPF" />
+                        </Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                            <Text text="RG" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <ObjectIdentifier/>
+                                <ObjectNumber/>
+                                <Text />
+                                <ObjectNumber/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+        </f:content>
+
+    </f:DynamicPage>
 </mvc:View>

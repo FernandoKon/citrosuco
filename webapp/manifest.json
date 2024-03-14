@@ -181,56 +181,56 @@
             "targets": {
                 "TargetHome": {
                     "viewType": "XML",
-                    "transition": "slide",
+                    "transition": "fade",
                     "clearControlAggregation": false,
                     "viewId": "Home",
                     "viewName": "Home"
                 },
                 "TargetPartners": {
                     "viewType": "XML",
-                    "transition": "slide",
+                    "transition": "fade",
                     "clearControlAggregation": false,
                     "viewId": "Partners",
                     "viewName": "Partners"
                 },
                 "TargetContracts": {
                     "viewType": "XML",
-                    "transition": "slide",
+                    "transition": "fade",
                     "clearControlAggregation": false,
                     "viewId": "Contracts",
                     "viewName": "Contracts"
                 },
                 "TargetPortion": {
                     "viewType": "XML",
-                    "transition": "slide",
+                    "transition": "fade",
                     "clearControlAggregation": false,
                     "viewId": "Portion",
                     "viewName": "Portion"
                 },
                 "TargetEvent": {
                     "viewType": "XML",
-                    "transition": "slide",
+                    "transition": "fade",
                     "clearControlAggregation": false,
                     "viewId": "Event",
                     "viewName": "Event"
                 },
                 "TargetQuota": {
                     "viewType": "XML",
-                    "transition": "slide",
+                    "transition": "fade",
                     "clearControlAggregation": false,
                     "viewId": "Quota",
                     "viewName": "Quota"
                 },
                 "TargetCredit": {
                     "viewType": "XML",
-                    "transition": "slide",
+                    "transition": "fade",
                     "clearControlAggregation": false,
                     "viewId": "Credit",
                     "viewName": "Credit"
                 },
                 "TargetDebit": {
                     "viewType": "XML",
-                    "transition": "slide",
+                    "transition": "fade",
                     "clearControlAggregation": false,
                     "viewId": "Debit",
                     "viewName": "Debit"

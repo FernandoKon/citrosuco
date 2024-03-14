@@ -1,34 +1,27 @@
 sap.ui.define([
     "com/lab2dev/citrosuco/controller/BaseController",
-    'sap/f/library'
+    'sap/f/library',
+    "sap/ui/core/routing/History"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, fioriLibrary) {
+    function (Controller, fioriLibrary, History) {
         "use strict";
 
         return Controller.extend("com.lab2dev.citrosuco.controller.Home", {
             onInit: function () {
-                // this.oComponent = this.getOwnerComponent();
-                // this.oAppView = oComponent.byId("App");
+                const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                oRouter.getRoute("HomeDetail").attachMatched(this._onRouteMatched, this);
                 
             },
 
-            handleSelectionChange: function (oEvent) {
-                const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                const oSelectedItem = oEvent.getSource();
-                const sID = oSelectedItem.getBindingContext().getProperty("ID");
-
-                oRouter.navTo("SupplierDetail", {
-                    supplierID: sID
-                });
+            _onRouteMatched: function (oEvent) {
+                const sSupplierId = oEvent.getParameter("arguments").supplierId;
             },
 
-            onListItemPress: function () {
-                var oFCL = this.byId("flexibleColumnLayout")
-    
-                oFCL.setLayout(fioriLibrary.LayoutType.TwoColumnsMidExpanded);
+            navBack: function(){
+                this.onNavBack("RouteHome")
             }
         });
     });
