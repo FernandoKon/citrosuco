@@ -22,34 +22,31 @@
                     <FlexItemData shrinkFactor="0"/>
                 </smartFilterBar:layoutData>
             </smartFilterBar:SmartFilterBar>
-            <Button type="Emphasized" text="Editar Dados" class="sapUiSmallMargin sapUiContentPadding" press=".openDetailView" />
 
-            <VBox height="calc(100% - 80px)" class="sapUiSmallMarginTopBottom customBorder" backgroundDesign="Solid"> 
-                <smartTable:SmartTable 
-                    backgroundDesign="Translucent"
-                    id="SmartTable" 
-                    entitySet="CaixasContratadas" 
-                    smartFilterId="smartFilterBar" 
-                    useExportToExcel="true" 
-                    beforeExport="onBeforeExport"
-                    useTablePersonalisation="true" 
-                    header="Caixas Contratadas" 
-                    showRowCount="true" 
-                    noData="Para começar, defina os filtros relevantes."
-                    tableType="ResponsiveTable"
-                    enableAutoBinding="false" 
-                    alignContent="Center"
-                    class="sapUiResponsiveContentPadding" 
-                    initiallyVisibleFields="PROPOSTA,CONTRATO,MOEDA,FORNECEDOR,VARIEDADE"
-                    wrap="NoWrap"
-                    >
-                    <smartTable:layoutData>
-                        <FlexItemData growFactor="2" baseSize="0%"/>
-                    </smartTable:layoutData>
-                    <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dados."
-                    mode="SingleSelectMaster"/>
-                </smartTable:SmartTable>
-            </VBox>
+            <smartTable:SmartTable 
+                backgroundDesign="Solid"
+                id="SmartTable" 
+                entitySet="CaixasContratadas" 
+                smartFilterId="smartFilterBar" 
+                useExportToExcel="true" 
+                beforeExport="onBeforeExport"
+                useTablePersonalisation="true" 
+                header="Caixas Contratadas" 
+                showRowCount="true" 
+                noData="Para começar, defina os filtros relevantes."
+                tableType="ResponsiveTable"
+                enableAutoBinding="false" 
+                alignContent="Center"
+                class="sapUiResponsiveContentPadding" 
+                initiallyVisibleFields="PROPOSTA,CONTRATO,MOEDA,FORNECEDOR,VARIEDADE"
+                wrap="NoWrap"
+                >
+                <smartTable:layoutData>
+                    <FlexItemData growFactor="2" baseSize="0%"/>
+                </smartTable:layoutData>
+                <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dados."
+                mode="SingleSelectMaster"/>
+            </smartTable:SmartTable>
         </VBox>
 
     </Page>

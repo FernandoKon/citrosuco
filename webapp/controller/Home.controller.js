@@ -1,11 +1,10 @@
 sap.ui.define([
-    "com/lab2dev/citrosuco/controller/BaseController",
-    'sap/f/library'
+    "com/lab2dev/citrosuco/controller/BaseController"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, fioriLibrary) {
+    function (Controller) {
         "use strict";
 
         return Controller.extend("com.lab2dev.citrosuco.controller.Home", {
@@ -13,20 +12,12 @@ sap.ui.define([
             
             },
 
-            openDetailView: function (oEvent) {
-                const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                const oSelectedItem = oEvent.getSource();
-                const sID = oSelectedItem.getProperty("type");
-
-                oRouter.navTo("HomeDetail", {supplierId: sID});
-
-            },
-
             handleSelectionChange: function (oEvent) {
                 const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                const sID = oEvent.getSource().getBindingContext().getProperty("ID");
+                const sID = oEvent.getParameter("listItem").getBindingContext().getObject().ID
+                const sSupplier = oEvent.getParameter("listItem").getBindingContext().getObject().FORNECEDOR
 
-                oRouter.navTo("HomeDetail", {supplierId: sID});
+                oRouter.navTo("HomeDetail", {Id: sID});
             },
 
         });

@@ -172,7 +172,7 @@
                 },
                 {
                     "name": "HomeDetail",
-                    "pattern": "HomeDetail({supplierId})",
+                    "pattern": "CaixaContratada({Id})",
                     "target": [
                         "TargetHomeDetail"
                     ]

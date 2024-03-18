@@ -22,11 +22,10 @@
                         </smartFilterBar:layoutData>
                     </smartFilterBar:SmartFilterBar>
 
-            <VBox height="calc(100% - 80px)" class="sapUiSmallMarginTopBottom customBorder" backgroundDesign="Solid"> 
                 <smartTable:SmartTable 
                     backgroundDesign="Translucent"
                     id="SmartTable" 
-                    entitySet="CaixasContratadas" 
+                    entitySet="Cotas" 
                     smartFilterId="smartFilterBar" 
                     useExportToExcel="true" 
                     beforeExport="onBeforeExport"
@@ -38,7 +37,7 @@
                     enableAutoBinding="false" 
                     alignContent="Center"
                     class="sapUiResponsiveContentPadding" 
-                    initiallyVisibleFields="PROPOSTA,CONTRATO,MOEDA,FORNECEDOR,VARIEDADE"
+                    initiallyVisibleFields="CENTRO,VARIEDADE,REGIAO,COMPRADOR,SEMANA,FORNECEDOR,IMOVEL,VEICULOS,VEIC_RECEBIDOS"
                     wrap="NoWrap"
                     >
                     <smartTable:layoutData>
@@ -47,7 +46,7 @@
                     <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dadaos."
                     mode="SingleSelectMaster"/>
                 </smartTable:SmartTable>
-            </VBox>
+            
         </VBox>
 
     </Page>

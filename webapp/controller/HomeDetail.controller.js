@@ -17,7 +17,7 @@ sap.ui.define([
             },
 
             _onRouteMatched: function (oEvent) {
-                const sSupplierId = oEvent.getParameter("arguments").supplierId;
+                const sId = oEvent.getParameter("arguments").Id;
             },
 
             navBack: function(){
