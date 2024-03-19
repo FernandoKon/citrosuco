@@ -28,7 +28,7 @@
                     id="SmartTable" 
                     entitySet="CaixasContratadas" 
                     smartFilterId="smartFilterBar" 
-                    useExportToExcel="true" 
+                    enableExport="true" 
                     beforeExport="onBeforeExport"
                     useTablePersonalisation="true" 
                     header="Débito" 

@@ -8,47 +8,44 @@ xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m"
     height="100%">
     <Page id="Partners" title="{i18n>title}" showHeader="false">
-                 
-        <VBox class="sapUiSmallMargin" fitContainer="true" backgroundDesign="Transparent">
-            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CaixasContratadas" class="customBorder" >
+        
+            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Socios" class="customBorder sapUiSmallMargin" showFilterConfiguration="false">
                 <smartFilterBar:controlConfiguration>
-                    <smartFilterBar:ControlConfiguration key="PROPOSTA" visibleInAdvancedArea="true"/>
-                    <smartFilterBar:ControlConfiguration key="CONTRATO" visibleInAdvancedArea="true"/>
-                    <smartFilterBar:ControlConfiguration key="MOEDA" visibleInAdvancedArea="true"/>
-                    <smartFilterBar:ControlConfiguration key="FORNECEDOR" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nº do fornecedor" key="FORNECEDOR" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nome do fornecedor" key="NOME_FORNECEDOR" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nome do sócio" key="NOME_SOCIO" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nº do sócio" key="COD_SOCIO" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="CPF" key="CPF" visibleInAdvancedArea="true"/>
                 </smartFilterBar:controlConfiguration>
                 <smartFilterBar:layoutData>
                     <FlexItemData shrinkFactor="0"/>
                 </smartFilterBar:layoutData>
             </smartFilterBar:SmartFilterBar>
-
-            <VBox height="calc(100% - 80px)" class="sapUiSmallMarginTopBottom customBorder" backgroundDesign="Solid"> 
-                <smartTable:SmartTable 
-                    backgroundDesign="Translucent"
-                    id="SmartTable" 
-                    entitySet="CaixasContratadas" 
-                    smartFilterId="smartFilterBar" 
-                    useExportToExcel="true" 
-                    beforeExport="onBeforeExport"
-                    useTablePersonalisation="true" 
-                    header="Sócios" 
-                    showRowCount="true" 
-                    noData="Para começar, defina os filtros relevantes."
-                    tableType="ResponsiveTable"
-                    enableAutoBinding="false" 
-                    alignContent="Center"
-                    class="sapUiResponsiveContentPadding" 
-                    initiallyVisibleFields="PROPOSTA,CONTRATO,MOEDA,FORNECEDOR,VARIEDADE"
-                    wrap="NoWrap"
-                    >
-                    <smartTable:layoutData>
-                        <FlexItemData growFactor="2" baseSize="0%"/>
-                    </smartTable:layoutData>
-                    <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dadaos."
-                    mode="SingleSelectMaster"/>
-                </smartTable:SmartTable>
-            </VBox>
-        </VBox>
+      
+            <smartTable:SmartTable 
+                backgroundDesign="Translucent"
+                id="SmartTable" 
+                entitySet="Socios" 
+                smartFilterId="smartFilterBar" 
+                enableExport="true" 
+                beforeExport="onBeforeExport"
+                useTablePersonalisation="true" 
+                header="Sócios" 
+                showRowCount="true" 
+                noData="Para começar, defina os filtros relevantes."
+                tableType="ResponsiveTable"
+                enableAutoBinding="false" 
+                alignContent="Center"
+                class="sapUiResponsiveContentPadding sapUiSmallMarginBeginEnd" 
+                initiallyVisibleFields="FORNECEDOR,NOME_FORNECEDOR,COD_SOCIO,NOME_SOCIO,FUNC_PARCEIRO,DESC_FUNC_PARC,CPF,RG"
+                wrap="NoWrap"
+                >
+                <smartTable:layoutData>
+                    <FlexItemData growFactor="2" baseSize="0%"/>
+                </smartTable:layoutData>
+                <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dadaos."
+                mode="SingleSelectMaster"/>
+            </smartTable:SmartTable>
 
     </Page>
 </mvc:View>

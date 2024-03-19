@@ -5,109 +5,72 @@
 	xmlns:f="sap.f"
     xmlns:layout="sap.ui.layout"
     xmlns="sap.m"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:smartForm="sap.ui.comp.smartform"
+	xmlns:smartField="sap.ui.comp.smartfield"
     xmlns:ff="sap.ui.layout.form"   
     xmlns:core="sap.ui.core"
     xmlns:main="sap.ui.webc.main">
-	<f:DynamicPage id="OrderDetailPage" showNavButton="true" navButtonPress="onNavBack">
-        <f:title>
-            <f:DynamicPageTitle>
-                <f:heading>
-                    <Title text="Fornecedor 012301"/>
-                </f:heading>
-                <f:navigationActions>
-                    <OverflowToolbarButton type="Transparent" icon="sap-icon://undo" press="navBack"  tooltip="Close about page" />
-                </f:navigationActions>
-            </f:DynamicPageTitle>
-        </f:title>
-        <f:header>
-				<f:DynamicPageHeader pinnable="true">
-					<layout:HorizontalLayout allowWrapping="true">
-						<layout:VerticalLayout class="sapUiMediumMarginEnd">
-							<ObjectAttribute title="Location" text="Warehouse A"/>
-							<ObjectAttribute title="Halway" text="23L"/>
-							<ObjectAttribute title="Rack" text="34"/>
-						</layout:VerticalLayout>
+	<Page id="OrderDetailPage" showHeader="false" navButtonPress="onNavBack">
 
-						<layout:VerticalLayout class="sapUiMediumMarginEnd">
-							<ObjectAttribute title="Location" text="Warehouse A"/>
-							<ObjectAttribute title="Halway" text="23L"/>
-							<ObjectAttribute title="Rack" text="34"/>
-						</layout:VerticalLayout>
-                        <layout:VerticalLayout class="sapUiMediumMarginEnd">
-							<ObjectAttribute title="Location" text="Warehouse A"/>
-							<ObjectAttribute title="Halway" text="23L"/>
-							<ObjectAttribute title="Rack" text="34"/>
-						</layout:VerticalLayout>
-                        <layout:VerticalLayout class="sapUiMediumMarginEnd">
-							<ObjectAttribute title="Location" text="Warehouse A"/>
-							<ObjectAttribute title="Halway" text="23L"/>
-							<ObjectAttribute title="Rack" text="34"/>
-						</layout:VerticalLayout>
-                        <layout:VerticalLayout class="sapUiMediumMarginEnd">
-							<ObjectAttribute title="Location" text="Warehouse A"/>
-							<ObjectAttribute title="Halway" text="23L"/>
-							<ObjectAttribute title="Rack" text="34"/>
-						</layout:VerticalLayout>
-                        <layout:VerticalLayout class="sapUiMediumMarginEnd">
-							<ObjectAttribute title="Location" text="Warehouse A"/>
-							<ObjectAttribute title="Halway" text="23L"/>
-							<ObjectAttribute title="Rack" text="34"/>
-						</layout:VerticalLayout>
-					</layout:HorizontalLayout>
-				</f:DynamicPageHeader>
-			</f:header>
+        <smartForm:SmartForm id="smartForm" title="Caixa Contratada {teste>/id}">
+            <smartForm:customToolbar>
+                <Toolbar>
+                    <ToolbarSpacer/>
+                    <Button type="Transparent" icon="sap-icon://undo" press="navBack"/>
+                </Toolbar>
+            </smartForm:customToolbar>
+            <smartForm:Group>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="PROPOSTA" value="{/PROPOSTA}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="CONTRATO" value="{/CONTRATO}"/>
+                </smartForm:GroupElement>
+            </smartForm:Group>
+        </smartForm:SmartForm>
+        
+        <content>
+            <VBox class="sapUiSmallMarginTop">
+                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Socios" class="customBorder" visible="true">
+                    <smartFilterBar:controlConfiguration>
+                        <smartFilterBar:ControlConfiguration key="FORNECEDOR"  visibleInAdvancedArea="true">
+                        	<smartFilterBar:defaultFilterValues>
+                                <smartFilterBar:SelectOption id="smartFilterData"/>
+                            </smartFilterBar:defaultFilterValues>
+                        </smartFilterBar:ControlConfiguration>
+                    </smartFilterBar:controlConfiguration>
+                    <smartFilterBar:layoutData>
+                        <FlexItemData shrinkFactor="0"/>
+                    </smartFilterBar:layoutData>
+                </smartFilterBar:SmartFilterBar>
 
-
-        <f:content>
-            <VBox fitContainer="true">
-                <Table
-                    id="idProductsTable"
-                    sticky="HeaderToolbar,ColumnHeaders"
-                    inset="false"
-                    items=""
-                    class="sapFDynamicPageAlignContent"
-                    width="auto">
-                    <headerToolbar>
-                        <Toolbar>
-                            <Title text="Sócios desse fornecedor" level="H2"/>
-                        </Toolbar>
-                    </headerToolbar>
-                    <columns>
-                        <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
-                            <Text text="Código" />
-                        </Column>
-                        <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
-                            <Text text="Nome" />
-                        </Column>
-                        <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
-                            <Text text="Descrição" />
-                        </Column>
-						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
-                            <Text text="Função" />
-                        </Column>
-						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
-                            <Text text="Descrição 2" />
-                        </Column>
-						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
-                            <Text text="CPF" />
-                        </Column>
-						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
-                            <Text text="RG" />
-                        </Column>
-                    </columns>
-                    <items>
-                        <ColumnListItem>
-                            <cells>
-                                <ObjectIdentifier/>
-                                <ObjectNumber/>
-                                <Text />
-                                <ObjectNumber/>
-                            </cells>
-                        </ColumnListItem>
-                    </items>
-                </Table>
+                <smartTable:SmartTable 
+                    backgroundDesign="Translucent"
+                    id="SmartTable" 
+                    entitySet="Socios" 
+                    smartFilterId="smartFilterBar" 
+                    enableExport="true" 
+                    beforeExport="onBeforeExport"
+                    useTablePersonalisation="true" 
+                    header="Sócios com o fornecedor {teste>/cod}" 
+                    showRowCount="true" 
+                    noData="Para começar, defina os filtros relevantes."
+                    tableType="ResponsiveTable"
+                    alignContent="Center"
+                    class="sapUiResponsiveContentPadding" 
+                    initiallyVisibleFields="FORNECEDOR,NOME_FORNECEDOR,COD_SOCIO,NOME_SOCIO,FUNC_PARCEIRO,DESC_FUNC_PARC,CPF,RG"
+                    wrap="NoWrap"
+                    >
+                    <smartTable:layoutData>
+                        <FlexItemData growFactor="2" baseSize="0%"/>
+                    </smartTable:layoutData>
+                    <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dadaos."
+                    mode="SingleSelectMaster"/>
+                </smartTable:SmartTable>
             </VBox>
-        </f:content>
+        </content>
 
-    </f:DynamicPage>
+    </Page>
 </mvc:View>

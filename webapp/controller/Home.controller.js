@@ -14,11 +14,12 @@ sap.ui.define([
 
             handleSelectionChange: function (oEvent) {
                 const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                const sID = oEvent.getParameter("listItem").getBindingContext().getObject().ID
-                const sSupplier = oEvent.getParameter("listItem").getBindingContext().getObject().FORNECEDOR
-
-                oRouter.navTo("HomeDetail", {Id: sID});
+                const sID = oEvent.getParameter("listItem").getBindingContext().getObject().ID;
+                const sSupplier = oEvent.getParameter("listItem").getBindingContext().getObject().FORNECEDOR;
+            
+                oRouter.navTo("HomeDetail", { Id: sID, Supplier: sSupplier });
             },
+            
 
         });
     });
