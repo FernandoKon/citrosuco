@@ -12,7 +12,7 @@
     xmlns:ff="sap.ui.layout.form"   
     xmlns:core="sap.ui.core"
     xmlns:main="sap.ui.webc.main">
-	<Page id="OrderDetailPage" showHeader="false" navButtonPress="onNavBack">
+	<Page id="DetailPage" showHeader="false">
 
         <smartForm:SmartForm id="smartForm" title="Caixa Contratada {teste>/id}">
             <smartForm:customToolbar>
@@ -34,13 +34,11 @@
         <content>
             <VBox class="sapUiSmallMarginTop">
                 <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Socios" class="customBorder" visible="true">
-                    <smartFilterBar:controlConfiguration>
-                        <smartFilterBar:ControlConfiguration key="FORNECEDOR"  visibleInAdvancedArea="true">
-                        	<smartFilterBar:defaultFilterValues>
-                                <smartFilterBar:SelectOption id="smartFilterData"/>
-                            </smartFilterBar:defaultFilterValues>
-                        </smartFilterBar:ControlConfiguration>
-                    </smartFilterBar:controlConfiguration>
+                    <smartFilterBar:ControlConfiguration key="FORNECEDOR"  visibleInAdvancedArea="true">
+                        <smartFilterBar:defaultFilterValues>
+                            <smartFilterBar:SelectOption id="smartFilterData"/>
+                        </smartFilterBar:defaultFilterValues>
+                    </smartFilterBar:ControlConfiguration>
                     <smartFilterBar:layoutData>
                         <FlexItemData shrinkFactor="0"/>
                     </smartFilterBar:layoutData>
@@ -51,17 +49,12 @@
                     id="SmartTable" 
                     entitySet="Socios" 
                     smartFilterId="smartFilterBar" 
-                    enableExport="true" 
-                    beforeExport="onBeforeExport"
-                    useTablePersonalisation="true" 
                     header="Sócios com o fornecedor {teste>/cod}" 
-                    showRowCount="true" 
                     noData="Para começar, defina os filtros relevantes."
                     tableType="ResponsiveTable"
                     alignContent="Center"
                     class="sapUiResponsiveContentPadding" 
                     initiallyVisibleFields="FORNECEDOR,NOME_FORNECEDOR,COD_SOCIO,NOME_SOCIO,FUNC_PARCEIRO,DESC_FUNC_PARC,CPF,RG"
-                    wrap="NoWrap"
                     >
                     <smartTable:layoutData>
                         <FlexItemData growFactor="2" baseSize="0%"/>

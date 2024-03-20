@@ -10,7 +10,7 @@
     height="100%">
     <Page id="Page" title="{i18n>title}" showHeader="false"> 
 
-        <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CaixasContratadas" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" header="Opções de filtragem">
+        <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CaixasContratadas" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" header="Opções de filtragem" showRestoreOnFB="true">
             <smartFilterBar:controlConfiguration>
                 <smartFilterBar:ControlConfiguration label="Nº da proposta" key="PROPOSTA" visibleInAdvancedArea="true"/>
                 <smartFilterBar:ControlConfiguration label="Nº do contrato" key="CONTRATO" visibleInAdvancedArea="true"/>
@@ -35,18 +35,12 @@
             id="SmartTable" 
             entitySet="CaixasContratadas" 
             smartFilterId="smartFilterBar" 
-            enableExport="true" 
-            beforeExport="onBeforeExport"
-            useTablePersonalisation="true" 
             header="Caixas Contratadas" 
-            showRowCount="true" 
             noData="Para começar, defina os filtros relevantes."
             tableType="ResponsiveTable"
-            enableAutoBinding="false" 
             alignContent="Center"
             class="sapUiResponsiveContentPadding sapUiSmallMarginBeginEnd" 
             initiallyVisibleFields="PROPOSTA,SAFRA,CONTRATO,MOEDA,FORNECEDOR,NOME_FORN,TIPO_FORN,VARIEDADE"
-            wrap="NoWrap"
             >
             <smartTable:layoutData>
                 <FlexItemData growFactor="2" baseSize="0%"/>

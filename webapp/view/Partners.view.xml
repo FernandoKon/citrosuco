@@ -9,7 +9,7 @@ xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     height="100%">
     <Page id="Partners" title="{i18n>title}" showHeader="false">
         
-            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Socios" class="customBorder sapUiSmallMargin" showFilterConfiguration="false">
+            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Socios" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" showRestoreOnFB="true">
                 <smartFilterBar:controlConfiguration>
                     <smartFilterBar:ControlConfiguration label="Nº do fornecedor" key="FORNECEDOR" visibleInAdvancedArea="true"/>
                     <smartFilterBar:ControlConfiguration label="Nome do fornecedor" key="NOME_FORNECEDOR" visibleInAdvancedArea="true"/>
@@ -27,18 +27,12 @@ xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
                 id="SmartTable" 
                 entitySet="Socios" 
                 smartFilterId="smartFilterBar" 
-                enableExport="true" 
-                beforeExport="onBeforeExport"
-                useTablePersonalisation="true" 
                 header="Sócios" 
-                showRowCount="true" 
                 noData="Para começar, defina os filtros relevantes."
                 tableType="ResponsiveTable"
-                enableAutoBinding="false" 
                 alignContent="Center"
                 class="sapUiResponsiveContentPadding sapUiSmallMarginBeginEnd" 
                 initiallyVisibleFields="FORNECEDOR,NOME_FORNECEDOR,COD_SOCIO,NOME_SOCIO,FUNC_PARCEIRO,DESC_FUNC_PARC,CPF,RG"
-                wrap="NoWrap"
                 >
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>

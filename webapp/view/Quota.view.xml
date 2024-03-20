@@ -9,7 +9,7 @@
     height="100%">
     <Page id="page" title="{i18n>title}" showHeader="false"> 
         
-            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Cotas" class="customBorder sapUiSmallMargin" showFilterConfiguration="false">
+            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Cotas" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" showRestoreOnFB="true"> 
                 <smartFilterBar:controlConfiguration>
                     <smartFilterBar:ControlConfiguration label="Data" key="DT_PROGRAMACAO" visibleInAdvancedArea="true"/>
                     <smartFilterBar:ControlConfiguration label="Semana" key="SEMANA" visibleInAdvancedArea="true"/>
@@ -29,18 +29,12 @@
                 id="SmartTable" 
                 entitySet="Cotas" 
                 smartFilterId="smartFilterBar" 
-                enableExport="true" 
-                beforeExport="onBeforeExport"
-                useTablePersonalisation="true" 
                 header="Cota" 
-                showRowCount="true" 
                 noData="Para começar, defina os filtros relevantes."
                 tableType="ResponsiveTable"
-                enableAutoBinding="false" 
                 alignContent="Center"
                 class="sapUiResponsiveContentPadding sapUiSmallMargin" 
                 initiallyVisibleFields="DT_PROGRAMACAO,CENTRO,COD_VARIEDADE,REGIAO,COMPRADOR,SEMANA,FORNECEDOR,IMOVEL,QTD_COTAS,QTD_CX_COTA"
-                wrap="NoWrap"
                 >
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>
