@@ -172,9 +172,16 @@
                 },
                 {
                     "name": "HomeDetail",
-                    "pattern": "CaixaContratada({Id})/{Supplier}",
+                    "pattern": "CaixaContratada({Id})/{Supplier}/{proposta}/{contrato}",
                     "target": [
                         "TargetHomeDetail"
+                    ]
+                },
+                {
+                    "name": "PartnersDetail",
+                    "pattern": "{name}({Id})/{Supplier}/{cod_socio}",
+                    "target": [
+                        "TargetPartnersDetail"
                     ]
                 }
             ],
@@ -241,6 +248,13 @@
                     "clearControlAggregation": false,
                     "viewId": "HomeDetail",
                     "viewName": "HomeDetail"
+                },
+                "TargetPartnersDetail": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "PartnersDetail",
+                    "viewName": "PartnersDetail"
                 }
             }
         },

@@ -6,24 +6,24 @@ sap.ui.define([
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, fioriLibrary, JSONModel) {
+    function (Controller, JSONModel) {
         "use strict";
 
-        return Controller.extend("com.lab2dev.citrosuco.controller.HomeDetail", {
+        return Controller.extend("com.lab2dev.citrosuco.controller.PartnersDetail", {
             onInit: async function () {
                 const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                await oRouter.getRoute("HomeDetail").attachMatched(this._onRouteMatched, this);
+                await oRouter.getRoute("PartnersDetail").attachMatched(this._onRouteMatched, this);
                 
             },
 
             _onRouteMatched: function (oEvent) {
                 const sID = oEvent.getParameter("arguments").Id;
-                const sProposta = oEvent.getParameter("arguments").proposta;
-                const sContrato = oEvent.getParameter("arguments").contrato;
+                const sPartner = oEvent.getParameter("arguments").cod_socio;
+                const sPartnerName = oEvent.getParameter("arguments").name;
                 const sSupplier = oEvent.getParameter("arguments").Supplier;
-                this.getView().byId("smartForm").bindElement(`/CaixasContratadas(ID=${sID},PROPOSTA='${sProposta}',CONTRATO='${sContrato}')`)
+                this.getView().byId("smartForm").bindElement(`/Socios(ID=${sID},FORNECEDOR='${sSupplier}',COD_SOCIO='${sPartner}')`)
                 
-                this.setModel({supplier: sSupplier, id: sID}, "oModel")
+                this.setModel({supplier: sSupplier, id: sID, name: sPartnerName}, "oModel")
                 this._setFilterData(sSupplier);
             },
 

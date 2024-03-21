@@ -10,19 +10,17 @@ sap.ui.define([
 
         return Controller.extend("com.lab2dev.citrosuco.controller.Partners", {
             onInit: function () {
-                this._setMockDataModel();
             },
 
-            _setMockDataModel: async function () {
-                const oModel = new JSONModel();
-                const oComponent = this.getOwnerComponent();
-                const resolveRefText = oComponent.getManifestObject().resolveUri("model/mockData.json");
-                oModel.loadData(resolveRefText);
-                this.getView().setModel(oModel, "mockData");
+            handleSelectionChange: function (oEvent) {
+                debugger
+                const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                const sID = oEvent.getParameter("listItem").getBindingContext().getObject().ID;
+                const sPartner = oEvent.getParameter("listItem").getBindingContext().getObject().COD_SOCIO;
+                const sSupplier = oEvent.getParameter("listItem").getBindingContext().getObject().FORNECEDOR;
+                const sPartnerName = oEvent.getParameter("listItem").getBindingContext().getObject().NOME_SOCIO;
+            
+                oRouter.navTo("PartnersDetail", { name: sPartnerName, Id: sID, Supplier: sSupplier, cod_socio: sPartner});
             },
-
-            test: function () {
-                console.log("oi")
-            }
         });
     });

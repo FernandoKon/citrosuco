@@ -15,9 +15,11 @@ sap.ui.define([
             handleSelectionChange: function (oEvent) {
                 const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
                 const sID = oEvent.getParameter("listItem").getBindingContext().getObject().ID;
+                const sProposta = oEvent.getParameter("listItem").getBindingContext().getObject().PROPOSTA;
+                const sContrato = oEvent.getParameter("listItem").getBindingContext().getObject().CONTRATO;
                 const sSupplier = oEvent.getParameter("listItem").getBindingContext().getObject().FORNECEDOR;
             
-                oRouter.navTo("HomeDetail", { Id: sID, Supplier: sSupplier });
+                oRouter.navTo("HomeDetail", { Id: sID, Supplier: sSupplier, proposta: sProposta, contrato: sContrato });
             },
             
 

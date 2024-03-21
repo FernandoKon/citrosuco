@@ -14,31 +14,190 @@
     xmlns:main="sap.ui.webc.main">
 	<Page id="DetailPage" showHeader="false">
 
-        <smartForm:SmartForm id="smartForm" title="Caixa Contratada {teste>/id}">
+        <smartForm:SmartForm id="smartForm" title="Caixa Contratada {oModel>/id}">
             <smartForm:customToolbar>
-                <Toolbar>
+                <Toolbar style="Clear">
                     <ToolbarSpacer/>
                     <Button type="Transparent" icon="sap-icon://undo" press="navBack"/>
                 </Toolbar>
             </smartForm:customToolbar>
             <smartForm:Group>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="PROPOSTA" value="{/PROPOSTA}"/>
+                    <smartField:SmartField textLabel="Proposta" value="{PROPOSTA}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="CONTRATO" value="{/CONTRATO}"/>
+                    <smartField:SmartField textLabel="Contrato" value="{CONTRATO}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Fornecedor" value="{FORNECEDOR}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Nome do fornecedor" value="{NOME_FORN}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Safra" value="{SAFRA}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Caixas contratadas" value="{CAIXAS_CONTRATADAS}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Criado em" value="{createdAt}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Criado por" value="{createdBy}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Modificado em" value="{modifiedAt}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Modificado por" value="{modifiedBy}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Imóvel" value="{IMOVEL}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Nome do imóvel" value="{NOME_IMOVEL}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Variedade" value="{VARIEDADE}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Nome da variedade" value="{NOME_VARIEDADE}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Comprador" value="{COMPRADOR}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Caixas estimadas" value="{CXS_ESTIMADAS}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Caixas entregues" value="{CXS_ENTREGUES}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Caixas recebidas anteriormente" value="{CXS_RECEB_ANT}"/>
+                </smartForm:GroupElement>
+            </smartForm:Group>
+            <smartForm:Group>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Preço base" value="{PRECO_BASE}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Moeda" value="{MOEDA}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Grupo" value="{GRUPO}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Nome do grupo" value="{NOME_GRUPO}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="MOD_CONTRATO" value="{MOD_CONTRATO}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Região" value="{COD_REGIAO}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Nome da região" value="{NOME_REGIAO}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Cidade do imóvel" value="{CIDADE_IMOVEL}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Estado do imóvel" value="{ESTADO_IMOVEL}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="MOD_COMPRA" value="{MOD_COMPRA}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="ADTO_FLUXO" value="{ADTO_FLUXO}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="RECEBEDOR" value="{RECEBEDOR}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="ID_DADOS_BANCARIOS" value="{ID_DADOS_BANCARIOS}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="CONTA_BANCARIA" value="{CONTA_BANCARIA}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="BANCO_AGENCIA" value="{BANCO_AGENCIA}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="DIG_CONTA_BANCARIA" value="{DIG_CONTA_BANCARIA}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="NOME_TP_TRANSF" value="{NOME_TP_TRANSF}"/>
+                </smartForm:GroupElement>
+            </smartForm:Group>
+            <smartForm:Group>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="DATA_CRIACAO" value="{DATA_CRIACAO}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="TIPO_CONTRATO" value="{TIPO_CONTRATO}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="COMENTARIO1" value="{COMENTARIO1}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="COMENTARIO2" value="{COMENTARIO2}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="COMENTARIO3" value="{COMENTARIO3}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="CONSOL_SALDO" value="{CONSOL_SALDO}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="COMPL_FRETE" value="{COMPL_FRETE}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="REEMB_ICMS" value="{REEMB_ICMS}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="ERDAT_PRINT" value="{ERDAT_PRINT}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="ERZET_PRINT" value="{ERZET_PRINT}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="DATA_LIMITE" value="{DATA_LIMITE}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="RET_FUNDECITROS" value="{RET_FUNDECITROS}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="PERC_REFUGO" value="{PERC_REFUGO}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="TP_PERC_REF" value="{TP_PERC_REF}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="TIPO_FORN" value="{TIPO_FORN}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="NOME_TP_FORN" value="{NOME_TP_FORN}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="PROP_ANTIGA" value="{PROP_ANTIGA}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="TP_TRANSF" value="{TP_TRANSF}"/>
                 </smartForm:GroupElement>
             </smartForm:Group>
         </smartForm:SmartForm>
         
         <content>
             <VBox class="sapUiSmallMarginTop">
-                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Socios" class="customBorder" visible="true">
-                    <smartFilterBar:ControlConfiguration key="FORNECEDOR"  visibleInAdvancedArea="true">
-                        <smartFilterBar:defaultFilterValues>
-                            <smartFilterBar:SelectOption id="smartFilterData"/>
-                        </smartFilterBar:defaultFilterValues>
-                    </smartFilterBar:ControlConfiguration>
+                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Socios" class="customBorder" visible="false">
+                    <smartFilterBar:controlConfiguration>
+                        <smartFilterBar:ControlConfiguration key="FORNECEDOR"  visibleInAdvancedArea="true">
+                            <smartFilterBar:defaultFilterValues>
+                                <smartFilterBar:SelectOption id="smartFilterData" low="{oModel>/supplier}"/>
+                            </smartFilterBar:defaultFilterValues>
+                        </smartFilterBar:ControlConfiguration>
+                    </smartFilterBar:controlConfiguration>    
                     <smartFilterBar:layoutData>
                         <FlexItemData shrinkFactor="0"/>
                     </smartFilterBar:layoutData>
@@ -49,9 +208,10 @@
                     id="SmartTable" 
                     entitySet="Socios" 
                     smartFilterId="smartFilterBar" 
-                    header="Sócios com o fornecedor {teste>/cod}" 
+                    header="Sócios com o fornecedor {oModel>/supplier}" 
                     noData="Para começar, defina os filtros relevantes."
                     tableType="ResponsiveTable"
+                    enableAutoBinding="true"
                     alignContent="Center"
                     class="sapUiResponsiveContentPadding" 
                     initiallyVisibleFields="FORNECEDOR,NOME_FORNECEDOR,COD_SOCIO,NOME_SOCIO,FUNC_PARCEIRO,DESC_FUNC_PARC,CPF,RG"
@@ -59,7 +219,7 @@
                     <smartTable:layoutData>
                         <FlexItemData growFactor="2" baseSize="0%"/>
                     </smartTable:layoutData>
-                    <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dadaos."
+                    <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Nenhum sócio para esse fornecedor."
                     mode="SingleSelectMaster"/>
                 </smartTable:SmartTable>
             </VBox>
