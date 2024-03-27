@@ -1,0 +1,30 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core" height="100%">
+    <Dialog id="addDialog"  showHeader="false" contentWidth="auto" class="sapUiResponsivePadding">
+
+        <content>
+            <Title text="Novo Parâmetro" class="sapUiSmallMargin"/>
+            <HBox class="sapUiSmallMargin">
+                <VBox class="sapUiSmallMarginEnd">
+                    <Label text="De"/>
+                    <Input id="fromId" placeholder="Ex: Lote*987"/>
+                </VBox>
+                <VBox>
+                    <Label text="Para"/>
+                    <Input id="toId" placeholder="Ex: Crédito Inválido"/>
+                </VBox>
+            </HBox>
+        </content>
+
+
+        <Toolbar style="Clear" class="sapUiTinyMarginEnd sapUiTinyMarginBottom">
+            <content>
+                <ToolbarSpacer />
+                <Button text="Criar" press="sendParameter" type="Accept" />
+                <Button text="Cancelar" press="onCloseNewParamDialog" type="Reject" />
+            </content>
+        </Toolbar>
+
+    </Dialog>
+</core:FragmentDefinition>

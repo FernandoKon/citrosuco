@@ -1,11 +1,8 @@
 <core:FragmentDefinition xmlns="sap.m"
-    xmlns:f="sap.ui.layout.form"
-    xmlns:l="sap.ui.layout"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:table="sap.ui.table"
-    xmlns:core="sap.ui.core"
-    xmlns:u="sap.ui.unified" height="100%"
-    xmlns:main="sap.ui.webc.main">
+    xmlns:dnd="sap.ui.core.dnd"
+    xmlns:core="sap.ui.core" height="100%">
     <Dialog id="Dialog"  showHeader="false" contentWidth="500px" class="sapUiResponsivePadding">
 
         <content>
@@ -20,7 +17,6 @@
                     <OverflowToolbar height="3rem">
                         <Title
                             class="sapUiTinyMargin"
-                            id="title"
                             text="Tabela de Parâmetros"
                         />
                         <ToolbarSpacer />
@@ -28,7 +24,7 @@
                             id="addButton" 
                             icon="sap-icon://add"
                             type="Transparent"
-							press="onAdd" />
+							press="onOpenAddDialog" />
                         <Button 
                             id="editButton" 
                             text="Editar" 
@@ -50,7 +46,17 @@
                     </OverflowToolbar>
                 </table:extension>
 
+                <table:dragDropConfig>
+                    <dnd:DragInfo groupName="priority" sourceAggregation="items"/>
+                    <dnd:DropInfo groupName="priority" dropPosition="Between" targetAggregation="items" drop="onDropPriority"/>
+                </table:dragDropConfig>
+
                 <table:columns>
+                    <table:Column resizable="false" width="2rem">
+                        <table:template> 
+                            <Text text=""/>
+                        </table:template>
+                    </table:Column>
                     <table:Column resizable="false">
                         <Label
                             design="Bold"
@@ -83,7 +89,7 @@
         <Toolbar style="Clear" class="sapUiTinyMarginEnd sapUiTinyMarginBottom">
             <content>
                 <ToolbarSpacer />
-                <Button text="Cadastrar" press="sendParameter" type="Emphasized" />
+                <Button text="Deletar" press="onDelete" type="Reject" />
                 <Button text="Fechar" press="onCloseDialog" type="Ghost" />
             </content>
         </Toolbar>

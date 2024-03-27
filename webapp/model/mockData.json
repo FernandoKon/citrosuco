@@ -2,5 +2,9 @@
     {
         "de": "teste",
         "para": "teste"
+    },
+    {
+        "de": "de",
+        "para": "para"
     }
 ]

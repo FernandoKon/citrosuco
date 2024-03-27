@@ -21,9 +21,5 @@ sap.ui.define([
                 return oModel;
             },
 
-            getBoxById: function (sID, oURLParams) {
-                return connector.get({ sPath: `/CaixasContratadas(${sID})`, oURLParams });
-              },
-
         };
     });
