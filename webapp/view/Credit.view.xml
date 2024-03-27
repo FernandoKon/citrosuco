@@ -1,4 +1,4 @@
-<mvc:View controllerName="com.lab2dev.citrosuco.controller.Home"
+<mvc:View controllerName="com.lab2dev.citrosuco.controller.Credit"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns:l="sap.ui.layout"
     xmlns:t="sap.ui.table"
@@ -9,46 +9,53 @@
     height="100%">
     <Page id="page" title="{i18n>title}" showHeader="false"> 
         
-        <VBox class="sapUiSmallMargin" fitContainer="true" backgroundDesign="Transparent">
-                    <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CaixasContratadas" class="customBorder" >
-                        <smartFilterBar:controlConfiguration>
-                            <smartFilterBar:ControlConfiguration key="PROPOSTA" visibleInAdvancedArea="true"/>
-                            <smartFilterBar:ControlConfiguration key="CONTRATO" visibleInAdvancedArea="true"/>
-                            <smartFilterBar:ControlConfiguration key="MOEDA" visibleInAdvancedArea="true"/>
-                            <smartFilterBar:ControlConfiguration key="FORNECEDOR" visibleInAdvancedArea="true"/>
-                        </smartFilterBar:controlConfiguration>
-                        <smartFilterBar:layoutData>
-                            <FlexItemData shrinkFactor="0"/>
-                        </smartFilterBar:layoutData>
-                    </smartFilterBar:SmartFilterBar>
+        <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CaixasContratadas" class="customBorder sapUiSmallMargin" header="Opções de filtragem">
+            <smartFilterBar:controlConfiguration>
+                <smartFilterBar:ControlConfiguration key="PROPOSTA" visibleInAdvancedArea="true" mandatory="mandatory"/>
+                <smartFilterBar:ControlConfiguration key="CONTRATO" visibleInAdvancedArea="true"/>
+                <smartFilterBar:ControlConfiguration key="MOEDA" visibleInAdvancedArea="true"/>
+                <smartFilterBar:ControlConfiguration key="FORNECEDOR" visibleInAdvancedArea="true"/>
+            </smartFilterBar:controlConfiguration>
+            <smartFilterBar:layoutData>
+                <FlexItemData shrinkFactor="0"/>
+            </smartFilterBar:layoutData>
+        </smartFilterBar:SmartFilterBar>
 
-            <VBox height="calc(100% - 80px)" class="sapUiSmallMarginTopBottom customBorder" backgroundDesign="Solid"> 
-                <smartTable:SmartTable 
-                    backgroundDesign="Translucent"
-                    id="SmartTable" 
-                    entitySet="CaixasContratadas" 
-                    smartFilterId="smartFilterBar" 
-                    enableExport="true" 
-                    beforeExport="onBeforeExport"
-                    useTablePersonalisation="true" 
-                    header="Crédito" 
-                    showRowCount="true" 
-                    noData="Para começar, defina os filtros relevantes."
-                    tableType="ResponsiveTable"
-                    enableAutoBinding="false" 
-                    alignContent="Center"
-                    class="sapUiResponsiveContentPadding" 
-                    initiallyVisibleFields="PROPOSTA,CONTRATO,MOEDA,FORNECEDOR,VARIEDADE"
-                    wrap="NoWrap"
-                    >
-                    <smartTable:layoutData>
-                        <FlexItemData growFactor="2" baseSize="0%"/>
-                    </smartTable:layoutData>
-                    <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dadaos."
-                    mode="SingleSelectMaster"/>
-                </smartTable:SmartTable>
-            </VBox>
-        </VBox>
+        <Button text="Parametros" press="onOpenDialog" class="sapUiSmallMarginBegin sapUiSmallMarginBottom"/>
+
+        <smartTable:SmartTable 
+            backgroundDesign="Solid"
+            id="SmartTable" 
+            beforeRebindTable="handleRebindTable"
+            entitySet="CaixasContratadas"
+            smartFilterId="smartFilterBar" 
+            header="Caixas Contratadas" 
+            noData="Para começar, defina os filtros relevantes."
+            tableType="ResponsiveTable"
+            alignContent="Center"
+            class="sapUiResponsiveContentPadding sapUiSmallMarginBeginEnd" 
+            initiallyVisibleFields="PROPOSTA,SAFRA,CONTRATO,MOEDA,FORNECEDOR,NOME_FORN,VARIEDADE,TIPO_FORN"
+            >
+            <smartTable:layoutData>
+                <FlexItemData growFactor="2" baseSize="0%"/>
+            </smartTable:layoutData>
+            <Table id="oTable" noDataText="Inicie ou verifique os filtros para exibir os dados."
+            mode="SingleSelectMaster">
+                <columns>
+                    <Column width="auto">
+                        <Text text="TIPO DE CRÉDITO"/>
+                    </Column>
+                </columns>
+
+                <items >
+                    <ColumnListItem vAlign="Middle">
+                        <cells>
+                            <Text id="creditType" class="textBold" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </smartTable:SmartTable>
 
     </Page>
 </mvc:View>

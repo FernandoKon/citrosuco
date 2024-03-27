@@ -1,0 +1,92 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:table="sap.ui.table"
+    xmlns:core="sap.ui.core"
+    xmlns:u="sap.ui.unified" height="100%"
+    xmlns:main="sap.ui.webc.main">
+    <Dialog id="Dialog"  showHeader="false" contentWidth="500px" class="sapUiResponsivePadding">
+
+        <content>
+            <table:Table
+                class="sapUiTinyMarginTopBottom"
+                id="ParameterTable"
+                rows="{mockData>/}"
+                enableColumnReordering="false"
+                rowMode="Auto"
+            >
+                <table:extension>
+                    <OverflowToolbar height="3rem">
+                        <Title
+                            class="sapUiTinyMargin"
+                            id="title"
+                            text="Tabela de Parâmetros"
+                        />
+                        <ToolbarSpacer />
+                        <Button 
+                            id="addButton" 
+                            icon="sap-icon://add"
+                            type="Transparent"
+							press="onAdd" />
+                        <Button 
+                            id="editButton" 
+                            text="Editar" 
+                            type="Transparent"
+							press="toggleEdit" 
+                            visible="{= !${viewDetail>/bEnableEditParam}}"/>
+						<Button 
+                            id="saveButton" 
+                            text="Salvar" 
+                            type="Accept"
+							press="onSave" 
+                            visible="{viewDetail>/bEnableEditParam}" />
+						<Button 
+                            id="cancelButton" 
+                            text="Cancelar" 
+                            type="Reject"
+							press="onCancel" 
+                            visible="{viewDetail>/bEnableEditParam}" />
+                    </OverflowToolbar>
+                </table:extension>
+
+                <table:columns>
+                    <table:Column resizable="false">
+                        <Label
+                            design="Bold"
+                            text="DE"
+                        />
+                        <table:template> 
+                                    <VBox>
+                                        <Text text="{mockData>de}" visible="{= !${viewDetail>/bEnableEditParam}}"/>
+                                        <Input value="{mockData>de}" visible="{viewDetail>/bEnableEditParam}"/>
+                                    </VBox>
+                        </table:template>
+                    </table:Column>
+                    <table:Column resizable="false">
+                        <Label
+                            design="Bold"
+                            text="PARA"
+                        />
+                        <table:template>
+                            <VBox>
+                                <Text text="{mockData>para}" visible="{= !${viewDetail>/bEnableEditParam}}"/>
+                                <Input value="{mockData>para}" visible="{viewDetail>/bEnableEditParam}"/>
+                            </VBox>
+                        </table:template>
+                    </table:Column>
+                </table:columns>
+            </table:Table>
+        </content>
+
+
+        <Toolbar style="Clear" class="sapUiTinyMarginEnd sapUiTinyMarginBottom">
+            <content>
+                <ToolbarSpacer />
+                <Button text="Cadastrar" press="sendParameter" type="Emphasized" />
+                <Button text="Fechar" press="onCloseDialog" type="Ghost" />
+            </content>
+        </Toolbar>
+
+    </Dialog>
+</core:FragmentDefinition>
