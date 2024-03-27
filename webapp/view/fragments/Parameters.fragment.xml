@@ -29,7 +29,7 @@
                             id="editButton" 
                             text="Editar" 
                             type="Transparent"
-							press="toggleEdit" 
+							press="onEdit" 
                             visible="{= !${viewDetail>/bEnableEditParam}}"/>
 						<Button 
                             id="saveButton" 
@@ -64,8 +64,8 @@
                         />
                         <table:template> 
                                     <VBox>
-                                        <Text text="{mockData>de}" visible="{= !${viewDetail>/bEnableEditParam}}"/>
-                                        <Input value="{mockData>de}" visible="{viewDetail>/bEnableEditParam}"/>
+                                        <Text text="{mockData>de}" visible="{= !${mockData>bEditable}}"/>
+                                        <Input id="inputFrom" value="{mockData>de}" visible="{mockData>bEditable}"/>
                                     </VBox>
                         </table:template>
                     </table:Column>
@@ -76,8 +76,8 @@
                         />
                         <table:template>
                             <VBox>
-                                <Text text="{mockData>para}" visible="{= !${viewDetail>/bEnableEditParam}}"/>
-                                <Input value="{mockData>para}" visible="{viewDetail>/bEnableEditParam}"/>
+                                <Text text="{mockData>para}" visible="{= !${mockData>bEditable}}"/>
+                                <Input id="inputTo" value="{mockData>para}" visible="{mockData>bEditable}"/>
                             </VBox>
                         </table:template>
                     </table:Column>

@@ -2,11 +2,12 @@ sap.ui.define([
     "com/lab2dev/citrosuco/controller/BaseController",
     "sap/ui/model/json/JSONModel",
     "../utilities/utilities",
+    "sap/base/util/deepClone"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, JSONModel, u) {
+    function (Controller, JSONModel, u, deepClone) {
         "use strict";
 
         return Controller.extend("com.lab2dev.citrosuco.controller.Credit", {
@@ -23,7 +24,6 @@ sap.ui.define([
             },
 
             _setMockDataModel: async function () {
-                debugger
                 const oModel = new JSONModel();
                 const oComponent = this.getOwnerComponent();
                 const resolveRefText = oComponent.getManifestObject().resolveUri("model/mockData.json");
@@ -86,39 +86,95 @@ sap.ui.define([
                 });
             },
 
-            toggleEdit: function () {
-                debugger
+            toggleEdit: function (){
+                const oModel = this.getView().getModel("viewDetail")
+                const bEditable = oModel.getProperty("/bEnableEditParam");
+                oModel.setProperty("/bEnableEditParam", !bEditable)
+            },
+
+            visibleChange: function () {
+                const oModel = this.getView().getModel("mockData")
+                const oData = oModel.getData()
+                const oDataClone = deepClone(oData)
+                const oEditFormModel = new JSONModel(oDataClone)
+
+                this.getView().setModel(oEditFormModel, 'editForm')
+
                 const oTable = this.byId("ParameterTable")
                 const aSelectedItems = oTable.getSelectedIndices();
-                const oModel = this.getView().getModel("viewDetail")
                 
-
                 if (aSelectedItems.length <= 0) {
-                    return this.MessageToast.show("Selecione ao menos um item para editar!"), true
+                    return this.MessageToast.show("Selecione ao menos um item!"), true
                 }
-
-                aSelectedItems.map((item) => {
-                    const oData = oTable.getBinding().getModel().getData()[item]// .ID
-                    oData.bEditable = true 
-                    // DELETE BY ID
-
+                
+                aSelectedItems.map((indice) => {
+                    const oData = oModel.getData()
+                    const oSelectedItem = oData.at(indice)
+                    oSelectedItem.bEditable = !oSelectedItem.bEditable
                 }) 
+                oModel.refresh(true);
+                this.toggleEdit();
+            },
 
-                // const bEditable = oModel.getProperty("/bEnableEditParam");
-                // oModel.setProperty("/bEnableEditParam", !bEditable)
+            onEdit: function () {
+                const dialogData = this.getModel("editForm");
+
+                // const oTable = this.byId("ParameterTable")
+                // const aSelectedItems = oTable.getSelectedIndices();
+                
+                
+                // if (aSelectedItems.length <= 0) {
+                //     return this.MessageToast.show("Selecione ao menos um item!"), true
+                // }
+                
+                // const oModel = this.getView().getModel("mockData")
+                // aSelectedItems.map((indice) => {
+                //     const oData = oModel.getData()
+                //     const oSelectedItem = oData.at(indice)
+                //     oSelectedItem.bEditable = !oSelectedItem.bEditable
+                // }) 
+                // oModel.refresh(true);
+                this.visibleChange();
+               
+
 
             },
 
             onSave: function() {
-                debugger
                 const oTable = this.byId("ParameterTable");
+                const sFrom = this.byId("inputFrom").getValue();
+                const sTo = this.byId("inputTo").getValue();
 
-                // PUT
-                this.toggleEdit();
+                const editedRow = {
+                    de: sFrom,
+                    para: sTo
+                };
+
+                this.visibleChange();
+
+                // PUT by ID
             },
             
             onCancel: function() {
-                this.toggleEdit();
+                // const oModel = this.getView().getModel("mockData")
+
+                // const oTable = this.byId("ParameterTable")
+                // const aSelectedItems = oTable.getSelectedIndices();
+                
+                // if (aSelectedItems.length <= 0) {
+                //     return this.MessageToast.show("Selecione ao menos um item!"), true
+                // }
+                
+
+                // aSelectedItems.map((indice) => {
+                //     const oData = oModel.getData()
+                //     const oSelectedItem = oData.at(indice)
+                //     oSelectedItem.bEditable = !oSelectedItem.bEditable
+                // }) 
+
+                this.visibleChange()
+
+                // oModel.refresh(true);
                 
             },
 
@@ -127,11 +183,11 @@ sap.ui.define([
                 const aSelectedItems = oTable.getSelectedIndices();
 
                 if (aSelectedItems.length <= 0) {
-                    return this.MessageToast.show("Selecione ao menos um item para excluir!"), true
+                    return this.MessageToast.show("Selecione ao menos um item!"), true
                 }
 
-                aSelectedItems.map((item) => {
-                    const ID = oTable.getBinding().getModel().getData()[item].de // .ID
+                aSelectedItems.map((indice) => {
+                    const ID = oTable.getBinding().getModel().getData()[indice].de // .ID
                     console.log(ID)
                     // DELETE BY ID
 
@@ -169,6 +225,12 @@ sap.ui.define([
                     );
                     this.getView().addDependent(this.sDialog);
                 }
+
+                const oModel = this.getView().getModel("mockData")
+                const oData = oModel.getData();
+                const oDataClone = deepClone(oData)
+                const oEditFormModel = new JSONModel(oDataClone)
+                this.getView().setModel(oEditFormModel, 'editForm')
 
                 this.sDialog.open();
             },

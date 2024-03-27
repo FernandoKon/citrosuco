@@ -13,7 +13,6 @@ sap.ui.define([
             },
 
             handleSelectionChange: function (oEvent) {
-                debugger
                 const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
                 const sID = oEvent.getParameter("listItem").getBindingContext().getObject().ID;
                 const sPartner = oEvent.getParameter("listItem").getBindingContext().getObject().COD_SOCIO;
