@@ -25,8 +25,7 @@
 
         <smartTable:SmartTable 
             backgroundDesign="Solid"
-            id="SmartTable" 
-            beforeRebindTable="handleRebindTable"
+            id="SmartTable"
             entitySet="CaixasContratadas"
             smartFilterId="smartFilterBar" 
             header="Caixas Contratadas" 

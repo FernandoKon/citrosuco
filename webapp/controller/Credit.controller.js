@@ -38,54 +38,6 @@ sap.ui.define([
             
             },
 
-            handleRebindTable: async function () {
-                const oTable = this.getView().byId("oTable");
-            
-                await new Promise(resolve => {
-                    oTable.attachEventOnce("updateFinished", resolve);
-                });
-            
-                const oSmartTable = this.getView().byId("SmartTable");
-                const oColumns = oSmartTable.getTable().getColumns();
-            
-                let columnIndex = -1;
-                oColumns.forEach(function (oColumn, index) {
-                    const columnBinding = oColumn.getAggregation("tooltip");
-                    if (columnBinding === "SAFRA") {
-                        columnIndex = index;
-                        return false;
-                    }
-                });
-                var aItems = oTable.getItems();
-                
-                const Param = this.sParam;
-            
-                aItems.forEach(function (oItem) {
-                    const safraText = oItem.getCells()[columnIndex].getText();
-            
-                    if (Param.includes("*")) {
-                        const regexString = Param.replace(/\*/g, ".*"); 
-                        const regex = new RegExp(regexString, "i"); 
-            
-                        if (regex.test(safraText)) {
-                            oItem.getCells()[0].setText("PARAMETRO");
-                        } else if (safraText === "2022") {
-                            oItem.getCells()[0].setText("2022");
-                        } else {
-                            oItem.getCells()[0].setText("Não Identificado");
-                        }
-                    } else {
-                        if (safraText.includes(Param)) { 
-                            oItem.getCells()[0].setText("PARAMETRO");
-                        } else if (safraText === "2022") {
-                            oItem.getCells()[0].setText("2022");
-                        } else {
-                            oItem.getCells()[0].setText("Não Identificado");
-                        }
-                    }
-                });
-            },
-
             toggleEdit: function (){
                 const oModel = this.getView().getModel("viewDetail")
                 const bEditable = oModel.getProperty("/bEnableEditParam");
@@ -117,6 +69,7 @@ sap.ui.define([
             },
 
             onEdit: function () {
+                debugger
                 const dialogData = this.getModel("editForm");
 
                 // const oTable = this.byId("ParameterTable")
@@ -144,37 +97,37 @@ sap.ui.define([
                 const oTable = this.byId("ParameterTable");
                 const sFrom = this.byId("inputFrom").getValue();
                 const sTo = this.byId("inputTo").getValue();
-
+                
                 const editedRow = {
                     de: sFrom,
                     para: sTo
                 };
-
+                
                 this.visibleChange();
-
+                oTable.clearSelection();
                 // PUT by ID
             },
             
             onCancel: function() {
-                // const oModel = this.getView().getModel("mockData")
+                debugger
+                const oEditFormModel = this.getView().getModel("editForm")
+                const oModel = this.getView().getModel("mockData")
 
-                // const oTable = this.byId("ParameterTable")
-                // const aSelectedItems = oTable.getSelectedIndices();
+                const oTable = this.byId("ParameterTable")
+                var oData = oModel.getData()
+                oData.map((item) => {
+                    if (item.bEditable == true) {
+                        item.bEditable = false
+                    }
+                })
+                oData = oEditFormModel.getData();
+                oModel.setData(oData);
+
+                oTable.clearSelection();
+
+                this.toggleEdit();
+                oModel.refresh(true);
                 
-                // if (aSelectedItems.length <= 0) {
-                //     return this.MessageToast.show("Selecione ao menos um item!"), true
-                // }
-                
-
-                // aSelectedItems.map((indice) => {
-                //     const oData = oModel.getData()
-                //     const oSelectedItem = oData.at(indice)
-                //     oSelectedItem.bEditable = !oSelectedItem.bEditable
-                // }) 
-
-                this.visibleChange()
-
-                // oModel.refresh(true);
                 
             },
 
@@ -197,10 +150,15 @@ sap.ui.define([
             },
             
             sendParameter: function () {
+                debugger
                 const inputFrom = this.byId("fromId").getValue();
                 const inputTo = this.byId("toId").getValue();
                 const oModel = this.getView().getModel("mockData");
-            
+                
+                if (!inputFrom || !inputTo) {
+                    return this.MessageToast.show("Preencha os campos necessários!")
+                }
+
                 const aData = oModel.getProperty("/");
             
                 const oNewRow = {
@@ -209,11 +167,13 @@ sap.ui.define([
                 };
                  // POST
                 aData.push(oNewRow);
-            
+                
+                aData[aData.length - 1].bEditable = false;
                 oModel.setProperty("/", aData);
                 oModel.refresh(true);
 
                 this.onCloseNewParamDialog();
+                this.MessageToast.show("Regra criada com sucesso!")
             },
 
             onOpenDialog: function () {

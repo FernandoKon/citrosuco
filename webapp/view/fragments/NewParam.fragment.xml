@@ -7,12 +7,12 @@
             <Title text="Novo Parâmetro" class="sapUiSmallMargin"/>
             <HBox class="sapUiSmallMargin">
                 <VBox class="sapUiSmallMarginEnd">
-                    <Label text="De"/>
+                    <Label text="De" required="true"/>
                     <Input id="fromId" placeholder="Ex: Lote*987"/>
                 </VBox>
                 <VBox>
-                    <Label text="Para"/>
-                    <Input id="toId" placeholder="Ex: Crédito Inválido"/>
+                    <Label text="Para" required="true"/>
+                    <Input id="toId" placeholder="Ex: Crédito Inválido" />
                 </VBox>
             </HBox>
         </content>
