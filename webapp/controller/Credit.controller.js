@@ -69,7 +69,6 @@ sap.ui.define([
             },
 
             onEdit: function () {
-                debugger
                 const dialogData = this.getModel("editForm");
 
                 // const oTable = this.byId("ParameterTable")
@@ -109,7 +108,6 @@ sap.ui.define([
             },
             
             onCancel: function() {
-                debugger
                 const oEditFormModel = this.getView().getModel("editForm")
                 const oModel = this.getView().getModel("mockData")
 
@@ -150,7 +148,6 @@ sap.ui.define([
             },
             
             sendParameter: function () {
-                debugger
                 const inputFrom = this.byId("fromId").getValue();
                 const inputTo = this.byId("toId").getValue();
                 const oModel = this.getView().getModel("mockData");

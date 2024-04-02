@@ -10,12 +10,15 @@
     <Page id="Contracts" title="{i18n>title}" showHeader="false"> 
         
         <VBox class="sapUiSmallMargin" fitContainer="true" backgroundDesign="Transparent">
-                    <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CaixasContratadas" class="customBorder" >
+                    <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="ContrTransfGet" class="customBorder" >
                         <smartFilterBar:controlConfiguration>
-                            <smartFilterBar:ControlConfiguration key="PROPOSTA" visibleInAdvancedArea="true"/>
-                            <smartFilterBar:ControlConfiguration key="CONTRATO" visibleInAdvancedArea="true"/>
-                            <smartFilterBar:ControlConfiguration key="MOEDA" visibleInAdvancedArea="true"/>
-                            <smartFilterBar:ControlConfiguration key="FORNECEDOR" visibleInAdvancedArea="true"/>
+                            <smartFilterBar:ControlConfiguration key="PropAnt" visibleInAdvancedArea="true"/>
+                            <smartFilterBar:ControlConfiguration key="PropNov" visibleInAdvancedArea="true"/>
+                            <smartFilterBar:ControlConfiguration key="ContrAnt" visibleInAdvancedArea="true"/>
+                            <smartFilterBar:ControlConfiguration key="ContrNov" visibleInAdvancedArea="true"/>
+                            <smartFilterBar:ControlConfiguration key="Imovel" visibleInAdvancedArea="true"/>
+                            <smartFilterBar:ControlConfiguration key="Safra" visibleInAdvancedArea="true"/>
+                            <smartFilterBar:ControlConfiguration key="NomeImovel" visibleInAdvancedArea="true"/>
                         </smartFilterBar:controlConfiguration>
                         <smartFilterBar:layoutData>
                             <FlexItemData shrinkFactor="0"/>
@@ -26,7 +29,7 @@
                 <smartTable:SmartTable 
                     backgroundDesign="Translucent"
                     id="SmartTable" 
-                    entitySet="CaixasContratadas" 
+                    entitySet="ContrTransfGet" 
                     smartFilterId="smartFilterBar" 
                     enableExport="true" 
                     beforeExport="onBeforeExport"
@@ -38,7 +41,7 @@
                     enableAutoBinding="false" 
                     alignContent="Center"
                     class="sapUiResponsiveContentPadding" 
-                    initiallyVisibleFields="PROPOSTA,CONTRATO,MOEDA,FORNECEDOR,VARIEDADE"
+                    initiallyVisibleFields="PropAnt,PropNov,ContrAnt,ContrNov,Imovel,NomeImovel,Safra"
                     wrap="NoWrap"
                     >
                     <smartTable:layoutData>

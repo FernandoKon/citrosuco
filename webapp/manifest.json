@@ -16,12 +16,12 @@
             "toolsId": "54dac88d-0d23-470b-bb2a-8829838852af"
         },
         "dataSources": {
-            "api": {
-                "uri": "/odata/v2/api/",
+            "fluxos-caixa": {
+                "uri": "/odata/v2/fluxos-caixa/",
                 "type": "OData",
                 "settings": {
                     "annotations": [],
-                    "localUri": "localService/metadata.xml",
+                    "localUri": "localService/fluxos-caixa/metadata.xml",
                     "odataVersion": "2.0"
                 }
             }
@@ -70,15 +70,13 @@
                 }
             },
             "": {
+                "dataSource": "fluxos-caixa",
                 "preload": true,
-                "dataSource": "api",
                 "settings": {
-                    "defaultBindingMode": "TwoWay",
-                    "defaultCountMode": "Inline",
-                    "refreshAfterChange": false,
-                    "metadataUrlParams": {
-                        "sap-value-list": "none"
-                    }
+                    "synchronizationMode": "None",
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": true
                 }
             }
         },
@@ -172,7 +170,7 @@
                 },
                 {
                     "name": "HomeDetail",
-                    "pattern": "CaixaContratada({Id})/{Supplier}/{proposta}/{contrato}",
+                    "pattern": "CaixaContratada({Safra})/{Fornecedor}/{Proposta}/{Contrato}/{Grupo}/{Imovel}",
                     "target": [
                         "TargetHomeDetail"
                     ]

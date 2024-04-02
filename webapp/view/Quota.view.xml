@@ -9,15 +9,15 @@
     height="100%">
     <Page id="page" title="{i18n>title}" showHeader="false"> 
         
-            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Cotas" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" showRestoreOnFB="true"> 
+            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CotasGet" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" showRestoreOnFB="true"> 
                 <smartFilterBar:controlConfiguration>
-                    <smartFilterBar:ControlConfiguration label="Data" key="DT_PROGRAMACAO" visibleInAdvancedArea="true"/>
-                    <smartFilterBar:ControlConfiguration label="Semana" key="SEMANA" visibleInAdvancedArea="true"/>
-                    <smartFilterBar:ControlConfiguration label="Centro" key="CENTRO" visibleInAdvancedArea="true"/>
-                    <smartFilterBar:ControlConfiguration label="Nº do fornecedor" key="FORNECEDOR" visibleInAdvancedArea="true"/>
-                    <smartFilterBar:ControlConfiguration label="Nome do fornecedor" key="NOME_FORN" visibleInAdvancedArea="true"/>
-                    <smartFilterBar:ControlConfiguration label="Nº do imóvel" key="IMOVEL" visibleInAdvancedArea="true"/>
-                    <smartFilterBar:ControlConfiguration label="Nome do imóvel" key="NOME_IMOVEL" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Data" key="DtProgramacao" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Semana" key="Semana" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Centro" key="Centro" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nº do fornecedor" key="Fornecedor" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nome do fornecedor" key="NomeForn" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nº do imóvel" key="Imovel" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nome do imóvel" key="NomeImovel" visibleInAdvancedArea="true"/>
                 </smartFilterBar:controlConfiguration>
                 <smartFilterBar:layoutData>
                     <FlexItemData shrinkFactor="0"/>
@@ -27,14 +27,14 @@
             <smartTable:SmartTable 
                 backgroundDesign="Translucent"
                 id="SmartTable" 
-                entitySet="Cotas" 
+                entitySet="CotasGet" 
                 smartFilterId="smartFilterBar" 
                 header="Cota" 
                 noData="Para começar, defina os filtros relevantes."
                 tableType="ResponsiveTable"
                 alignContent="Center"
                 class="sapUiResponsiveContentPadding sapUiSmallMargin" 
-                initiallyVisibleFields="DT_PROGRAMACAO,CENTRO,COD_VARIEDADE,REGIAO,COMPRADOR,SEMANA,FORNECEDOR,IMOVEL,QTD_COTAS,QTD_CX_COTA"
+                initiallyVisibleFields="DtProgramacao,Centro,CodVariedade,Regiao,Comprador,Semana,Fornecedor,Imovel,QtdCotas,QtdCxCota"
                 >
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>

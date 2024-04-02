@@ -23,25 +23,25 @@
             </smartForm:customToolbar>
             <smartForm:Group>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Proposta" value="{PROPOSTA}"/>
+                    <smartField:SmartField textLabel="Proposta" value="{Proposta}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Contrato" value="{CONTRATO}"/>
+                    <smartField:SmartField textLabel="Contrato" value="{Contrato}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Fornecedor" value="{FORNECEDOR}"/>
+                    <smartField:SmartField textLabel="Fornecedor" value="{Fornecedor}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Nome do fornecedor" value="{NOME_FORN}"/>
+                    <smartField:SmartField textLabel="Nome do fornecedor" value="{NomeForn}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Safra" value="{SAFRA}"/>
+                    <smartField:SmartField textLabel="Safra" value="{Safra}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Caixas contratadas" value="{CAIXAS_CONTRATADAS}"/>
+                    <smartField:SmartField textLabel="Caixas contratadas" value="{CaixasContratadas}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Criado em" value="{createdAt}"/>
+                    <smartField:SmartField textLabel="Criado em" value="{DataCriacao}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
                     <smartField:SmartField textLabel="Criado por" value="{createdBy}"/>
@@ -190,9 +190,9 @@
         
         <content>
             <VBox class="sapUiSmallMarginTop">
-                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Socios" class="customBorder" visible="false">
+                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="SociosGet" class="customBorder" visible="false">
                     <smartFilterBar:controlConfiguration>
-                        <smartFilterBar:ControlConfiguration key="FORNECEDOR"  visibleInAdvancedArea="true">
+                        <smartFilterBar:ControlConfiguration key="Fornecedor"  visibleInAdvancedArea="true">
                             <smartFilterBar:defaultFilterValues>
                                 <smartFilterBar:SelectOption id="smartFilterData" low="{oModel>/supplier}"/>
                             </smartFilterBar:defaultFilterValues>
@@ -206,7 +206,7 @@
                 <smartTable:SmartTable 
                     backgroundDesign="Translucent"
                     id="SmartTable" 
-                    entitySet="Socios" 
+                    entitySet="SociosGet" 
                     smartFilterId="smartFilterBar" 
                     header="Sócios com o fornecedor {oModel>/supplier}" 
                     noData="Para começar, defina os filtros relevantes."
@@ -214,7 +214,7 @@
                     enableAutoBinding="true"
                     alignContent="Center"
                     class="sapUiResponsiveContentPadding" 
-                    initiallyVisibleFields="FORNECEDOR,NOME_FORNECEDOR,COD_SOCIO,NOME_SOCIO,FUNC_PARCEIRO,DESC_FUNC_PARC,CPF,RG"
+                    initiallyVisibleFields="Fornecedor,NomeFornecedor,CodSocio,NomeSocio,FuncParceiro,DescFuncParc,Cpf,Rg"
                     >
                     <smartTable:layoutData>
                         <FlexItemData growFactor="2" baseSize="0%"/>

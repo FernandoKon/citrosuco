@@ -9,12 +9,12 @@ xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     height="100%">
     <Page id="Partners" title="{i18n>title}" showHeader="false">
         
-            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Socios" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" showRestoreOnFB="true">
+            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="SociosGet" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" showRestoreOnFB="true">
                 <smartFilterBar:controlConfiguration>
-                    <smartFilterBar:ControlConfiguration label="Nº do fornecedor" key="FORNECEDOR" visibleInAdvancedArea="true"/>
-                    <smartFilterBar:ControlConfiguration label="Nome do fornecedor" key="NOME_FORNECEDOR" visibleInAdvancedArea="true"/>
-                    <smartFilterBar:ControlConfiguration label="Nome do sócio" key="NOME_SOCIO" visibleInAdvancedArea="true"/>
-                    <smartFilterBar:ControlConfiguration label="Nº do sócio" key="COD_SOCIO" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nº do fornecedor" key="Forecedor" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nome do fornecedor" key="NomeFornecedor" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nome do sócio" key="NomeSocio" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Código do sócio" key="CodSocio" visibleInAdvancedArea="true"/>
                     <smartFilterBar:ControlConfiguration label="CPF" key="CPF" visibleInAdvancedArea="true"/>
                 </smartFilterBar:controlConfiguration>
                 <smartFilterBar:layoutData>
@@ -25,14 +25,14 @@ xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
             <smartTable:SmartTable 
                 backgroundDesign="Translucent"
                 id="SmartTable" 
-                entitySet="Socios" 
+                entitySet="SociosGet" 
                 smartFilterId="smartFilterBar" 
                 header="Sócios" 
                 noData="Para começar, defina os filtros relevantes."
                 tableType="ResponsiveTable"
                 alignContent="Center"
                 class="sapUiResponsiveContentPadding sapUiSmallMarginBeginEnd" 
-                initiallyVisibleFields="NOME_SOCIO,COD_SOCIO,FORNECEDOR,NOME_FORNECEDOR,FUNC_PARCEIRO,DESC_FUNC_PARC,CPF,RG"
+                initiallyVisibleFields="NomeSocio,CodSocio,Fornecedor,NomeFornecedor,FuncParceiro,DescFuncParc,Cpf,Rg"
                 >
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>

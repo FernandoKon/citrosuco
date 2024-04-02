@@ -38,5 +38,25 @@ sap.ui.define([
 				}
 			}
 		},
+
+		bindAggregations: function (oEvent, keys) {
+			const oObject = {};
+		
+			// Verifica se a quantidade de chaves é igual à quantidade de valores
+			if (keys.length <= 0) {
+				console.error("A quantidade de chaves não é igual à quantidade de valores.");
+				return;
+			}
+		
+			// Usa map para criar o objeto
+			keys.map((key) => {
+				var value = key
+				var key = oEvent.getParameter("listItem").getBindingContext().getObject(value);
+				oObject[value] = key;
+			});
+			
+			return oObject
+		}
+		
 	}
 });

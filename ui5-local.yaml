@@ -30,9 +30,9 @@ server:
       configuration:
         ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
         backend:
-          - path: /odata
-            url: https://lab2dev-solucoes-em-technologia-ltda-dev-amazon-web-ser7d0d2b59.cfapps.us10-001.hana.ondemand.com
-            destination: citrosuco-cashflow
+          - path: /odata/v2/fluxos-caixa/
+            url: https://cashflow-api.dest
+            destination: cashflow-api
     - name: fiori-tools-preview
       afterMiddleware: fiori-tools-appreload
       configuration:

@@ -9,7 +9,7 @@ server:
     - name: fiori-tools-proxy
       afterMiddleware: compression
       configuration:
-        ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
+        ignoreCertError: true # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
         ui5:
           path:
             - /resources
@@ -17,8 +17,8 @@ server:
           url: https://ui5.sap.com
         backend:
           - path: /odata
-            url: https://lab2dev-solucoes-em-technologia-ltda-dev-amazon-web-ser7d0d2b59.cfapps.us10-001.hana.ondemand.com
-            destination: citrosuco-cashflow
+            url: https://cashflow-api.dest
+            destination: cashflow-api
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:
