@@ -1,4 +1,4 @@
-<mvc:View controllerName="com.lab2dev.citrosuco.controller.Home"
+<mvc:View controllerName="com.lab2dev.citrosuco.controller.Portion"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns:l="sap.ui.layout"
     xmlns:t="sap.ui.table"
@@ -9,46 +9,39 @@
     height="100%">
     <Page id="page" title="{i18n>title}" showHeader="false"> 
         
-        <VBox class="sapUiSmallMargin" fitContainer="true" backgroundDesign="Transparent">
-                    <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CaixasContratadas" class="customBorder" >
-                        <smartFilterBar:controlConfiguration>
-                            <smartFilterBar:ControlConfiguration key="PROPOSTA" visibleInAdvancedArea="true"/>
-                            <smartFilterBar:ControlConfiguration key="CONTRATO" visibleInAdvancedArea="true"/>
-                            <smartFilterBar:ControlConfiguration key="MOEDA" visibleInAdvancedArea="true"/>
-                            <smartFilterBar:ControlConfiguration key="FORNECEDOR" visibleInAdvancedArea="true"/>
-                        </smartFilterBar:controlConfiguration>
-                        <smartFilterBar:layoutData>
-                            <FlexItemData shrinkFactor="0"/>
-                        </smartFilterBar:layoutData>
-                    </smartFilterBar:SmartFilterBar>
-
-            <VBox height="calc(100% - 80px)" class="sapUiSmallMarginTopBottom customBorder" backgroundDesign="Solid"> 
-                <smartTable:SmartTable 
-                    backgroundDesign="Translucent"
-                    id="SmartTable" 
-                    entitySet="CaixasContratadas" 
-                    smartFilterId="smartFilterBar" 
-                    enableExport="true" 
-                    beforeExport="onBeforeExport"
-                    useTablePersonalisation="true" 
-                    header="Parcelas" 
-                    showRowCount="true" 
-                    noData="Para começar, defina os filtros relevantes."
-                    tableType="ResponsiveTable"
-                    enableAutoBinding="false" 
-                    alignContent="Center"
-                    class="sapUiResponsiveContentPadding" 
-                    initiallyVisibleFields="PROPOSTA,CONTRATO,MOEDA,FORNECEDOR,VARIEDADE"
-                    wrap="NoWrap"
-                    >
-                    <smartTable:layoutData>
-                        <FlexItemData growFactor="2" baseSize="0%"/>
-                    </smartTable:layoutData>
-                    <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dadaos."
-                    mode="SingleSelectMaster"/>
-                </smartTable:SmartTable>
-            </VBox>
-        </VBox>
+        <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="EvtParcGet" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" header="Opções de filtragem" showRestoreOnFB="true">
+                <smartFilterBar:controlConfiguration>
+                    <smartFilterBar:ControlConfiguration label="Proposta" key="Proposta" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Contrato" key="Contrato" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Safra" key="Safra" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Data da parcela" key="DtParcela" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Recebedor" key="Recebedor" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nome do recebedor" key="NomeRecebedor" visibleInAdvancedArea="true"/>
+                </smartFilterBar:controlConfiguration>
+                <smartFilterBar:layoutData>
+                    <FlexItemData shrinkFactor="0"/>
+                </smartFilterBar:layoutData>
+            </smartFilterBar:SmartFilterBar>
+      
+            <smartTable:SmartTable 
+                backgroundDesign="Translucent"
+                showFullScreenButton="true"
+                id="SmartTable" 
+                entitySet="EvtParcGet" 
+                smartFilterId="smartFilterBar" 
+                header="Parcelas" 
+                noData="Para começar, defina os filtros relevantes."
+                tableType="ResponsiveTable"
+                alignContent="Center"
+                class="sapUiResponsiveContentPadding sapUiSmallMarginBeginEnd" 
+                initiallyVisibleFields="Proposta,Contrato,Safra,Evento,DescEvento,DtParcela,VlrCaixa,VlrCxAcumul"
+                >
+                <smartTable:layoutData>
+                    <FlexItemData growFactor="2" baseSize="0%"/>
+                </smartTable:layoutData>
+                <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dadaos." growing="true"
+                mode="SingleSelectMaster"/>
+            </smartTable:SmartTable>
 
     </Page>
 </mvc:View>

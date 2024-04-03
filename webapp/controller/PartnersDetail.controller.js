@@ -2,11 +2,12 @@ sap.ui.define([
     "com/lab2dev/citrosuco/controller/BaseController",
     'sap/f/library',
     "sap/ui/model/json/JSONModel",
+    "com/lab2dev/citrosuco/utilities/utilities"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, JSONModel) {
+    function (Controller, JSONModel, utilities) {
         "use strict";
 
         return Controller.extend("com.lab2dev.citrosuco.controller.PartnersDetail", {
@@ -17,21 +18,35 @@ sap.ui.define([
             },
 
             _onRouteMatched: function (oEvent) {
-                const sID = oEvent.getParameter("arguments").Id;
-                const sPartner = oEvent.getParameter("arguments").cod_socio;
-                const sPartnerName = oEvent.getParameter("arguments").name;
-                const sSupplier = oEvent.getParameter("arguments").Supplier;
-                this.getView().byId("smartForm").bindElement(`/Socios(ID=${sID},FORNECEDOR='${sSupplier}',COD_SOCIO='${sPartner}')`)
-                
-                this.setModel({supplier: sSupplier, id: sID, name: sPartnerName}, "oModel")
-                this._setFilterData(sSupplier);
+                const params = oEvent.getParameter("arguments")
+
+                let bindString = "/SociosGet(";
+
+                Object.keys(params).forEach((key, index) => {
+                    if (index > 0) {
+                        bindString += ",";
+                    }
+                    bindString += key + "='" + params[key] + "'";
+
+                    if (key === "Fornecedor") {
+                        this.sSupplier = params[key];
+                    }
+                });
+
+                bindString += ")";
+
+                this.getView().byId("smartForm").bindElement(bindString);
+
+                this.setModel({supplier: this.sSupplier}, "oModel");
+                this._setFilterData(this.sSupplier);
+
             },
 
             _setFilterData(low) {
                 const oSmartFilterBar = this.byId("smartFilterBar");
 
                 oSmartFilterBar.setFilterData({
-                    'FORNECEDOR': low
+                    'Fornecedor': low
                 }, true)
 
                 oSmartFilterBar.search();

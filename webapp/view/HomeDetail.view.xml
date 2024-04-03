@@ -14,7 +14,7 @@
     xmlns:main="sap.ui.webc.main">
 	<Page id="DetailPage" showHeader="false">
 
-        <smartForm:SmartForm id="smartForm" title="Caixa Contratada {oModel>/id}">
+        <smartForm:SmartForm id="smartForm" title="Caixa Contratada" expandable="true">
             <smartForm:customToolbar>
                 <Toolbar style="Clear">
                     <ToolbarSpacer/>
@@ -53,137 +53,137 @@
                     <smartField:SmartField textLabel="Modificado por" value="{modifiedBy}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Imóvel" value="{IMOVEL}"/>
+                    <smartField:SmartField textLabel="Imóvel" value="{Imovel}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Nome do imóvel" value="{NOME_IMOVEL}"/>
+                    <smartField:SmartField textLabel="Nome do imóvel" value="{NomeImovel}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Variedade" value="{VARIEDADE}"/>
+                    <smartField:SmartField textLabel="Variedade" value="{Variedade}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Nome da variedade" value="{NOME_VARIEDADE}"/>
+                    <smartField:SmartField textLabel="Nome da variedade" value="{NomeVariedade}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Comprador" value="{COMPRADOR}"/>
+                    <smartField:SmartField textLabel="Comprador" value="{Comprador}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Caixas estimadas" value="{CXS_ESTIMADAS}"/>
+                    <smartField:SmartField textLabel="Caixas estimadas" value="{CxsEstimdas}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Caixas entregues" value="{CXS_ENTREGUES}"/>
+                    <smartField:SmartField textLabel="Caixas entregues" value="{CxsEntregues}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Caixas recebidas anteriormente" value="{CXS_RECEB_ANT}"/>
-                </smartForm:GroupElement>
-            </smartForm:Group>
-            <smartForm:Group>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Preço base" value="{PRECO_BASE}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Moeda" value="{MOEDA}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Grupo" value="{GRUPO}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Nome do grupo" value="{NOME_GRUPO}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="MOD_CONTRATO" value="{MOD_CONTRATO}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Região" value="{COD_REGIAO}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Nome da região" value="{NOME_REGIAO}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Cidade do imóvel" value="{CIDADE_IMOVEL}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Estado do imóvel" value="{ESTADO_IMOVEL}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="MOD_COMPRA" value="{MOD_COMPRA}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="ADTO_FLUXO" value="{ADTO_FLUXO}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="RECEBEDOR" value="{RECEBEDOR}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="ID_DADOS_BANCARIOS" value="{ID_DADOS_BANCARIOS}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="CONTA_BANCARIA" value="{CONTA_BANCARIA}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="BANCO_AGENCIA" value="{BANCO_AGENCIA}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="DIG_CONTA_BANCARIA" value="{DIG_CONTA_BANCARIA}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="NOME_TP_TRANSF" value="{NOME_TP_TRANSF}"/>
+                    <smartField:SmartField textLabel="Caixas recebidas anteriormente" value="{CxsRecebAnt}"/>
                 </smartForm:GroupElement>
             </smartForm:Group>
             <smartForm:Group>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="DATA_CRIACAO" value="{DATA_CRIACAO}"/>
+                    <smartField:SmartField textLabel="Preço base" value="{PrecoBase}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="TIPO_CONTRATO" value="{TIPO_CONTRATO}"/>
+                    <smartField:SmartField textLabel="Moeda" value="{Moeda}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="COMENTARIO1" value="{COMENTARIO1}"/>
+                    <smartField:SmartField textLabel="Grupo" value="{Grupo}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="COMENTARIO2" value="{COMENTARIO2}"/>
+                    <smartField:SmartField textLabel="Nome do grupo" value="{NomeGrupo}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="COMENTARIO3" value="{COMENTARIO3}"/>
+                    <smartField:SmartField textLabel="MOD_CONTRATO" value="{ModContrato}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="CONSOL_SALDO" value="{CONSOL_SALDO}"/>
+                    <smartField:SmartField textLabel="Região" value="{CodRegiao}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="COMPL_FRETE" value="{COMPL_FRETE}"/>
+                    <smartField:SmartField textLabel="Nome da região" value="{NomeRegiao}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="REEMB_ICMS" value="{REEMB_ICMS}"/>
+                    <smartField:SmartField textLabel="Cidade do imóvel" value="{CidadeImovel}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="ERDAT_PRINT" value="{ERDAT_PRINT}"/>
+                    <smartField:SmartField textLabel="Estado do imóvel" value="{EstadoImovel}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="ERZET_PRINT" value="{ERZET_PRINT}"/>
+                    <smartField:SmartField textLabel="MOD_COMPRA" value="{ModCompra}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="DATA_LIMITE" value="{DATA_LIMITE}"/>
+                    <smartField:SmartField textLabel="ADTO_FLUXO" value="{AdtoFluxo}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="RET_FUNDECITROS" value="{RET_FUNDECITROS}"/>
+                    <smartField:SmartField textLabel="RECEBEDOR" value="{Recebedor}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="PERC_REFUGO" value="{PERC_REFUGO}"/>
+                    <smartField:SmartField textLabel="ID_DADOS_BANCARIOS" value="{IdDadosBancarios}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="TP_PERC_REF" value="{TP_PERC_REF}"/>
+                    <smartField:SmartField textLabel="CONTA_BANCARIA" value="{ContaBancaria}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="TIPO_FORN" value="{TIPO_FORN}"/>
+                    <smartField:SmartField textLabel="BANCO_AGENCIA" value="{BancoAgencia}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="NOME_TP_FORN" value="{NOME_TP_FORN}"/>
+                    <smartField:SmartField textLabel="DIG_CONTA_BANCARIA" value="{DigContaBancaria}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="PROP_ANTIGA" value="{PROP_ANTIGA}"/>
+                    <smartField:SmartField textLabel="NOME_TP_TRANSF" value="{NomeTpTransf}"/>
+                </smartForm:GroupElement>
+            </smartForm:Group>
+            <smartForm:Group>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="DATA_CRIACAO" value="{DataCriacao}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="TP_TRANSF" value="{TP_TRANSF}"/>
+                    <smartField:SmartField textLabel="TIPO_CONTRATO" value="{TipoContrato}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="COMENTARIO1" value="{Comentario1}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="COMENTARIO2" value="{Comentario2}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="COMENTARIO3" value="{Comentario3}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="CONSOL_SALDO" value="{ConsolSaldo}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="COMPL_FRETE" value="{ComplFrete}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="REEMB_ICMS" value="{ReembIcms}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="ERDAT_PRINT" value="{ErdatPrint}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="ERZET_PRINT" value="{ErzetPrint}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="DATA_LIMITE" value="{DataLimite}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="RET_FUNDECITROS" value="{RetFundecitros}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="PERC_REFUGO" value="{PercRefugo}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="TP_PERC_REF" value="{TpPercRef}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="TIPO_FORN" value="{TipoForn}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="NOME_TP_FORN" value="{NomeTpForn}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="PROP_ANTIGA" value="{PropAntiga}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="TP_TRANSF" value="{TpTransf}"/>
                 </smartForm:GroupElement>
             </smartForm:Group>
         </smartForm:SmartForm>
@@ -220,7 +220,7 @@
                         <FlexItemData growFactor="2" baseSize="0%"/>
                     </smartTable:layoutData>
                     <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Nenhum sócio para esse fornecedor."
-                    mode="SingleSelectMaster"/>
+                    mode="SingleSelectMaster" growing="true"/>
                 </smartTable:SmartTable>
             </VBox>
         </content>

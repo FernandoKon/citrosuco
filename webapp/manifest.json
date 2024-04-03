@@ -170,14 +170,14 @@
                 },
                 {
                     "name": "HomeDetail",
-                    "pattern": "CaixaContratada({Safra})/{Fornecedor}/{Proposta}/{Contrato}/{Grupo}/{Imovel}",
+                    "pattern": "CaixaContratada/{Safra}/{Fornecedor}/{Proposta}/{Contrato}/{Grupo}/{Imovel}",
                     "target": [
                         "TargetHomeDetail"
                     ]
                 },
                 {
                     "name": "PartnersDetail",
-                    "pattern": "{name}({Id})/{Supplier}/{cod_socio}",
+                    "pattern": "Socio/{Fornecedor}/{CodSocio}",
                     "target": [
                         "TargetPartnersDetail"
                     ]

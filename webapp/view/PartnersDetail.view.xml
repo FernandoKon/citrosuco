@@ -14,7 +14,7 @@
     xmlns:main="sap.ui.webc.main">
 	<Page id="PartnersDetail" showHeader="false">
 
-        <smartForm:SmartForm id="smartForm" title="{oModel>/name}">
+        <smartForm:SmartForm id="smartForm" title="Sócio" expandable="true">
             <smartForm:customToolbar>
                 <Toolbar style="Clear">
                     <ToolbarSpacer/>
@@ -23,53 +23,39 @@
             </smartForm:customToolbar>
              <smartForm:Group>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Nome socio" value="{NOME_SOCIO}"/>
+                    <smartField:SmartField textLabel="Nome socio" value="{NomeSocio}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Código do socio" value="{COD_SOCIO}"/>
+                    <smartField:SmartField textLabel="Código do socio" value="{CodSocio}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="CPF" value="{CPF}"/>
+                    <smartField:SmartField textLabel="CPF" value="{Cpf}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="RG" value="{RG}"/>
-                </smartForm:GroupElement>
-            </smartForm:Group>
-            <smartForm:Group>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Nome Fornecedor" value="{NOME_FORNECEDOR}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Código do fornecedor" value="{FORNECEDOR}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Função do parceiro" value="{FUNC_PARCEIRO}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Descrição do parceiro" value="{DESC_PARCEIRO}"/>
+                    <smartField:SmartField textLabel="RG" value="{Rg}"/>
                 </smartForm:GroupElement>
             </smartForm:Group>
             <smartForm:Group>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Criado em" value="{createdAt}"/>
+                    <smartField:SmartField textLabel="Nome Fornecedor" value="{NomeFornecedor}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Criado por" value="{createdBy}"/>
+                    <smartField:SmartField textLabel="Código do fornecedor" value="{Fornecedor}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Modificado em" value="{modifiedAt}"/>
+                    <smartField:SmartField textLabel="Função do parceiro" value="{FucParceiro}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Modificado por" value="{modifiedBy}"/>
+                    <smartField:SmartField textLabel="Descrição do parceiro" value="{DescFuncParc}"/>
                 </smartForm:GroupElement>
             </smartForm:Group>
         </smartForm:SmartForm>
         
         <content>
             <VBox class="sapUiSmallMarginTop">
-                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CaixasContratadas" class="customBorder" visible="false">
+                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CxsContrGet" class="customBorder" visible="false">
                     <smartFilterBar:controlConfiguration>
-                        <smartFilterBar:ControlConfiguration key="FORNECEDOR"  visibleInAdvancedArea="false">
+                        <smartFilterBar:ControlConfiguration key="Fornecedor"  visibleInAdvancedArea="false">
                             <smartFilterBar:defaultFilterValues>
                                 <smartFilterBar:SelectOption id="smartFilterData" low="{oModel>/supplier}"/>
                             </smartFilterBar:defaultFilterValues>
@@ -83,7 +69,7 @@
                 <smartTable:SmartTable 
                     backgroundDesign="Translucent"
                     id="SmartTable" 
-                    entitySet="CaixasContratadas" 
+                    entitySet="CxsContrGet" 
                     smartFilterId="smartFilterBar" 
                     header="Propostas do fornecedor {oModel>/supplier}" 
                     noData="Para começar, defina os filtros relevantes."
@@ -91,13 +77,13 @@
                     enableAutoBinding="true"
                     alignContent="Center"
                     class="sapUiResponsiveContentPadding" 
-                    initiallyVisibleFields="PROPOSTA,SAFRA,CONTRATO,MOEDA,FORNECEDOR,NOME_FORN,TIPO_FORN,VARIEDADE"
+                    initiallyVisibleFields="Proposta,Safra,Contrato,Moeda,Fornecedor,NomeForn,TipoForn,Variedade"
                     >
                     <smartTable:layoutData>
                         <FlexItemData growFactor="2" baseSize="0%"/>
                     </smartTable:layoutData>
                     <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Nenhuma proposta para esse fornecedor."
-                    mode="SingleSelectMaster"/>
+                    mode="SingleSelectMaster" growing="true"/>
                 </smartTable:SmartTable>
             </VBox>
         </content>

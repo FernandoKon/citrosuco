@@ -9,49 +9,45 @@
     height="100%">
     <Page id="Contracts" title="{i18n>title}" showHeader="false"> 
         
-        <VBox class="sapUiSmallMargin" fitContainer="true" backgroundDesign="Transparent">
-                    <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="ContrTransfGet" class="customBorder" >
-                        <smartFilterBar:controlConfiguration>
-                            <smartFilterBar:ControlConfiguration key="PropAnt" visibleInAdvancedArea="true"/>
-                            <smartFilterBar:ControlConfiguration key="PropNov" visibleInAdvancedArea="true"/>
-                            <smartFilterBar:ControlConfiguration key="ContrAnt" visibleInAdvancedArea="true"/>
-                            <smartFilterBar:ControlConfiguration key="ContrNov" visibleInAdvancedArea="true"/>
-                            <smartFilterBar:ControlConfiguration key="Imovel" visibleInAdvancedArea="true"/>
-                            <smartFilterBar:ControlConfiguration key="Safra" visibleInAdvancedArea="true"/>
-                            <smartFilterBar:ControlConfiguration key="NomeImovel" visibleInAdvancedArea="true"/>
-                        </smartFilterBar:controlConfiguration>
-                        <smartFilterBar:layoutData>
-                            <FlexItemData shrinkFactor="0"/>
-                        </smartFilterBar:layoutData>
-                    </smartFilterBar:SmartFilterBar>
+        <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="ContrTransfGet" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" header="Opções de filtragem" showRestoreOnFB="true">
+            <smartFilterBar:controlConfiguration>
+                <smartFilterBar:ControlConfiguration label="Proposta Antiga" key="PropAnt" visibleInAdvancedArea="true"/>
+                <smartFilterBar:ControlConfiguration label="Proposta Nova" key="PropNov" visibleInAdvancedArea="true"/>
+                <smartFilterBar:ControlConfiguration label="Contrato Antigo" key="ContrAnt" visibleInAdvancedArea="true"/>
+                <smartFilterBar:ControlConfiguration label="Contrato Novo" key="ContrNov" visibleInAdvancedArea="true"/>
+                <smartFilterBar:ControlConfiguration label="Imovel" key="Imovel" visibleInAdvancedArea="true"/>
+                <smartFilterBar:ControlConfiguration label="Nome do Imovel" key="NomeImovel" visibleInAdvancedArea="true"/>
+                <smartFilterBar:ControlConfiguration label="Safra" key="Safra" visibleInAdvancedArea="true"/>
+            </smartFilterBar:controlConfiguration>
+            <smartFilterBar:layoutData>
+                <FlexItemData shrinkFactor="0"/>
+            </smartFilterBar:layoutData>
+        </smartFilterBar:SmartFilterBar>
 
-            <VBox height="calc(100% - 80px)" class="sapUiSmallMarginTopBottom customBorder" backgroundDesign="Solid"> 
-                <smartTable:SmartTable 
-                    backgroundDesign="Translucent"
-                    id="SmartTable" 
-                    entitySet="ContrTransfGet" 
-                    smartFilterId="smartFilterBar" 
-                    enableExport="true" 
-                    beforeExport="onBeforeExport"
-                    useTablePersonalisation="true" 
-                    header="Contratos Transferidos" 
-                    showRowCount="true" 
-                    noData="Para começar, defina os filtros relevantes."
-                    tableType="ResponsiveTable"
-                    enableAutoBinding="false" 
-                    alignContent="Center"
-                    class="sapUiResponsiveContentPadding" 
-                    initiallyVisibleFields="PropAnt,PropNov,ContrAnt,ContrNov,Imovel,NomeImovel,Safra"
-                    wrap="NoWrap"
-                    >
-                    <smartTable:layoutData>
-                        <FlexItemData growFactor="2" baseSize="0%"/>
-                    </smartTable:layoutData>
-                    <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dadaos."
-                    mode="SingleSelectMaster"/>
-                </smartTable:SmartTable>
-            </VBox>
-        </VBox>
+        <smartTable:SmartTable 
+            backgroundDesign="Translucent"
+            showFullScreenButton="true"
+            id="SmartTable" 
+            entitySet="ContrTransfGet" 
+            smartFilterId="smartFilterBar" 
+            enableExport="true" 
+            useTablePersonalisation="true" 
+            header="Contratos Transferidos" 
+            showRowCount="true" 
+            noData="Para começar, defina os filtros relevantes."
+            tableType="ResponsiveTable"
+            enableAutoBinding="false" 
+            alignContent="Center"
+            class="sapUiResponsiveContentPadding sapUiSmallMarginBeginEnd" 
+            initiallyVisibleFields="PropAnt,PropNov,ContrAnt,ContrNov,Imovel,NomeImovel,Safra"
+            wrap="NoWrap"
+            >
+            <smartTable:layoutData>
+                <FlexItemData growFactor="2" baseSize="0%"/>
+            </smartTable:layoutData>
+            <Table id="oTable" noDataText="Inicie ou verifique os filtros para exibir os dadaos." growing="true"
+            mode="SingleSelectMaster"/>
+        </smartTable:SmartTable>
 
     </Page>
 </mvc:View>

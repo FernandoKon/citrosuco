@@ -14,7 +14,7 @@
             <smartFilterBar:controlConfiguration>
                 <smartFilterBar:ControlConfiguration label="Nº da proposta" key="Proposta" visibleInAdvancedArea="true"/>
                 <smartFilterBar:ControlConfiguration label="Nº do contrato" key="Contrato" visibleInAdvancedArea="true"/>
-                <smartFilterBar:ControlConfiguration label="Nº da safra" key="SAFRA" visibleInAdvancedArea="true"/>
+                <smartFilterBar:ControlConfiguration label="Nº da safra" key="Safra" visibleInAdvancedArea="true"/>
                 <smartFilterBar:ControlConfiguration label="Nº do fornecedor" key="Fornecedor" visibleInAdvancedArea="true"/>
                 <smartFilterBar:ControlConfiguration label="Data de criação" key="DataCriacao" visibleInAdvancedArea="true"/>
                 <smartFilterBar:ControlConfiguration label="Nome do fornecedor" key="NomeForn" visibleInAdvancedArea="true"/>
@@ -32,6 +32,7 @@
 
         <smartTable:SmartTable 
             backgroundDesign="Solid"
+            showFullScreenButton="true"
             id="SmartTable" 
             entitySet="CxsContrGet" 
             smartFilterId="smartFilterBar" 
@@ -46,7 +47,7 @@
                 <FlexItemData growFactor="2" baseSize="0%"/>
             </smartTable:layoutData>
             <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dados."
-            mode="SingleSelectMaster"/>
+            mode="SingleSelectMaster" growing="true"/>
         </smartTable:SmartTable>
 
     </Page>

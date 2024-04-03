@@ -9,51 +9,42 @@
     height="100%">
     <Page id="page" title="{i18n>title}" showHeader="false"> 
         
-        <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CaixasContratadas" class="customBorder sapUiSmallMargin" header="Opções de filtragem">
+        <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="ExtrCredGet" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" header="Opções de filtragem" showRestoreOnFB="true">
             <smartFilterBar:controlConfiguration>
-                <smartFilterBar:ControlConfiguration key="PROPOSTA" visibleInAdvancedArea="true" mandatory="mandatory"/>
-                <smartFilterBar:ControlConfiguration key="CONTRATO" visibleInAdvancedArea="true"/>
-                <smartFilterBar:ControlConfiguration key="MOEDA" visibleInAdvancedArea="true"/>
-                <smartFilterBar:ControlConfiguration key="FORNECEDOR" visibleInAdvancedArea="true"/>
+                <smartFilterBar:ControlConfiguration label="Safra" key="Safra" visibleInAdvancedArea="true" mandatory="mandatory"/>
+                <smartFilterBar:ControlConfiguration label="Data de lançamento" key="DtLancamento" visibleInAdvancedArea="true" mandatory="mandatory"/>
+                <smartFilterBar:ControlConfiguration label="Nº da proposta" key="Proposta" visibleInAdvancedArea="true"/>
+                <smartFilterBar:ControlConfiguration label="Nº do contrato" key="Contrato" visibleInAdvancedArea="true"/>
+                <smartFilterBar:ControlConfiguration label="Nº do imóvel" key="Imovel" visibleInAdvancedArea="true"/>
+                <smartFilterBar:ControlConfiguration label="Nome do imóvel" key="NomeImovel" visibleInAdvancedArea="true"/>
+                <smartFilterBar:ControlConfiguration label="Nº do grupo" key="Grupo" visibleInAdvancedArea="true"/>
+                <smartFilterBar:ControlConfiguration label="Nome do grupo" key="NomeGrupo" visibleInAdvancedArea="true"/>
             </smartFilterBar:controlConfiguration>
             <smartFilterBar:layoutData>
                 <FlexItemData shrinkFactor="0"/>
             </smartFilterBar:layoutData>
         </smartFilterBar:SmartFilterBar>
 
-        <Button text="Parametros" press="onOpenDialog" class="sapUiSmallMarginBegin sapUiSmallMarginBottom"/>
+        <Button text="Parametros" press="onOpenDialog" class="sapUiSmallMarginBegin sapUiSmallMarginBottom" visible="false"/>
 
         <smartTable:SmartTable 
             backgroundDesign="Solid"
+            showFullScreenButton="true"
             id="SmartTable"
-            entitySet="CaixasContratadas"
+            entitySet="ExtrCredGet"
             smartFilterId="smartFilterBar" 
-            header="Caixas Contratadas" 
+            header="Crédito" 
             noData="Para começar, defina os filtros relevantes."
             tableType="ResponsiveTable"
             alignContent="Center"
             class="sapUiResponsiveContentPadding sapUiSmallMarginBeginEnd" 
-            initiallyVisibleFields="PROPOSTA,SAFRA,CONTRATO,MOEDA,FORNECEDOR,NOME_FORN,VARIEDADE,TIPO_FORN"
+            initiallyVisibleFields="Safra,Fornecedor,NomeForn,Moeda,Proposta,Contrato,Imovel,NomeImovel"
             >
             <smartTable:layoutData>
                 <FlexItemData growFactor="2" baseSize="0%"/>
             </smartTable:layoutData>
-            <Table id="oTable" noDataText="Inicie ou verifique os filtros para exibir os dados."
-            mode="SingleSelectMaster">
-                <columns>
-                    <Column width="auto">
-                        <Text text="TIPO DE CRÉDITO"/>
-                    </Column>
-                </columns>
-
-                <items >
-                    <ColumnListItem vAlign="Middle">
-                        <cells>
-                            <Text id="creditType" class="textBold" />
-                        </cells>
-                    </ColumnListItem>
-                </items>
-            </Table>
+            <Table id="oTable" noDataText="Inicie ou verifique os filtros para exibir os dados." growing="true"
+            mode="SingleSelectMaster"/> 
         </smartTable:SmartTable>
 
     </Page>
