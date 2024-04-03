@@ -5,9 +5,10 @@
 sap.ui.define([
         "sap/ui/core/UIComponent",
         "sap/ui/Device",
-        "com/lab2dev/citrosuco/model/models"
+        "com/lab2dev/citrosuco/model/models",
+        "com/lab2dev/citrosuco/connection/connector"
     ],
-    function (UIComponent, Device, models) {
+    function (UIComponent, Device, models, connector) {
         "use strict";
 
         return UIComponent.extend("com.lab2dev.citrosuco.Component", {
@@ -23,6 +24,8 @@ sap.ui.define([
             init: function () {
                 // call the base component's init function
                 UIComponent.prototype.init.apply(this, arguments);
+
+                connector.init(this)
 
                 // enable routing
                 this.getRouter().initialize();

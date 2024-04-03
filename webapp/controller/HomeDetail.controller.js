@@ -19,14 +19,14 @@ sap.ui.define([
 
             _onRouteMatched: function (oEvent) {
                 const params = oEvent.getParameter("arguments")
-
+                
                 let bindString = "/CxsContrGet(";
 
                 Object.keys(params).forEach((key, index) => {
                     if (index > 0) {
                         bindString += ",";
                     }
-                    bindString += key + "='" + params[key] + "'";
+                    bindString += key + "='" + (params[key] || "") + "'";
 
                     if (key === "Fornecedor") {
                         this.sSupplier = params[key];

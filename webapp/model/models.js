@@ -21,5 +21,20 @@ sap.ui.define([
                 return oModel;
             },
 
+            getParams: async function(){
+                return connector.read("dataSource", "/ComparisonGet")
+            },
+
+            postParams: async function(oData){
+                return connector.create("dataSource", "/ComparisonGet", oData)
+            },
+
+            putParams: async function(ID, oData){
+                return connector.update("dataSource", `/ComparisonGet(${ID})`, oData)
+            },
+
+            deleteParams: async function(ID, oData){
+                return connector.remove("dataSource", `/ComparisonGet(${ID})`, oData)
+            },
         };
     });

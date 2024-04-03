@@ -25,7 +25,7 @@
             </smartFilterBar:layoutData>
         </smartFilterBar:SmartFilterBar>
 
-        <Button text="Parametros" press="onOpenDialog" class="sapUiSmallMarginBegin sapUiSmallMarginBottom" visible="false"/>
+        <Button text="Parametros" press="onOpenDialog" class="sapUiSmallMarginBegin sapUiSmallMarginBottom" />
 
         <smartTable:SmartTable 
             backgroundDesign="Solid"

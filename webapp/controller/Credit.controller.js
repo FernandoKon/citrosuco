@@ -2,18 +2,19 @@ sap.ui.define([
     "com/lab2dev/citrosuco/controller/BaseController",
     "sap/ui/model/json/JSONModel",
     "../utilities/utilities",
-    "sap/base/util/deepClone"
+    "sap/base/util/deepClone",
+    "../model/models",
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, JSONModel, u, deepClone) {
+    function (Controller, JSONModel, u, deepClone, models) {
         "use strict";
 
         return Controller.extend("com.lab2dev.citrosuco.controller.Credit", {
             onInit: function () {
 
-                this._setMockDataModel();
+                this._setParamsModel();
 
                 const viewDetail = new JSONModel({
                     bEnableEditParam: false
@@ -23,19 +24,21 @@ sap.ui.define([
 
             },
 
-            _setMockDataModel: async function () {
-                const oModel = new JSONModel();
-                const oComponent = this.getOwnerComponent();
-                const resolveRefText = oComponent.getManifestObject().resolveUri("model/mockData.json");
-                await oModel.loadData(resolveRefText);
-                const newModel = oModel.getData();
-                const oData = newModel.map((item)=> {
-                    item.bEditable = false
-                })
+            _setParamsModel: async function () {
+                try {
+                    const { oData } = await models.getParams()
 
-                oModel.setData(newModel)
-                this.getView().setModel(oModel, "mockData");
-            
+                    const oModel = oData.results
+
+                    const newData = oModel.map((item)=> {
+                        item.bEditable = false
+                    })
+
+                    this.setModel(oModel, "params")
+                } catch (error) {
+                    console.log(error);
+                    this.MessageToast.show("Erro inesperado ao consultar a tabela de parâmetros");
+                };
             },
 
             toggleEdit: function (){
@@ -45,8 +48,8 @@ sap.ui.define([
             },
 
             visibleChange: function () {
-                const oModel = this.getView().getModel("mockData")
-                const oData = oModel.getData()
+                const oModel = this.getView().getModel("params")
+                const oData = oModel.getData();
                 const oDataClone = deepClone(oData)
                 const oEditFormModel = new JSONModel(oDataClone)
 
@@ -60,7 +63,7 @@ sap.ui.define([
                 }
                 
                 aSelectedItems.map((indice) => {
-                    const oData = oModel.getData()
+                    const oData = oModel.getData();
                     const oSelectedItem = oData.at(indice)
                     oSelectedItem.bEditable = !oSelectedItem.bEditable
                 }) 
@@ -70,49 +73,38 @@ sap.ui.define([
 
             onEdit: function () {
                 const dialogData = this.getModel("editForm");
-
-                // const oTable = this.byId("ParameterTable")
-                // const aSelectedItems = oTable.getSelectedIndices();
-                
-                
-                // if (aSelectedItems.length <= 0) {
-                //     return this.MessageToast.show("Selecione ao menos um item!"), true
-                // }
-                
-                // const oModel = this.getView().getModel("mockData")
-                // aSelectedItems.map((indice) => {
-                //     const oData = oModel.getData()
-                //     const oSelectedItem = oData.at(indice)
-                //     oSelectedItem.bEditable = !oSelectedItem.bEditable
-                // }) 
-                // oModel.refresh(true);
-                this.visibleChange();
-               
-
+                this.visibleChange(); 
 
             },
 
-            onSave: function() {
+            onSave: async function() {
                 const oTable = this.byId("ParameterTable");
-                const sFrom = this.byId("inputFrom").getValue();
-                const sTo = this.byId("inputTo").getValue();
+                const priorities = oTable.getSelectedIndices();
                 
-                const editedRow = {
-                    de: sFrom,
-                    para: sTo
-                };
+                priorities.map(async (item) => {
+                    var Items = this.getView().getModel("params").getData().at(item)
+                    var ID = `Priority='${Items.Priority}',Type='credit'`
+                    var editedRow = {
+                        Priority: Items.Priority.toString(),
+                        Type: "credit",
+                        Fillter: Items.Fillter,
+                        Text: Items.Text
+                    };
+
+                    await models.putParams(ID,editedRow)
+                    
+                })
                 
                 this.visibleChange();
                 oTable.clearSelection();
-                // PUT by ID
             },
             
             onCancel: function() {
                 const oEditFormModel = this.getView().getModel("editForm")
-                const oModel = this.getView().getModel("mockData")
+                const oModel = this.getView().getModel("params")
 
                 const oTable = this.byId("ParameterTable")
-                var oData = oModel.getData()
+                var oData = oModel.getData();
                 oData.map((item) => {
                     if (item.bEditable == true) {
                         item.bEditable = false
@@ -126,54 +118,57 @@ sap.ui.define([
                 this.toggleEdit();
                 oModel.refresh(true);
                 
-                
             },
 
             onDelete: function() {
-                const oTable = this.byId("ParameterTable")
-                const aSelectedItems = oTable.getSelectedIndices();
+                const oTable = this.byId("ParameterTable");
+                const priorities = oTable.getSelectedIndices();
+                
+                priorities.map(async (item) => {
+                    var Items = this.getView().getModel("params").getData().at(item)
+                    var ID = `Priority='${Items.Priority}',Type='credit'`
+                    var editedRow = {
+                        Priority: Items.Priority.toString(),
+                        Type: "credit",
+                        Fillter: Items.Fillter,
+                        Text: Items.Text
+                    };
 
-                if (aSelectedItems.length <= 0) {
-                    return this.MessageToast.show("Selecione ao menos um item!"), true
-                }
+                    await models.deleteParams(ID,editedRow)
+                    
+                })
+                
+                oTable.clearSelection();
 
-                aSelectedItems.map((indice) => {
-                    const ID = oTable.getBinding().getModel().getData()[indice].de // .ID
-                    console.log(ID)
-                    // DELETE BY ID
-
-                }) 
-
-                // Refresh
             },
             
-            sendParameter: function () {
+            sendParameter: async function () {
+                const newPriority = this.byId("ParameterTable").getBinding().getLength();
+                const sPriority = newPriority.toString();
                 const inputFrom = this.byId("fromId").getValue();
                 const inputTo = this.byId("toId").getValue();
-                const oModel = this.getView().getModel("mockData");
+                const oModel = this.getView().getModel("params");
                 
                 if (!inputFrom || !inputTo) {
                     return this.MessageToast.show("Preencha os campos necessários!")
                 }
 
-                const aData = oModel.getProperty("/");
             
                 const oNewRow = {
-                    de: inputFrom,
-                    para: inputTo
+                    Priority: sPriority,
+                    Type: "credit",
+                    Fillter: inputFrom,
+                    Text: inputTo
                 };
                  // POST
-                aData.push(oNewRow);
-                
-                aData[aData.length - 1].bEditable = false;
-                oModel.setProperty("/", aData);
+                await models.postParams(oNewRow)
                 oModel.refresh(true);
 
                 this.onCloseNewParamDialog();
                 this.MessageToast.show("Regra criada com sucesso!")
             },
 
-            onOpenDialog: function () {
+            onOpenDialog: async function () {
                 if (!this.sDialog) {
                     this.sDialog = sap.ui.xmlfragment(
                         this.getView().getId(),
@@ -183,7 +178,7 @@ sap.ui.define([
                     this.getView().addDependent(this.sDialog);
                 }
 
-                const oModel = this.getView().getModel("mockData")
+                const oModel = await this.getView().getModel("params")
                 const oData = oModel.getData();
                 const oDataClone = deepClone(oData)
                 const oEditFormModel = new JSONModel(oDataClone)

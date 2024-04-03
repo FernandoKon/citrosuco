@@ -9,7 +9,7 @@
             <table:Table
                 class="sapUiTinyMarginTopBottom"
                 id="ParameterTable"
-                rows="{mockData>/}"
+                rows="{params>/}"
                 enableColumnReordering="false"
                 rowMode="Auto"
             >
@@ -54,7 +54,7 @@
                 <table:columns>
                     <table:Column resizable="false" width="2rem">
                         <table:template> 
-                            <Text text=""/>
+                            <Text text="{params>Priority}"/>
                         </table:template>
                     </table:Column>
                     <table:Column resizable="false">
@@ -64,8 +64,8 @@
                         />
                         <table:template> 
                                     <VBox>
-                                        <Text text="{mockData>de}" visible="{= !${mockData>bEditable}}"/>
-                                        <Input id="inputFrom" value="{mockData>de}" visible="{mockData>bEditable}"/>
+                                        <Text text="{params>Fillter}" visible="{= !${params>bEditable}}"/>
+                                        <Input id="inputFrom" value="{params>Fillter}" visible="{params>bEditable}"/>
                                     </VBox>
                         </table:template>
                     </table:Column>
@@ -76,8 +76,8 @@
                         />
                         <table:template>
                             <VBox>
-                                <Text text="{mockData>para}" visible="{= !${mockData>bEditable}}"/>
-                                <Input id="inputTo" value="{mockData>para}" visible="{mockData>bEditable}"/>
+                                <Text text="{params>Text}" visible="{= !${params>bEditable}}"/>
+                                <Input id="inputTo" value="{params>Text}" visible="{params>bEditable}"/>
                             </VBox>
                         </table:template>
                     </table:Column>

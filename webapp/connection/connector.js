@@ -1,129 +1,131 @@
 sap.ui.define([
-    "sap/ui/model/odata/v2/ODataModel"
+  "sap/ui/model/odata/v2/ODataModel"
 ], function (ODataModel) {
-    "use strict";
-    
-    return {
+  "use strict";
 
-        _oPromises: {},
-        _oComponent: null,
+  return {
 
-        init: function(oComponent) {
-            this._oComponent = oComponent;
+    _oPromises: {},
+    _oComponent: null,
 
-            const oDataModel = new ODataModel("/sap/opu/odata/sap/ZHR_LIGACAO_PONTO_SRV", {
-                defaultUpdateMethod: "PUT"
-            });
-            this.setODataModel(oDataModel, "dataSource");
-        },
+    init: function (oComponent) {
+      this._oComponent = oComponent;
 
-        getOwnerComponent: function() {
-            return this._oComponent;
-        },
+      const oDataModel = new ODataModel("/odata/v2/fluxos-caixa/", {
+        defaultUpdateMethod: "PUT"
+      });
+      this.setODataModel(oDataModel, "dataSource");
+    },
 
-        getPromise: function(...aModelNames) {
-            const aPromises = aModelNames.map(sModelName => {
-                return this._oPromises[sModelName];
-            });
-            
-            return Promise.all(aPromises);
-        },
+    getOwnerComponent: function () {
+      return this._oComponent;
+    },
 
-        setODataModel: function(oModel, sName) {
-            const oComponent = this.getOwnerComponent();
-            oComponent.setModel(oModel, sName);
+    getPromise: function (...aModelNames) {
+      const aPromises = aModelNames.map(sModelName => {
+        return this._oPromises[sModelName];
+      });
 
-            const pMetadata = new Promise((resolve, reject) => {
-                oModel.attachEventOnce("metadataLoaded", resolve);
-                oModel.attachEventOnce("metadataFailed", reject);
-            });
+      return Promise.all(aPromises);
+    },
 
-            this._oPromises[sName] = pMetadata;
-        },
+    setODataModel: function (oModel, sName) {
+      const oComponent = this.getOwnerComponent();
+      oComponent.setModel(oModel, sName);
 
-        read: function(sModelName, sPath, options) {
-            const oComponent = this.getOwnerComponent();
-            const oModel = oComponent.getModel(sModelName);
+      const pMetadata = new Promise((resolve, reject) => {
+        oModel.attachEventOnce("metadataLoaded", resolve);
+        oModel.attachEventOnce("metadataFailed", reject);
+      });
 
-			return new Promise((resolve, reject) => {
-                return this._oPromises[sModelName].then(() => {
-                    if (!options) {
-                        options = {};
-                    }
-    
-                    options = {
-                        ...options,
-                        success: (oData, response) => resolve({oData, response}),
-                        error: oError => reject(oError)
-                    };
-    
-                    oModel.read(sPath, options);
-                });
-			});
-		},
+      this._oPromises[sName] = pMetadata;
+    },
 
-        remove: function(sModelName, sPath, options) {
-            const oComponent = this.getOwnerComponent();
-            const oModel = oComponent.getModel(sModelName);
+    read: function (sModelName, sPath, options) {
+      const oComponent = this.getOwnerComponent();
+      const oModel = oComponent.getModel(sModelName);
 
-			return new Promise((resolve, reject) => {
-                return this._oPromises[sModelName].then(() => {
-                    if (!options) {
-                        options = {};
-                    }
-    
-                    options = {
-                        ...options,
-                        success: (oData, response) => resolve({oData, response}),
-                        error: oError => reject(oError)
-                    };
-    
-                    oModel.remove(sPath, options);
-                });
-			});
-		},
+      return new Promise((resolve, reject) => {
+        return this._oPromises[sModelName].then(() => {
+          if (!options) {
+            options = {};
+          }
 
-        create: function(sModelName, sPath, oData, options) {
-            const oComponent = this.getOwnerComponent();
-            const oModel = oComponent.getModel(sModelName);
+          options = {
+            ...options,
+            success: (oData, response) => resolve({ oData, response }),
+            error: oError => reject(oError)
+          };
 
-			return new Promise((resolve, reject) => {
-                return this._oPromises[sModelName].then(() => {
-                    if (!options) {
-                        options = {};
-                    }
-    
-                    options = {
-                        ...options,
-                        success: (oData, response) => resolve({oData, response}),
-                        error: oError => reject(oError)
-                    };
-    
-                    oModel.create(sPath, oData, options);
-                });
-			});
-		},
+          oModel.read(sPath, options);
+        });
+      });
+    },
 
-        update: function(sModelName, sPath, oData, options) {
-            const oComponent = this.getOwnerComponent();
-            const oModel = oComponent.getModel(sModelName);
+    remove: function (sModelName, sPath, options) {
+      const oComponent = this.getOwnerComponent();
+      const oModel = oComponent.getModel(sModelName);
 
-			return new Promise((resolve, reject) => {
-                return this._oPromises[sModelName].then(() => {
-                    if (!options) {
-                        options = {};
-                    }
-    
-                    options = {
-                        ...options,
-                        success: (oData, response) => resolve({oData, response}),
-                        error: oError => reject(oError)
-                    };
-    
-                    oModel.update(sPath, oData, options);
-                });
-			});
-		}
+      return new Promise((resolve, reject) => {
+        return this._oPromises[sModelName].then(() => {
+          if (!options) {
+            options = {};
+          }
 
-    };
+          options = {
+            ...options,
+            success: (oData, response) => resolve({ oData, response }),
+            error: oError => reject(oError)
+          };
+
+          oModel.remove(sPath, options);
+        });
+      });
+    },
+
+    create: function (sModelName, sPath, oData, options) {
+      debugger
+      const oComponent = this.getOwnerComponent();
+      const oModel = oComponent.getModel(sModelName);
+
+      return new Promise((resolve, reject) => {
+        return this._oPromises[sModelName].then(() => {
+          if (!options) {
+            options = {};
+          }
+
+          options = {
+            ...options,
+            success: (oData, response) => resolve({ oData, response }),
+            error: oError => reject(oError)
+          };
+
+          oModel.create(sPath, oData, options);
+        });
+      });
+    },
+
+    update: function (sModelName, sPath, oData, options) {
+      debugger
+      const oComponent = this.getOwnerComponent();
+      const oModel = oComponent.getModel(sModelName);
+
+      return new Promise((resolve, reject) => {
+        return this._oPromises[sModelName].then(() => {
+          if (!options) {
+            options = {};
+          }
+
+          options = {
+            ...options,
+            success: (oData, response) => resolve({ oData, response }),
+            error: oError => reject(oError)
+          };
+
+          oModel.update(sPath, oData, options);
+        });
+      });
+    }
+
+  };
 });

@@ -184,7 +184,7 @@
         },
         {
           "name": "HomeDetail",
-          "pattern": "CaixaContratada/{Safra}/{Fornecedor}/{Proposta}/{Contrato}/{Grupo}/{Imovel}",
+          "pattern": "CaixaContratada/{Safra},{Fornecedor},{Proposta},{Contrato},{Imovel},:Grupo:",
           "target": [
             "TargetHomeDetail"
           ]
