@@ -9,38 +9,40 @@ xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     height="100%">
     <Page id="Partners" title="{i18n>title}" showHeader="false">
         
-            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="SociosGet" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" header="Opções de filtragem" showRestoreOnFB="true">
-                <smartFilterBar:controlConfiguration>
-                    <smartFilterBar:ControlConfiguration label="Nº do fornecedor" key="Fornecedor" visibleInAdvancedArea="true"/>
-                    <smartFilterBar:ControlConfiguration label="Nome do fornecedor" key="NomeFornecedor" visibleInAdvancedArea="true"/>
-                    <smartFilterBar:ControlConfiguration label="Nome do sócio" key="NomeSocio" visibleInAdvancedArea="true"/>
-                    <smartFilterBar:ControlConfiguration label="Código do sócio" key="CodSocio" visibleInAdvancedArea="true"/>
-                    <smartFilterBar:ControlConfiguration label="CPF" key="Cpf" visibleInAdvancedArea="true"/>
-                </smartFilterBar:controlConfiguration>
-                <smartFilterBar:layoutData>
-                    <FlexItemData shrinkFactor="0"/>
-                </smartFilterBar:layoutData>
-            </smartFilterBar:SmartFilterBar>
-      
-            <smartTable:SmartTable 
-                backgroundDesign="Translucent"
-                showFullScreenButton="true"
-                id="SmartTable" 
-                entitySet="SociosGet" 
-                smartFilterId="smartFilterBar" 
-                header="Sócios" 
-                noData="Para começar, defina os filtros relevantes."
-                tableType="ResponsiveTable"
-                alignContent="Center"
-                class="sapUiResponsiveContentPadding sapUiSmallMarginBeginEnd" 
-                initiallyVisibleFields="NomeSocio,CodSocio,Fornecedor,NomeFornecedor,FuncParceiro,DescFuncParc,Cpf,Rg"
-                >
-                <smartTable:layoutData>
-                    <FlexItemData growFactor="2" baseSize="0%"/>
-                </smartTable:layoutData>
-                <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dadaos." growing="true"
-                mode="SingleSelectMaster"/>
-            </smartTable:SmartTable>
+            <VBox fitContainer="true">
+                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="SociosGet" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" header="Opções de filtragem" showRestoreOnFB="true">
+                    <smartFilterBar:controlConfiguration>
+                        <smartFilterBar:ControlConfiguration label="Nº do fornecedor" key="Fornecedor" visibleInAdvancedArea="true"/>
+                        <smartFilterBar:ControlConfiguration label="Nome do fornecedor" key="NomeFornecedor" visibleInAdvancedArea="true"/>
+                        <smartFilterBar:ControlConfiguration label="Nome do sócio" key="NomeSocio" visibleInAdvancedArea="true"/>
+                        <smartFilterBar:ControlConfiguration label="Código do sócio" key="CodSocio" visibleInAdvancedArea="true"/>
+                        <smartFilterBar:ControlConfiguration label="CPF" key="Cpf" visibleInAdvancedArea="true"/>
+                    </smartFilterBar:controlConfiguration>
+                    <smartFilterBar:layoutData>
+                        <FlexItemData shrinkFactor="0"/>
+                    </smartFilterBar:layoutData>
+                </smartFilterBar:SmartFilterBar>
+        
+                <smartTable:SmartTable 
+                    backgroundDesign="Translucent"
+                    showFullScreenButton="true"
+                    id="SmartTable" 
+                    entitySet="SociosGet" 
+                    smartFilterId="smartFilterBar" 
+                    header="Sócios" 
+                    noData="Para começar, defina os filtros relevantes."
+                    tableType="Table"
+                    alignContent="Center"
+                    class="sapUiResponsiveContentPadding" 
+                    initiallyVisibleFields="NomeSocio,CodSocio,Fornecedor,NomeFornecedor,FuncParceiro,DescFuncParc,Cpf,Rg"
+                    >
+                    <smartTable:layoutData>
+                        <FlexItemData growFactor="2" baseSize="0%"/>
+                    </smartTable:layoutData>
+                    <!-- <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dadaos." growing="true"
+                    mode="SingleSelectMaster"/> -->
+                </smartTable:SmartTable>
+            </VBox>
 
     </Page>
 </mvc:View>

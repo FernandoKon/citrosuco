@@ -33,8 +33,8 @@ sap.ui.define([
                 return connector.update("dataSource", `/ComparisonGet(${ID})`, oData)
             },
 
-            deleteParams: async function(ID, oData){
-                return connector.remove("dataSource", `/ComparisonGet(${ID})`, oData)
+            deleteParams: async function(ID){
+                return connector.remove("dataSource", `/ComparisonGet(${ID})`)
             },
         };
     });

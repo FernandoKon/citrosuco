@@ -84,7 +84,6 @@ sap.ui.define([
     },
 
     create: function (sModelName, sPath, oData, options) {
-      debugger
       const oComponent = this.getOwnerComponent();
       const oModel = oComponent.getModel(sModelName);
 
@@ -106,7 +105,6 @@ sap.ui.define([
     },
 
     update: function (sModelName, sPath, oData, options) {
-      debugger
       const oComponent = this.getOwnerComponent();
       const oModel = oComponent.getModel(sModelName);
 

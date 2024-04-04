@@ -10,6 +10,7 @@
     height="100%">
     <Page id="Page" title="{i18n>title}" showHeader="false"> 
 
+    <VBox fitContainer="true">
         <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CxsContrGet" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" header="Opções de filtragem" showRestoreOnFB="true">
             <smartFilterBar:controlConfiguration>
                 <smartFilterBar:ControlConfiguration label="Nº da proposta" key="Proposta" visibleInAdvancedArea="true"/>
@@ -37,10 +38,8 @@
             entitySet="CxsContrGet" 
             smartFilterId="smartFilterBar" 
             header="Caixas Contratadas" 
-            noData="Para começar, defina os filtros relevantes."
             tableType="ResponsiveTable"
-            alignContent="Center"
-            class="sapUiResponsiveContentPadding sapUiSmallMarginBeginEnd" 
+            class="sapUiResponsiveContentPadding" 
             initiallyVisibleFields="Proposta,Safra,Contrato,Moeda,Fornecedor,NomeForn,TipoForn,Variedade,Grupo,Imovel"
             >
             <smartTable:layoutData>
@@ -49,6 +48,6 @@
             <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dados."
             mode="SingleSelectMaster" growing="true"/>
         </smartTable:SmartTable>
-
+    </VBox>
     </Page>
 </mvc:View>

@@ -183,6 +183,13 @@
           ]
         },
         {
+          "name": "Params",
+          "pattern": "Params",
+          "target": [
+            "TargetParams"
+          ]
+        },
+        {
           "name": "HomeDetail",
           "pattern": "CaixaContratada/{Safra},{Fornecedor},{Proposta},{Contrato},{Imovel},:Grupo:",
           "target": [
@@ -253,6 +260,13 @@
           "clearControlAggregation": false,
           "viewId": "Debit",
           "viewName": "Debit"
+        },
+        "TargetParams": {
+          "viewType": "XML",
+          "transition": "fade",
+          "clearControlAggregation": false,
+          "viewId": "Params",
+          "viewName": "Params"
         },
         "TargetHomeDetail": {
           "viewType": "XML",

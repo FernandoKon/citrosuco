@@ -1,4 +1,4 @@
-<mvc:View controllerName="com.lab2dev.citrosuco.controller.Credit"
+<mvc:View controllerName="com.lab2dev.citrosuco.controller.Home"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns:l="sap.ui.layout"
     xmlns:t="sap.ui.table"
@@ -9,43 +9,43 @@
     height="100%">
     <Page id="page" title="{i18n>title}" showHeader="false"> 
         
-        <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="ExtrCredGet" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" header="Opções de filtragem" showRestoreOnFB="true">
-            <smartFilterBar:controlConfiguration>
-                <smartFilterBar:ControlConfiguration label="Safra" key="Safra" visibleInAdvancedArea="true" mandatory="mandatory"/>
-                <smartFilterBar:ControlConfiguration label="Data de lançamento" key="DtLancamento" visibleInAdvancedArea="true" mandatory="mandatory"/>
-                <smartFilterBar:ControlConfiguration label="Nº da proposta" key="Proposta" visibleInAdvancedArea="true"/>
-                <smartFilterBar:ControlConfiguration label="Nº do contrato" key="Contrato" visibleInAdvancedArea="true"/>
-                <smartFilterBar:ControlConfiguration label="Nº do imóvel" key="Imovel" visibleInAdvancedArea="true"/>
-                <smartFilterBar:ControlConfiguration label="Nome do imóvel" key="NomeImovel" visibleInAdvancedArea="true"/>
-                <smartFilterBar:ControlConfiguration label="Nº do grupo" key="Grupo" visibleInAdvancedArea="true"/>
-                <smartFilterBar:ControlConfiguration label="Nome do grupo" key="NomeGrupo" visibleInAdvancedArea="true"/>
-            </smartFilterBar:controlConfiguration>
-            <smartFilterBar:layoutData>
-                <FlexItemData shrinkFactor="0"/>
-            </smartFilterBar:layoutData>
-        </smartFilterBar:SmartFilterBar>
+        <VBox fitContainer="true">
+            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="ExtrCredGet" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" header="Opções de filtragem" showRestoreOnFB="true">
+                <smartFilterBar:controlConfiguration>
+                    <smartFilterBar:ControlConfiguration label="Safra" key="Safra" visibleInAdvancedArea="true" mandatory="mandatory"/>
+                    <smartFilterBar:ControlConfiguration label="Data de lançamento" key="DtLancamento" visibleInAdvancedArea="true" mandatory="mandatory"/>
+                    <smartFilterBar:ControlConfiguration label="Nº da proposta" key="Proposta" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nº do contrato" key="Contrato" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nº do imóvel" key="Imovel" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nome do imóvel" key="NomeImovel" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nº do grupo" key="Grupo" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nome do grupo" key="NomeGrupo" visibleInAdvancedArea="true"/>
+                </smartFilterBar:controlConfiguration>
+                <smartFilterBar:layoutData>
+                    <FlexItemData shrinkFactor="0"/>
+                </smartFilterBar:layoutData>
+            </smartFilterBar:SmartFilterBar>
 
-        <Button text="Parametros" press="onOpenDialog" class="sapUiSmallMarginBegin sapUiSmallMarginBottom" />
-
-        <smartTable:SmartTable 
-            backgroundDesign="Solid"
-            showFullScreenButton="true"
-            id="SmartTable"
-            entitySet="ExtrCredGet"
-            smartFilterId="smartFilterBar" 
-            header="Crédito" 
-            noData="Para começar, defina os filtros relevantes."
-            tableType="ResponsiveTable"
-            alignContent="Center"
-            class="sapUiResponsiveContentPadding sapUiSmallMarginBeginEnd" 
-            initiallyVisibleFields="Safra,Fornecedor,NomeForn,Moeda,Proposta,Contrato,Imovel,NomeImovel"
-            >
-            <smartTable:layoutData>
-                <FlexItemData growFactor="2" baseSize="0%"/>
-            </smartTable:layoutData>
-            <Table id="oTable" noDataText="Inicie ou verifique os filtros para exibir os dados." growing="true"
-            mode="SingleSelectMaster"/> 
-        </smartTable:SmartTable>
+            <smartTable:SmartTable 
+                backgroundDesign="Solid"
+                showFullScreenButton="true"
+                id="SmartTable"
+                entitySet="ExtrCredGet"
+                smartFilterId="smartFilterBar" 
+                header="Crédito" 
+                noData="Para começar, defina os filtros relevantes."
+                tableType="Table"
+                alignContent="Center"
+                class="sapUiResponsiveContentPadding" 
+                initiallyVisibleFields="Safra,Fornecedor,NomeForn,Moeda,Proposta,Contrato,Imovel,NomeImovel"
+                >
+                <smartTable:layoutData>
+                    <FlexItemData growFactor="2" baseSize="0%"/>
+                </smartTable:layoutData>
+                <!-- <Table id="oTable" noDataText="Inicie ou verifique os filtros para exibir os dados." growing="true"
+                mode="SingleSelectMaster"/>  -->
+            </smartTable:SmartTable>
+        </VBox>
 
     </Page>
 </mvc:View>

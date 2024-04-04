@@ -9,7 +9,8 @@
     height="100%">
     <Page id="page" title="{i18n>title}" showHeader="false"> 
         
-        <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="EvtParcGet" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" header="Opções de filtragem" showRestoreOnFB="true">
+        <VBox fitContainer="true">
+            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="EvtParcGet" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" header="Opções de filtragem" showRestoreOnFB="true">
                 <smartFilterBar:controlConfiguration>
                     <smartFilterBar:ControlConfiguration label="Proposta" key="Proposta" visibleInAdvancedArea="true"/>
                     <smartFilterBar:ControlConfiguration label="Contrato" key="Contrato" visibleInAdvancedArea="true"/>
@@ -22,7 +23,7 @@
                     <FlexItemData shrinkFactor="0"/>
                 </smartFilterBar:layoutData>
             </smartFilterBar:SmartFilterBar>
-      
+        
             <smartTable:SmartTable 
                 backgroundDesign="Translucent"
                 showFullScreenButton="true"
@@ -31,17 +32,18 @@
                 smartFilterId="smartFilterBar" 
                 header="Parcelas" 
                 noData="Para começar, defina os filtros relevantes."
-                tableType="ResponsiveTable"
+                tableType="Table"
                 alignContent="Center"
-                class="sapUiResponsiveContentPadding sapUiSmallMarginBeginEnd" 
+                class="sapUiResponsiveContentPadding" 
                 initiallyVisibleFields="Proposta,Contrato,Safra,Evento,DescEvento,DtParcela,VlrCaixa,VlrCxAcumul"
                 >
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>
                 </smartTable:layoutData>
-                <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dadaos." growing="true"
-                mode="SingleSelectMaster"/>
+                <!-- <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dadaos." growing="true"
+                mode="SingleSelectMaster"/> -->
             </smartTable:SmartTable>
+        </VBox>
 
     </Page>
 </mvc:View>
