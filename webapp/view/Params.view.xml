@@ -9,7 +9,7 @@
     <Page id="page" title="{i18n>title}" showHeader="false"> 
         
         <HBox class="sapUiSmallMargin">
-            <VBox class="sapUiSmallMarginEnd">
+            <VBox class="sapUiSmallMarginEnd customBorder" backgroundDesign="Solid">
                 <table:Table
                     class="sapUiTinyMarginTopBottom"
                     id="credit"
@@ -88,7 +88,7 @@
                 </table:Table>
             </VBox>
 
-            <VBox>
+            <VBox class="customBorder" backgroundDesign="Translucent">
                 <table:Table
                     class="sapUiTinyMarginTopBottom"
                     id="debit"

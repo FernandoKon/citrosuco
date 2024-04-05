@@ -137,7 +137,7 @@ sap.ui.define([
                     });
                 }
             
-                if (type === "credit") {
+                if (type === "credit" || type === "debit") {
                     oData = oEditFormModel.getData();
                 }
             
