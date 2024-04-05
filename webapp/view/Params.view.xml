@@ -139,13 +139,6 @@
                     </table:dragDropConfig>
 
                     <table:columns>
-                    <table:Column resizable="false">
-                            <table:template> 
-                                        <VBox>
-                                            <Text text="{debit>Priority}" />
-                                        </VBox>
-                            </table:template>
-                        </table:Column>
                         <table:Column resizable="false">
                             <Label
                                 design="Bold"

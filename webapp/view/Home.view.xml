@@ -10,44 +10,45 @@
     height="100%">
     <Page id="Page" title="{i18n>title}" showHeader="false"> 
 
-    <VBox fitContainer="true">
-        <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CxsContrGet" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" header="Opções de filtragem" showRestoreOnFB="true">
-            <smartFilterBar:controlConfiguration>
-                <smartFilterBar:ControlConfiguration label="Nº da proposta" key="Proposta" visibleInAdvancedArea="true"/>
-                <smartFilterBar:ControlConfiguration label="Nº do contrato" key="Contrato" visibleInAdvancedArea="true"/>
-                <smartFilterBar:ControlConfiguration label="Nº da safra" key="Safra" visibleInAdvancedArea="true"/>
-                <smartFilterBar:ControlConfiguration label="Nº do fornecedor" key="Fornecedor" visibleInAdvancedArea="true"/>
-                <smartFilterBar:ControlConfiguration label="Data de criação" key="DataCriacao" visibleInAdvancedArea="true"/>
-                <smartFilterBar:ControlConfiguration label="Nome do fornecedor" key="NomeForn" visibleInAdvancedArea="true"/>
-                <smartFilterBar:ControlConfiguration label="Nº do imóvel" key="Imovel" visibleInAdvancedArea="true"/>
-                <smartFilterBar:ControlConfiguration label="Nome do imóvel" key="NomeImovel" visibleInAdvancedArea="true"/>
-                <smartFilterBar:ControlConfiguration label="Nº da variedade" key="Variedade" visibleInAdvancedArea="true"/>
-                <smartFilterBar:ControlConfiguration label="Nome da variedade" key="NomeVariedade" visibleInAdvancedArea="true"/>
-                <smartFilterBar:ControlConfiguration label="Nº do grupo" key="Grupo" visibleInAdvancedArea="true"/>
-                <smartFilterBar:ControlConfiguration label="Nome do grupo" key="NomeGrupo" visibleInAdvancedArea="true"/>
-            </smartFilterBar:controlConfiguration>
-            <smartFilterBar:layoutData>
-                <FlexItemData shrinkFactor="0"/>
-            </smartFilterBar:layoutData>
-        </smartFilterBar:SmartFilterBar>
+        <VBox fitContainer="true">
+            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CxsContrGet" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" header="Opções de filtragem" showRestoreOnFB="true">
+                <smartFilterBar:controlConfiguration>
+                    <smartFilterBar:ControlConfiguration label="Nº da proposta" key="Proposta" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nº do contrato" key="Contrato" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nº da safra" key="Safra" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nº do fornecedor" key="Fornecedor" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Data de criação" key="DataCriacao" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nome do fornecedor" key="NomeForn" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nº do imóvel" key="Imovel" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nome do imóvel" key="NomeImovel" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nº da variedade" key="Variedade" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nome da variedade" key="NomeVariedade" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nº do grupo" key="Grupo" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Nome do grupo" key="NomeGrupo" visibleInAdvancedArea="true"/>
+                </smartFilterBar:controlConfiguration>
+                <smartFilterBar:layoutData>
+                    <FlexItemData shrinkFactor="0"/>
+                </smartFilterBar:layoutData>
+            </smartFilterBar:SmartFilterBar>
 
-        <smartTable:SmartTable 
-            backgroundDesign="Solid"
-            showFullScreenButton="true"
-            id="SmartTable" 
-            entitySet="CxsContrGet" 
-            smartFilterId="smartFilterBar" 
-            header="Caixas Contratadas" 
-            tableType="ResponsiveTable"
-            class="sapUiResponsiveContentPadding" 
-            initiallyVisibleFields="Proposta,Safra,Contrato,Moeda,Fornecedor,NomeForn,TipoForn,Variedade,Grupo,Imovel"
-            >
-            <smartTable:layoutData>
-                <FlexItemData growFactor="2" baseSize="0%"/>
-            </smartTable:layoutData>
-            <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dados."
-            mode="SingleSelectMaster" growing="true"/>
-        </smartTable:SmartTable>
-    </VBox>
+            <smartTable:SmartTable 
+                backgroundDesign="Solid"
+                showFullScreenButton="true"
+                id="SmartTable" 
+                entitySet="CxsContrGet" 
+                smartFilterId="smartFilterBar" 
+                header="Caixas Contratadas"
+                tableType="TreeTable"
+                class="sapUiResponsiveContentPadding" 
+                initiallyVisibleFields="Proposta,Safra,Contrato,Moeda,Fornecedor,NomeForn,TipoForn,Variedade,Grupo,Imovel"
+                >
+                <smartTable:layoutData>
+                    <FlexItemData growFactor="2" baseSize="0%"/>
+                </smartTable:layoutData>
+                <!-- <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dados."
+                mode="SingleSelectMaster" growing="true"/> -->
+            </smartTable:SmartTable>
+        </VBox>
+        
     </Page>
 </mvc:View>

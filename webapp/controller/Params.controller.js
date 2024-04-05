@@ -186,17 +186,17 @@ sap.ui.define([
                 const inputFromId = type === "credit" ? "fromId" : "fromIdD";
                 const inputToId = type === "credit" ? "toId" : "toIdD";
 
-                dialog.setBusy(true);
                 const newPriority = this.byId(type).getBinding().getLength();
                 const sPriority = newPriority.toString();
                 const inputFrom = this.byId(inputFromId).getValue();
                 const inputTo = this.byId(inputToId).getValue();
-
+                
                 if (!inputFrom || !inputTo) {
                     dialog.setBusy(false);
                     return this.MessageToast.show("Preencha os campos necessários!");
                 }
-
+                
+                dialog.setBusy(true);
                 try {
                     const oNewRow = {
                         Priority: sPriority,
@@ -224,7 +224,7 @@ sap.ui.define([
             },
 
             onOpenAddDialog: async function (type) {
-                const dialog = type === "credit" ? this.dialog : this.dialogDebit;
+                var dialog = type === "credit" ? this.dialog : this.dialogDebit;
                 const dialogId = type === "credit" ? "com.lab2dev.citrosuco.view.fragments.NewParam" : "com.lab2dev.citrosuco.view.fragments.NewParamD";
                 const dialogProperty = type === "credit" ? "dialog" : "dialogDebit";
             
@@ -237,6 +237,7 @@ sap.ui.define([
                         });
                         this[dialogProperty] = fragment;
                         this.getView().addDependent(this[dialogProperty]);
+                        dialog = type === "credit" ? this.dialog : this.dialogDebit;
                     } catch (error) {
                         console.error("Error loading fragment:", error);
                         return;

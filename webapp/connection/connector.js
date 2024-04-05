@@ -10,8 +10,9 @@ sap.ui.define([
 
     init: function (oComponent) {
       this._oComponent = oComponent;
+      const serviceUrl = this._oComponent.getManifestObject().resolveUri("odata/v2/fluxos-caixa/")
 
-      const oDataModel = new ODataModel("/odata/v2/fluxos-caixa/", {
+      const oDataModel = new ODataModel(serviceUrl, {
         defaultUpdateMethod: "PUT"
       });
       this.setODataModel(oDataModel, "dataSource");

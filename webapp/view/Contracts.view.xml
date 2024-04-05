@@ -9,7 +9,7 @@
     height="100%">
     <Page id="Contracts" title="{i18n>title}" showHeader="false"> 
         
-        <VBox fieldGroupIds="true">
+        <VBox fitContainer="true">
             <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="ContrTransfGet" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" header="Opções de filtragem" showRestoreOnFB="true">
                 <smartFilterBar:controlConfiguration>
                     <smartFilterBar:ControlConfiguration label="Proposta Antiga" key="PropAnt" visibleInAdvancedArea="true"/>
