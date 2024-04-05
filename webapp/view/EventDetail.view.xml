@@ -1,0 +1,92 @@
+<mvc:View
+    controllerName="com.lab2dev.citrosuco.controller.EventDetail"
+	height="100%"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout"
+    xmlns="sap.m"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:smartForm="sap.ui.comp.smartform"
+	xmlns:smartField="sap.ui.comp.smartfield"
+    xmlns:ff="sap.ui.layout.form"   
+    xmlns:core="sap.ui.core"
+    xmlns:main="sap.ui.webc.main">
+	<Page id="EventDetail" showHeader="false">
+
+        <smartForm:SmartForm id="smartForm" title="Evento Contra Entrega" expandable="true">
+            <smartForm:customToolbar>
+                <Toolbar style="Clear">
+                    <ToolbarSpacer/>
+                    <Button type="Transparent" icon="sap-icon://undo" press="navBack"/>
+                </Toolbar>
+            </smartForm:customToolbar>
+             <smartForm:Group>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Nome socio" value="{NomeSocio}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Código do socio" value="{CodSocio}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="CPF" value="{Cpf}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="RG" value="{Rg}"/>
+                </smartForm:GroupElement>
+            </smartForm:Group>
+            <smartForm:Group>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Nome Fornecedor" value="{NomeFornecedor}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Código do fornecedor" value="{Fornecedor}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Função do parceiro" value="{FucParceiro}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Descrição do parceiro" value="{DescFuncParc}"/>
+                </smartForm:GroupElement>
+            </smartForm:Group>
+        </smartForm:SmartForm>
+        
+        <content>
+            <VBox class="sapUiSmallMarginTop">
+                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CxsContrGet" class="customBorder" visible="false">
+                    <smartFilterBar:controlConfiguration>
+                        <smartFilterBar:ControlConfiguration key="Proposta"  visibleInAdvancedArea="false">
+                            <smartFilterBar:defaultFilterValues>
+                                <smartFilterBar:SelectOption id="smartFilterData" low="{oModel>/supplier}"/>
+                            </smartFilterBar:defaultFilterValues>
+                        </smartFilterBar:ControlConfiguration>
+                    </smartFilterBar:controlConfiguration>    
+                    <smartFilterBar:layoutData>
+                        <FlexItemData shrinkFactor="0"/>
+                    </smartFilterBar:layoutData>
+                </smartFilterBar:SmartFilterBar>
+
+                <smartTable:SmartTable 
+                    backgroundDesign="Translucent"
+                    id="SmartTable" 
+                    entitySet="CxsContrGet" 
+                    smartFilterId="smartFilterBar" 
+                    header="Caixas Contratadas com a proposta {oModel>/supplier}" 
+                    noData="Para começar, defina os filtros relevantes."
+                    tableType="ResponsiveTable"
+                    enableAutoBinding="true"
+                    alignContent="Center"
+                    class="sapUiResponsiveContentPadding" 
+                    initiallyVisibleFields="Proposta,Safra,Contrato,Moeda,Fornecedor,NomeForn,TipoForn,Variedade"
+                    >
+                    <smartTable:layoutData>
+                        <FlexItemData growFactor="2" baseSize="0%"/>
+                    </smartTable:layoutData>
+                    <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Nenhuma proposta para esse fornecedor."
+                    mode="SingleSelectMaster" growing="true"/>
+                </smartTable:SmartTable>
+            </VBox>
+        </content>
+
+    </Page>
+</mvc:View>

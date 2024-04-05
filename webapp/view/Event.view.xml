@@ -39,8 +39,8 @@
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>
                 </smartTable:layoutData>
-                <!-- <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dados." growing="true"
-                mode="SingleSelectMaster"/> -->
+                <t:Table id="oTable" cellClick="handleSelectionChange($event,'EventDetail')"
+                selectionMode="Single" />
             </smartTable:SmartTable>
         </VBox>
 

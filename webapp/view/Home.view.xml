@@ -38,15 +38,15 @@
                 entitySet="CxsContrGet" 
                 smartFilterId="smartFilterBar" 
                 header="Caixas Contratadas"
-                tableType="TreeTable"
+                tableType="Table"
                 class="sapUiResponsiveContentPadding" 
                 initiallyVisibleFields="Proposta,Safra,Contrato,Moeda,Fornecedor,NomeForn,TipoForn,Variedade,Grupo,Imovel"
                 >
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>
                 </smartTable:layoutData>
-                <!-- <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dados."
-                mode="SingleSelectMaster" growing="true"/> -->
+                <t:Table id="oTable" cellClick="handleSelectionChange($event,'HomeDetail')"
+                selectionMode="Single" />
             </smartTable:SmartTable>
         </VBox>
         

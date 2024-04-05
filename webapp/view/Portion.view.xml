@@ -30,7 +30,7 @@
                 id="SmartTable" 
                 entitySet="EvtParcGet" 
                 smartFilterId="smartFilterBar" 
-                header="Parcelas" 
+                header="Evento Parcela" 
                 noData="Para começar, defina os filtros relevantes."
                 tableType="Table"
                 alignContent="Center"

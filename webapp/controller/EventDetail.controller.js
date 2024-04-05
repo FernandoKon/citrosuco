@@ -10,10 +10,10 @@ sap.ui.define([
     function (Controller, fioriLibrary, JSONModel, utilities) {
         "use strict";
 
-        return Controller.extend("com.lab2dev.citrosuco.controller.HomeDetail", {
+        return Controller.extend("com.lab2dev.citrosuco.controller.EventDetail", {
             onInit: async function () {
                 const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                await oRouter.getRoute("HomeDetail").attachMatched(this._onRouteMatched, this);
+                await oRouter.getRoute("EventDetail").attachMatched(this._onRouteMatched, this);
 
             },
 
@@ -21,7 +21,7 @@ sap.ui.define([
                 debugger
                 const params = oEvent.getParameter("arguments")
                 
-                let bindString = "/CxsContrGet(";
+                let bindString = "/EvtContrEntrGet(";
 
                 Object.keys(params).forEach((key, index) => {
                     if (index > 0) {
@@ -29,7 +29,7 @@ sap.ui.define([
                     }
                     bindString += key + "='" + (params[key] || "") + "'";
 
-                    if (key === "Fornecedor") {
+                    if (key === "Proposta") {
                         this.sSupplier = params[key];
                     }
                 });
@@ -47,7 +47,7 @@ sap.ui.define([
                 const oSmartFilterBar = this.byId("smartFilterBar");
 
                 oSmartFilterBar.setFilterData({
-                    'Fornecedor': low
+                    'Proposta': low
                 }, true)
 
                 oSmartFilterBar.search();

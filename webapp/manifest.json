@@ -202,6 +202,13 @@
           "target": [
             "TargetPartnersDetail"
           ]
+        },
+        {
+          "name": "EventDetail",
+          "pattern": "EventoContraEntrega/{Proposta}/{Safra}",
+          "target": [
+            "TargetEventDetail"
+          ]
         }
       ],
       "targets": {
@@ -281,6 +288,13 @@
           "clearControlAggregation": false,
           "viewId": "PartnersDetail",
           "viewName": "PartnersDetail"
+        },
+        "TargetEventDetail": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "EventDetail",
+          "viewName": "EventDetail"
         }
       }
     },

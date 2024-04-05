@@ -39,8 +39,8 @@ xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
                     <smartTable:layoutData>
                         <FlexItemData growFactor="2" baseSize="0%"/>
                     </smartTable:layoutData>
-                    <!-- <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dadaos." growing="true"
-                    mode="SingleSelectMaster"/> -->
+                    <t:Table id="oTable" cellClick="handleSelectionChange($event,'PartnersDetail')"
+                    selectionMode="Single" />
                 </smartTable:SmartTable>
             </VBox>
 

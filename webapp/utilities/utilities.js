@@ -1,13 +1,13 @@
 sap.ui.define([
 
-], function() {
+], function () {
 	"use strict";
 
 	return {
 		assoc: function (prop, value, object) {
 			return Object.assign({}, object, { [prop]: value })
 		},
-		
+
 		bind: function (fn, ...args) {
 			return fn.bind(null, ...args)
 		},
@@ -19,7 +19,7 @@ sap.ui.define([
 				list.slice(index + 1)
 			)
 		},
-		
+
 		rank: {
 			get(list) {
 				return list
@@ -49,21 +49,29 @@ sap.ui.define([
 			}
 		},
 
-		bindAggregations: function (oEvent, keys) {
-			const oObject = {};
-		
-			if (keys.length <= 0) {
-				console.error("A quantidade de chaves não é igual à quantidade de valores.");
-				return;
-			}
-			keys.map((key) => {
-				var value = key
-				var key = oEvent.getParameter("listItem").getBindingContext().getObject(value);
-				oObject[value] = key;
+		extractParamsObject: function (paramsString) {
+			const cleanString = paramsString.replace(/^.*\(|\)$/g, '');
+
+			const keyValuePairs = cleanString.split(',');
+
+			const paramsObject = {};
+
+			keyValuePairs.forEach(pair => {
+				const [key, value] = pair.split('=');
+				const cleanedValue = value.replace(/'/g, '');
+				paramsObject[key] = cleanedValue;
 			});
-			
-			return oObject
+
+			return paramsObject;
+		},
+
+		bindAggregations: function (oEvent) {
+			const fullPath = oEvent.getParameter("rowBindingContext").sPath
+			const paramsString = this.extractParamsObject(fullPath)
+
+			return paramsString
 		}
-		
+
+
 	}
 });

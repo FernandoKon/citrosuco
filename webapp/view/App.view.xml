@@ -17,12 +17,12 @@
             <IconTabFilter key="Home" text="Caixas Contratadas"/>
             <IconTabFilter key="Partners" text="Sócios"/>
             <IconTabFilter key="Contracts" text="Contratos Transferidos"/>
-            <IconTabFilter key="Portion" text="Evento Parcelas"/>
+            <IconTabFilter key="Portion" text="Evento Parcela"/>
             <IconTabFilter key="Event" text="Evento Contra Entrega"/>
             <IconTabFilter key="Quota" text="Cota"/>
             <IconTabFilter key="Credit" text="Extrator Crédito"/>
             <IconTabFilter key="Debit" text="Extrator Débito"/>
-            <IconTabFilter key="Params" text="Parametros"/>
+            <IconTabFilter key="Params" text="Parâmetro"/>
         </items>
     </IconTabBar>
 

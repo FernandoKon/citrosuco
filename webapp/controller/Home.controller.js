@@ -13,12 +13,13 @@ sap.ui.define([
             
             },
 
-            handleSelectionChange: function (oEvent) {
+            handleSelectionChange: function (oEvent, route) {
                 const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                const params = utilities.bindAggregations(oEvent, ["Proposta","Contrato","Fornecedor","Imovel","Safra","Grupo"])
-            
-                oRouter.navTo("HomeDetail", params);
+                const params = utilities.bindAggregations(oEvent)
+                
+                oRouter.navTo(route, params);
             },
+
             
 
         });

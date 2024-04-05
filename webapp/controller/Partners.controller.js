@@ -15,8 +15,8 @@ sap.ui.define([
 
             handleSelectionChange: function (oEvent) {
                 const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                const params = utilities.bindAggregations(oEvent, ["Fornecedor","CodSocio"])
-            
+                const params = utilities.bindAggregations(oEvent)
+                
                 oRouter.navTo("PartnersDetail", params);
             },
         });
