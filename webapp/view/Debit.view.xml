@@ -26,8 +26,6 @@
                 </smartFilterBar:layoutData>
             </smartFilterBar:SmartFilterBar>
 
-            <Button text="Parametros" press="onOpenDialog" class="sapUiSmallMarginBegin sapUiSmallMarginBottom" visible="false"/>
-
             <smartTable:SmartTable 
                 backgroundDesign="Solid"
                 showFullScreenButton="true"
@@ -44,8 +42,7 @@
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>
                 </smartTable:layoutData>
-                <!-- <Table id="oTable" noDataText="Inicie ou verifique os filtros para exibir os dados." growing="true"
-                mode="SingleSelectMaster"/> -->
+                <t:Table id="oTable" selectionMode="Single" />
             </smartTable:SmartTable>
         </VBox>
 

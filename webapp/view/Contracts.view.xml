@@ -46,8 +46,7 @@
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>
                 </smartTable:layoutData>
-                <!-- <Table id="oTable" noDataText="Inicie ou verifique os filtros para exibir os dadaos." growing="true"
-                mode="SingleSelectMaster"/> -->
+                <t:Table id="oTable" selectionMode="Single" />
             </smartTable:SmartTable>
         </VBox>
 
