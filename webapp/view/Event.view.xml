@@ -34,7 +34,8 @@
                 tableType="Table"
                 alignContent="Center"
                 class="sapUiResponsiveContentPadding" 
-                initiallyVisibleFields="Proposta,Contrato,Safra,TpEvento,DescTpEvento,Periodo,DescPeriodo,NomeRecebedor"
+                initiallyVisibleFields="Proposta,Safra,Contrato,VlrCaixa,TpEvento,DescTpEvento,Periodo,DescPeriodo,
+                Dias,CondPag,DescCondPag,Bloqueado,FormaPgto,Recebedor,NomeRecebedor,IdDadosBancarios,BangoAgencia,ContaBancaria,DigContaAg"
                 >
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>

@@ -34,7 +34,7 @@ xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
                     tableType="Table"
                     alignContent="Center"
                     class="sapUiResponsiveContentPadding" 
-                    initiallyVisibleFields="NomeSocio,CodSocio,Fornecedor,NomeFornecedor,FuncParceiro,DescFuncParc,Cpf,Rg"
+                    initiallyVisibleFields="Fornecedor,NomeFornecedor,CodSocio,NomeSocio,FuncParceiro,DescFuncParc,Cpf,Rg"
                     >
                     <smartTable:layoutData>
                         <FlexItemData growFactor="2" baseSize="0%"/>

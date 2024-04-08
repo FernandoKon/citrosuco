@@ -114,7 +114,7 @@
       "routes": [
         {
           "name": "Home",
-          "pattern": "CaixasContratadas",
+          "pattern": ":?query:",
           "target": [
             "TargetHome"
           ]

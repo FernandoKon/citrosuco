@@ -40,7 +40,8 @@
                 enableAutoBinding="false" 
                 alignContent="Center"
                 class="sapUiResponsiveContentPadding" 
-                initiallyVisibleFields="PropAnt,PropNov,ContrAnt,ContrNov,Imovel,NomeImovel,Safra"
+                initiallyVisibleFields="PropAnt,PropNov,Safra,Imovel,NomeImovel,ContrAnt,ContrNov,
+                MoedaCtrAnt,MoedaCtrNov,FornecAnt,NomeFornAnt,FornecNov,NomeFornNov,TipoTransf,NomeTpTransf,DataTransf"
                 wrap="NoWrap"
                 >
                 <smartTable:layoutData>

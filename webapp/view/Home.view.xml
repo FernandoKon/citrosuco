@@ -40,7 +40,11 @@
                 header="Caixas Contratadas"
                 tableType="Table"
                 class="sapUiResponsiveContentPadding" 
-                initiallyVisibleFields="Proposta,Safra,Contrato,Moeda,Fornecedor,NomeForn,TipoForn,Variedade,Grupo,Imovel"
+                initiallyVisibleFields="Proposta,Contrato,Moeda,Fornecedor,NomeForn,Imovel,NomeImovel,Variedade,Safra,
+                CaixasContratadas,PrecoBase,Comprador,Grupo,NomeGrupo,CodRegiao,CidadeImovel,EstadoImovel,ModContrato,
+                ModCompra,AdtoFluxo,Recebedor,IdDadosBancarios,BancoAgencia,ContaBancaria,DigContaBancaria,DataCriacao,TipoContrato
+                Comentario1,Comentario2,Comentario3,ConsolSaldo,ComplFrete,ReembIcms,ErdatPrint,ErzetPrint,DataLimite,RetFundecitros,PercRefugo
+                TpPercRef,TipoForn,NomeTpForn,PropAntiga,TpTransf,NomeTpTransf,CxsEstimadas,CxsEntregues,CxsRecebAnt"
                 >
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>
