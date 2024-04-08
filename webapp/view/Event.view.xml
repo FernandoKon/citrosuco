@@ -34,8 +34,12 @@
                 tableType="Table"
                 alignContent="Center"
                 class="sapUiResponsiveContentPadding" 
-                initiallyVisibleFields="Proposta,Safra,Contrato,VlrCaixa,TpEvento,DescTpEvento,Periodo,DescPeriodo,
-                Dias,CondPag,DescCondPag,Bloqueado,FormaPgto,Recebedor,NomeRecebedor,IdDadosBancarios,BangoAgencia,ContaBancaria,DigContaAg"
+                persistencyKey="ContraEntrega"
+                showTablePersonalisation="true"
+                useVariantManagement="true"
+                showRowCount="true"
+                enableAutoColumnWidth="true"
+                initiallyVisibleFields="Proposta,Contrato,Safra,TpEvento,DescTpEvento,Periodo,DescPeriodo,NomeRecebedor"
                 >
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>

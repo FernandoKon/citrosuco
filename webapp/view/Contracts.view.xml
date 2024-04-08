@@ -33,16 +33,18 @@
                 smartFilterId="smartFilterBar" 
                 enableExport="true" 
                 useTablePersonalisation="true" 
-                header="Contratos Transferidos" 
-                showRowCount="true" 
+                header="Contratos Transferidos"
                 noData="Para começar, defina os filtros relevantes."
                 tableType="Table"
                 enableAutoBinding="false" 
                 alignContent="Center"
                 class="sapUiResponsiveContentPadding" 
-                initiallyVisibleFields="PropAnt,PropNov,Safra,Imovel,NomeImovel,ContrAnt,ContrNov,
-                MoedaCtrAnt,MoedaCtrNov,FornecAnt,NomeFornAnt,FornecNov,NomeFornNov,TipoTransf,NomeTpTransf,DataTransf"
-                wrap="NoWrap"
+                persistencyKey="Contratos"
+                showTablePersonalisation="true"
+                useVariantManagement="true"
+                showRowCount="true"
+                enableAutoColumnWidth="true"
+                initiallyVisibleFields="PropAnt,PropNov,ContrAnt,ContrNov,Imovel,NomeImovel,Safra"
                 >
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>

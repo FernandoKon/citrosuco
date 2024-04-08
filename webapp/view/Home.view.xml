@@ -39,13 +39,14 @@
                 smartFilterId="smartFilterBar" 
                 header="Caixas Contratadas"
                 tableType="Table"
+                useTablePersonalisation="true"
                 class="sapUiResponsiveContentPadding" 
-                initiallyVisibleFields="Proposta,Contrato,Moeda,Fornecedor,NomeForn,Imovel,NomeImovel,Variedade,Safra,
-                CaixasContratadas,PrecoBase,Comprador,Grupo,NomeGrupo,CodRegiao,CidadeImovel,EstadoImovel,ModContrato,
-                ModCompra,AdtoFluxo,Recebedor,IdDadosBancarios,BancoAgencia,ContaBancaria,DigContaBancaria,DataCriacao,TipoContrato
-                Comentario1,Comentario2,Comentario3,ConsolSaldo,ComplFrete,ReembIcms,ErdatPrint,ErzetPrint,DataLimite,RetFundecitros,PercRefugo
-                TpPercRef,TipoForn,NomeTpForn,PropAntiga,TpTransf,NomeTpTransf,CxsEstimadas,CxsEntregues,CxsRecebAnt"
-                >
+                persistencyKey="CxsContratadas"
+                showTablePersonalisation="true"
+                useVariantManagement="true"
+                showRowCount="true"
+                enableAutoColumnWidth="true"
+                initiallyVisibleFields="Proposta,Safra,Contrato,Moeda,Fornecedor,NomeForn,TipoForn,Variedade,Grupo,Imovel">
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>
                 </smartTable:layoutData>

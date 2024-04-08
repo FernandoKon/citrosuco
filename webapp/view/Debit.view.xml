@@ -37,8 +37,12 @@
                 tableType="Table"
                 alignContent="Center"
                 class="sapUiResponsiveContentPadding" 
-                initiallyVisibleFields="Safra,Proposta,Contrato,Imovel,TpDocumento,DtLancamento,Grupo,NomeGrupo,Fornecedor,
-                NomeForn,Moeda,NomeImovel,IdTpDeb,TpDeb,VlrUsd,VlrPgBrl,VlrPgUsd,Quantidade,VlrCaixa,TpText"
+                persistencyKey="Debito"
+                showTablePersonalisation="true"
+                useVariantManagement="true"
+                showRowCount="true"
+                enableAutoColumnWidth="true"
+                initiallyVisibleFields="Safra,Fornecedor,NomeForn,Moeda,Proposta,Contrato,Imovel,NomeImovel,TpDocumento,DtLancamento"
                 >
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>

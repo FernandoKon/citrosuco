@@ -36,8 +36,12 @@
                     tableType="Table"
                     alignContent="Center"
                     class="sapUiResponsiveContentPadding" 
-                    initiallyVisibleFields="DtProgramacao,Centro,CodVariedade,Regiao,Comprador,Semana,Fornecedor,Imovel,
-                    NomeVariedade,NomeRegiao,NomeComprador,NomeForn,NomeImovel,QtdCotas,QtdCxCota"
+                    persistencyKey="Cota"
+                    showTablePersonalisation="true"
+                    useVariantManagement="true"
+                    showRowCount="true"
+                    enableAutoColumnWidth="true"
+                    initiallyVisibleFields="DtProgramacao,Centro,CodVariedade,Regiao,Comprador,Semana,Fornecedor,Imovel,QtdCotas,QtdCxCota"
                     >
                     <smartTable:layoutData>
                         <FlexItemData growFactor="2" baseSize="0%"/>

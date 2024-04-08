@@ -34,6 +34,11 @@ xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
                     tableType="Table"
                     alignContent="Center"
                     class="sapUiResponsiveContentPadding" 
+                    persistencyKey="Socios"
+                    showTablePersonalisation="true"
+                    useVariantManagement="true"
+                    showRowCount="true"
+                    enableAutoColumnWidth="true"
                     initiallyVisibleFields="Fornecedor,NomeFornecedor,CodSocio,NomeSocio,FuncParceiro,DescFuncParc,Cpf,Rg"
                     >
                     <smartTable:layoutData>
