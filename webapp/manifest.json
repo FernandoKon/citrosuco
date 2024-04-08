@@ -114,100 +114,93 @@
       "routes": [
         {
           "name": "Home",
-          "pattern": ":?query:",
+          "pattern": "CaixasContratadas",
           "target": [
             "TargetHome"
           ]
         },
         {
           "name": "Partners",
-          "pattern": "Partners",
+          "pattern": "Socios",
           "target": [
             "TargetPartners"
           ]
         },
         {
           "name": "Contracts",
-          "pattern": "Contracts",
-          "target": [
-            "TargetContracts"
-          ]
-        },
-        {
-          "name": "Contracts",
-          "pattern": "Contracts",
+          "pattern": "ContratosTransferidos",
           "target": [
             "TargetContracts"
           ]
         },
         {
           "name": "Portion",
-          "pattern": "Portion",
-          "target": [
-            "TargetPortion"
-          ]
-        },
-        {
-          "name": "Portion",
-          "pattern": "Portion",
+          "pattern": "EventoParcelas",
           "target": [
             "TargetPortion"
           ]
         },
         {
           "name": "Event",
-          "pattern": "Event",
+          "pattern": "EventoContraEntrega",
           "target": [
             "TargetEvent"
           ]
         },
         {
           "name": "Quota",
-          "pattern": "Quota",
+          "pattern": "Cota",
           "target": [
             "TargetQuota"
           ]
         },
         {
           "name": "Credit",
-          "pattern": "Credit",
+          "pattern": "ExtratorCredito",
           "target": [
             "TargetCredit"
           ]
         },
         {
           "name": "Debit",
-          "pattern": "Debit",
+          "pattern": "ExtratorDebito",
           "target": [
             "TargetDebit"
           ]
         },
         {
           "name": "Params",
-          "pattern": "Params",
+          "pattern": "Parametros",
           "target": [
             "TargetParams"
           ]
         },
         {
           "name": "HomeDetail",
-          "pattern": "CaixaContratada/{Safra},{Fornecedor},{Proposta},{Contrato},{Imovel},:Grupo:",
+          "pattern": "CaixasContratada/:Safra:,:Fornecedor:,:Proposta:,:Contrato:,:Imovel:,:Grupo:",
           "target": [
             "TargetHomeDetail"
           ]
         },
         {
           "name": "PartnersDetail",
-          "pattern": "Socio/{Fornecedor}/{CodSocio}",
+          "pattern": "Socios/:Fornecedor:,:CodSocio:",
           "target": [
             "TargetPartnersDetail"
           ]
         },
         {
           "name": "EventDetail",
-          "pattern": "EventoContraEntrega/{Proposta}/{Safra}",
+          "pattern": "EventoContraEntrega/:Proposta:,:Safra:",
           "target": [
             "TargetEventDetail"
+          ]
+        },
+        {
+          "name": "PortionDetail",
+          "pattern": "EventoParcelas/:Proposta:,:Safra:,:Evento:",
+          "target": [
+            "TargetPortionDetail"
           ]
         }
       ],
@@ -295,6 +288,13 @@
           "clearControlAggregation": false,
           "viewId": "EventDetail",
           "viewName": "EventDetail"
+        },
+        "TargetPortionDetail": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "PortionDetail",
+          "viewName": "PortionDetail"
         }
       }
     },

@@ -5,6 +5,7 @@
 	xmlns:f="sap.f"
     xmlns:layout="sap.ui.layout"
     xmlns="sap.m"
+    xmlns:t="sap.ui.table"
     xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
 	xmlns:smartTable="sap.ui.comp.smarttable"
     xmlns:smartForm="sap.ui.comp.smartform"
@@ -14,7 +15,7 @@
     xmlns:main="sap.ui.webc.main">
 	<Page id="PartnersDetail" showHeader="false">
 
-        <smartForm:SmartForm id="smartForm" title="Sócio" expandable="true">
+        <smartForm:SmartForm id="smartForm" title="Sócio" expandable="true" expanded="true" class="sapUiSmallMargin">
             <smartForm:customToolbar>
                 <Toolbar style="Clear">
                     <ToolbarSpacer/>
@@ -67,23 +68,21 @@
                 </smartFilterBar:SmartFilterBar>
 
                 <smartTable:SmartTable 
-                    backgroundDesign="Translucent"
+                    backgroundDesign="Solid"
+                    showFullScreenButton="true"
                     id="SmartTable" 
                     entitySet="CxsContrGet" 
                     smartFilterId="smartFilterBar" 
-                    header="Propostas do fornecedor {oModel>/supplier}" 
-                    noData="Para começar, defina os filtros relevantes."
-                    tableType="ResponsiveTable"
-                    enableAutoBinding="true"
-                    alignContent="Center"
+                    header="Caixas Contratadas com o fornecedor {oModel>/supplier}"
+                    tableType="Table"
                     class="sapUiResponsiveContentPadding" 
-                    initiallyVisibleFields="Proposta,Safra,Contrato,Moeda,Fornecedor,NomeForn,TipoForn,Variedade"
+                    initiallyVisibleFields="Proposta,Safra,Contrato,Moeda,Fornecedor,NomeForn,TipoForn,Variedade,Grupo,Imovel"
                     >
                     <smartTable:layoutData>
                         <FlexItemData growFactor="2" baseSize="0%"/>
                     </smartTable:layoutData>
-                    <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Nenhuma proposta para esse fornecedor."
-                    mode="SingleSelectMaster" growing="true"/>
+                    <t:Table id="oTable"
+                    selectionMode="Single" />
                 </smartTable:SmartTable>
             </VBox>
         </content>

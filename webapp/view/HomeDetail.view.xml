@@ -14,7 +14,7 @@
     xmlns:main="sap.ui.webc.main">
 	<Page id="DetailPage" showHeader="false">
 
-        <smartForm:SmartForm id="smartForm" title="Caixa Contratada" expandable="true">
+        <smartForm:SmartForm id="smartForm" title="Caixa Contratada" expandable="true" expanded="true" class="sapUiSmallMargin">
             <smartForm:customToolbar>
                 <Toolbar style="Clear">
                     <ToolbarSpacer/>

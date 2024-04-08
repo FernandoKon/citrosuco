@@ -1,21 +1,20 @@
 <mvc:View
-    controllerName="com.lab2dev.citrosuco.controller.EventDetail"
+    controllerName="com.lab2dev.citrosuco.controller.PortionDetail"
 	height="100%"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:f="sap.f"
     xmlns:layout="sap.ui.layout"
-    xmlns="sap.m"
     xmlns:t="sap.ui.table"
+    xmlns="sap.m"
     xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
 	xmlns:smartTable="sap.ui.comp.smarttable"
     xmlns:smartForm="sap.ui.comp.smartform"
 	xmlns:smartField="sap.ui.comp.smartfield"
-    xmlns:ff="sap.ui.layout.form"   
     xmlns:core="sap.ui.core"
     xmlns:main="sap.ui.webc.main">
 	<Page id="EventDetail" showHeader="false">
 
-        <smartForm:SmartForm id="smartForm" title="Evento Contra Entrega" expandable="true" expanded="true" class="sapUiSmallMargin">
+        <smartForm:SmartForm id="smartForm" title="Evento Parcelas" expandable="true" expanded="true" class="sapUiSmallMargin">
             <smartForm:customToolbar>
                 <Toolbar style="Clear">
                     <ToolbarSpacer/>
@@ -33,40 +32,29 @@
                     <smartField:SmartField textLabel="Nº do contrato" value="{Contrato}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Data da parcela" value="{DtParcela}"/>
+                </smartForm:GroupElement>
+            </smartForm:Group>
+            <smartForm:Group>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Evento" value="{Evento}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Descrição do evento" value="{DescEvento}"/>
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
                     <smartField:SmartField textLabel="Valor da caixa" value="{VlrCaixa}"/>
                 </smartForm:GroupElement>
-            </smartForm:Group>
-            <smartForm:Group>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Tipo do evento" value="{TpEvento}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Descrição do evento" value="{DescTpEvento}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Periodo" value="{Periodo}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Descrição do periodo" value="{DescPeriodo}"/>
+                    <smartField:SmartField textLabel="Valor de caixa acumulado" value="{VlrCxAcumul}"/>
                 </smartForm:GroupElement>
             </smartForm:Group>
             <smartForm:Group>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Dias" value="{Dias}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Condição de pagamento" value="{CondPag}"/>
-                </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Descrição da condição de pagamento" value="{DescCondPag}"/>
-                </smartForm:GroupElement>
                 <smartForm:GroupElement>
                     <smartField:SmartField textLabel="Bloqueado" value="{Bloqueado}"/>
                 </smartForm:GroupElement>
-            </smartForm:Group>
-            <smartForm:Group>
                 <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="Forma de pagamento" value="{FormaPgto}"/>
+                    <smartField:SmartField textLabel="Valor acumulado" value="{VlrAcumul}"/>
                 </smartForm:GroupElement>
                 <smartForm:GroupElement>
                     <smartField:SmartField textLabel="Nº do recebedor" value="{Recebedor}"/>
@@ -74,11 +62,11 @@
                 <smartForm:GroupElement>
                     <smartField:SmartField textLabel="Nome do recebedor" value="{NomeRecebedor}"/>
                 </smartForm:GroupElement>
-                <smartForm:GroupElement>
-                    <smartField:SmartField textLabel="ID dados bancários" value="{IdDadosBancarios}"/>
-                </smartForm:GroupElement>
             </smartForm:Group>
             <smartForm:Group>
+             <smartForm:GroupElement>
+                    <smartField:SmartField textLabel="Forma de pagamento" value="{FormaPgto}"/>
+                </smartForm:GroupElement>
                 <smartForm:GroupElement>
                     <smartField:SmartField textLabel="Banco/Agência" value="{BangoAgencia}"/>
                 </smartForm:GroupElement>

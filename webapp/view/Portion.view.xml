@@ -1,4 +1,4 @@
-<mvc:View controllerName="com.lab2dev.citrosuco.controller.Portion"
+<mvc:View controllerName="com.lab2dev.citrosuco.controller.Home"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns:l="sap.ui.layout"
     xmlns:t="sap.ui.table"
@@ -40,8 +40,8 @@
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>
                 </smartTable:layoutData>
-                <!-- <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Inicie ou verifique os filtros para exibir os dadaos." growing="true"
-                mode="SingleSelectMaster"/> -->
+                <t:Table id="oTable" cellClick="handleSelectionChange($event,'PortionDetail')"
+                selectionMode="Single" />
             </smartTable:SmartTable>
         </VBox>
 
