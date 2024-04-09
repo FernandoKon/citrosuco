@@ -10,7 +10,7 @@
     <Page id="page" title="{i18n>title}" showHeader="false"> 
         
         <VBox fitContainer="true">
-            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="ExtrDebGet" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" header="Opções de filtragem" showRestoreOnFB="true">
+            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="ExtrDebGet" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" header="Opções de Filtros" showRestoreOnFB="true">
                 <smartFilterBar:controlConfiguration>
                     <smartFilterBar:ControlConfiguration label="Safra" key="Safra" visibleInAdvancedArea="true" mandatory="mandatory"/>
                     <smartFilterBar:ControlConfiguration label="Data de lançamento" key="DtLancamento" visibleInAdvancedArea="true"/>

@@ -10,7 +10,7 @@ xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     <Page id="Partners" title="{i18n>title}" showHeader="false">
         
             <VBox fitContainer="true">
-                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="SociosGet" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" header="Opções de filtragem" showRestoreOnFB="true">
+                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="SociosGet" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" header="Opções de Filtros" showRestoreOnFB="true">
                     <smartFilterBar:controlConfiguration>
                         <smartFilterBar:ControlConfiguration label="Nº do fornecedor" key="Fornecedor" visibleInAdvancedArea="true"/>
                         <smartFilterBar:ControlConfiguration label="Nome do fornecedor" key="NomeFornecedor" visibleInAdvancedArea="true"/>

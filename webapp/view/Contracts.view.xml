@@ -10,7 +10,7 @@
     <Page id="Contracts" title="{i18n>title}" showHeader="false"> 
         
         <VBox fitContainer="true">
-            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="ContrTransfGet" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" header="Opções de filtragem" showRestoreOnFB="true">
+            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="ContrTransfGet" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" header="Opções de Filtros" showRestoreOnFB="true">
                 <smartFilterBar:controlConfiguration>
                     <smartFilterBar:ControlConfiguration label="Proposta Antiga" key="PropAnt" visibleInAdvancedArea="true"/>
                     <smartFilterBar:ControlConfiguration label="Proposta Nova" key="PropNov" visibleInAdvancedArea="true"/>
