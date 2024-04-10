@@ -40,7 +40,7 @@
                 showTablePersonalisation="true"
                 useVariantManagement="true"
                 showRowCount="true"
-                initialise="onSmartTableInit($event,'SmartTablePortion')"
+                initialise="onSmartTableInit($event)"
                 enableAutoColumnWidth="true"
                 initiallyVisibleFields="Proposta,Contrato,Safra,Evento,DescEvento,DtParcela,VlrCaixa,VlrCxAcumul"
                 >

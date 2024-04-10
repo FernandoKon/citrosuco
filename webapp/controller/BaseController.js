@@ -44,9 +44,15 @@ sap.ui.define([
             })
         },
 
-        onSmartTableInit: function (oEvent, id) {
-            this.byId(id).getAggregation("items")[1].setSelectionMode(sap.ui.table.SelectionMode.Single)
-            
+        onSmartTableInit: function (oEvent) {
+            const table = oEvent.getSource()
+            this.getAggregationOfType(table, "sap.ui.table.Table").setSelectionMode(sap.ui.table.SelectionMode.Single);
+        },
+
+        getAggregationOfType: function (control, type) {
+            const aggregationType = control.getAggregation("items");
+
+            return aggregationType.find((aggregation) => aggregation.getMetadata().getName() == type);
         }
         
     })

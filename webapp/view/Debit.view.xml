@@ -42,7 +42,7 @@
                 showTablePersonalisation="true"
                 useVariantManagement="true"
                 showRowCount="true"
-                initialise="onSmartTableInit($event,'SmartTableDebit')"
+                initialise="onSmartTableInit($event)"
                 enableAutoColumnWidth="true"
                 initiallyVisibleFields="Safra,Fornecedor,NomeForn,Moeda,Proposta,Contrato,Imovel,NomeImovel,TpDocumento,DtLancamento"
                 >

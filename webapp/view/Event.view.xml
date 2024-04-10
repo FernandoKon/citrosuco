@@ -39,7 +39,7 @@
                 showTablePersonalisation="true"
                 useVariantManagement="true"
                 showRowCount="true"
-                initialise="onSmartTableInit($event,'SmartTableEvent')"
+                initialise="onSmartTableInit($event)"
                 enableAutoColumnWidth="true"
                 initiallyVisibleFields="Proposta,Contrato,Safra,TpEvento,DescTpEvento,Periodo,DescPeriodo,NomeRecebedor"
                 >

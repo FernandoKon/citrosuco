@@ -39,7 +39,7 @@ xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
                     showTablePersonalisation="true"
                     useVariantManagement="true"
                     showRowCount="true"
-                    initialise="onSmartTableInit($event,'SmartTablePartner')"
+                    initialise="onSmartTableInit($event)"
                     enableAutoColumnWidth="true"
                     initiallyVisibleFields="Fornecedor,NomeFornecedor,CodSocio,NomeSocio,FuncParceiro,DescFuncParc,Cpf,Rg"
                     >

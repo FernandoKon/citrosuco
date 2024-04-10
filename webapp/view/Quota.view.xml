@@ -41,7 +41,7 @@
                     showTablePersonalisation="true"
                     useVariantManagement="true"
                     showRowCount="true"
-                    initialise="onSmartTableInit($event,'SmartTableQuota')"
+                    initialise="onSmartTableInit($event)"
                     enableAutoColumnWidth="true"
                     initiallyVisibleFields="DtProgramacao,Centro,CodVariedade,Regiao,Comprador,Semana,Fornecedor,Imovel,QtdCotas,QtdCxCota"
                     >
