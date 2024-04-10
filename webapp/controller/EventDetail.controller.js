@@ -48,9 +48,5 @@ sap.ui.define([
 
                 oSmartFilterBar.search();
             },
-
-            navBack: function () {
-                this.onNavBack("RouteHome")
-            }
         });
     });

@@ -19,7 +19,7 @@
             <smartForm:customToolbar>
                 <Toolbar style="Clear">
                     <ToolbarSpacer/>
-                    <Button type="Transparent" icon="sap-icon://undo" press="navBack"/>
+                    <Button type="Transparent" icon="sap-icon://undo" press="onNavBack('Partners')"/>
                 </Toolbar>
             </smartForm:customToolbar>
              <smartForm:Group>
