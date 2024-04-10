@@ -1,4 +1,4 @@
-<mvc:View controllerName="com.lab2dev.citrosuco.controller.Home"
+<mvc:View controllerName="com.lab2dev.citrosuco.controller.Event"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns:l="sap.ui.layout"
     xmlns:t="sap.ui.table"
@@ -26,7 +26,7 @@
             <smartTable:SmartTable 
                 backgroundDesign="Solid"
                 showFullScreenButton="true"
-                id="SmartTable" 
+                id="SmartTableEvent" 
                 entitySet="EvtContrEntrGet" 
                 smartFilterId="smartFilterBar" 
                 header="Contra Entrega" 
@@ -35,17 +35,17 @@
                 alignContent="Center"
                 class="sapUiResponsiveContentPadding" 
                 persistencyKey="ContraEntrega"
+                initialNoDataText="Inicie os filtros para exibir os dados."
                 showTablePersonalisation="true"
                 useVariantManagement="true"
                 showRowCount="true"
+                initialise="onSmartTableInit($event,'SmartTableEvent')"
                 enableAutoColumnWidth="true"
                 initiallyVisibleFields="Proposta,Contrato,Safra,TpEvento,DescTpEvento,Periodo,DescPeriodo,NomeRecebedor"
                 >
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>
                 </smartTable:layoutData>
-                <t:Table id="oTable" cellClick="handleSelectionChange($event,'EventDetail')"
-                selectionMode="Single" />
             </smartTable:SmartTable>
         </VBox>
 

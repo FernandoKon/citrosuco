@@ -11,13 +11,11 @@ sap.ui.define([
 
         return Controller.extend("com.lab2dev.citrosuco.controller.Partners", {
             onInit: function () {
+                this.attachSmartTableClickEvent({
+                    tableId: "SmartTablePartner",
+                    route: "PartnersDetail"
+                });
             },
 
-            handleSelectionChange: function (oEvent) {
-                const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                const params = utilities.bindAggregations(oEvent)
-                
-                oRouter.navTo("PartnersDetail", params);
-            },
         });
     });

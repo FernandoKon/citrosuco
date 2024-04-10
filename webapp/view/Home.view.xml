@@ -34,24 +34,27 @@
             <smartTable:SmartTable 
                 backgroundDesign="Solid"
                 showFullScreenButton="true"
-                id="SmartTable" 
+                id="SmartTableHome" 
                 entitySet="CxsContrGet" 
                 smartFilterId="smartFilterBar" 
                 header="Caixas Contratadas"
                 tableType="Table"
                 useTablePersonalisation="true"
+                beforeExport="onBeforeExport"
                 class="sapUiResponsiveContentPadding" 
                 persistencyKey="CxsContratadas"
+                initialNoDataText="Inicie os filtros para exibir os dados."
                 showTablePersonalisation="true"
                 useVariantManagement="true"
                 showRowCount="true"
+                initialise="onSmartTableInit($event,'SmartTableHome')"
                 enableAutoColumnWidth="true"
                 initiallyVisibleFields="Proposta,Safra,Contrato,Moeda,Fornecedor,NomeForn,TipoForn,Variedade,Grupo,Imovel">
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>
                 </smartTable:layoutData>
-                <t:Table id="oTable" cellClick="handleSelectionChange($event,'HomeDetail')"
-                selectionMode="Single" />
+                <!-- <t:Table id="oTable" cellClick="handleSelectionChange($event,'HomeDetail')"
+                selectionMode="Single" /> -->
             </smartTable:SmartTable>
         </VBox>
         

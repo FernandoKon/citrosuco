@@ -3,27 +3,28 @@ sap.ui.define([
     "sap/ui/model/json/JSONModel",
     "sap/m/MessageBox",
     "sap/m/MessageToast",
-    "sap/ui/core/routing/History"
+    "sap/ui/core/routing/History",
+    "com/lab2dev/citrosuco/utilities/utilities"
 
-], function(BaseController, JSONModel, MessageBox, MessageToast, History) {
+], function (BaseController, JSONModel, MessageBox, MessageToast, History, utilities) {
     'use strict';
     return BaseController.extend("com.lab2dev.btpexperiencemainscreen.controller.BaseController", {
-        
+
         MessageBox: MessageBox,
         MessageToast: MessageToast,
 
-        getModel: function(sNameModel){
+        getModel: function (sNameModel) {
             return this.getView().getModel(sNameModel)
         },
 
-        setModel: function(oModel, sNameModel){
+        setModel: function (oModel, sNameModel) {
             return this.getView().setModel(new JSONModel(oModel), sNameModel)
         },
 
         onNavBack: function (sRoute) {
             const oHistory = History.getInstance();
             const sPreviousHash = oHistory.getPreviousHash();
-            
+
             if (sPreviousHash !== undefined) {
                 window.history.go(-1);
             } else {
@@ -32,5 +33,21 @@ sap.ui.define([
                 oRouter.navTo(sRoute, {}, true);
             }
         },
+
+        attachSmartTableClickEvent: function (eventDefinition) {
+            const [table] = this.byId(eventDefinition.tableId).getAggregation("items")
+            table.attachCellClick((oEvent) => {
+                const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                const params = utilities.bindAggregations(oEvent)
+
+                oRouter.navTo(eventDefinition.route, params);
+            })
+        },
+
+        onSmartTableInit: function (oEvent, id) {
+            this.byId(id).getAggregation("items")[1].setSelectionMode(sap.ui.table.SelectionMode.Single)
+            
+        }
+        
     })
 });

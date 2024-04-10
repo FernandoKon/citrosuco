@@ -1,4 +1,4 @@
-<mvc:View controllerName="com.lab2dev.citrosuco.controller.Home"
+<mvc:View controllerName="com.lab2dev.citrosuco.controller.Contracts"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns:l="sap.ui.layout"
     xmlns:t="sap.ui.table"
@@ -28,7 +28,7 @@
             <smartTable:SmartTable 
                 backgroundDesign="Translucent"
                 showFullScreenButton="true"
-                id="SmartTable" 
+                id="SmartTableContracts" 
                 entitySet="ContrTransfGet" 
                 smartFilterId="smartFilterBar" 
                 enableExport="true" 
@@ -40,16 +40,18 @@
                 alignContent="Center"
                 class="sapUiResponsiveContentPadding" 
                 persistencyKey="Contratos"
+                initialNoDataText="Inicie os filtros para exibir os dados."
                 showTablePersonalisation="true"
                 useVariantManagement="true"
                 showRowCount="true"
+                initialise="onSmartTableInit($event,'SmartTableContracts')"
                 enableAutoColumnWidth="true"
                 initiallyVisibleFields="PropAnt,PropNov,ContrAnt,ContrNov,Imovel,NomeImovel,Safra"
                 >
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>
                 </smartTable:layoutData>
-                <t:Table id="oTable" selectionMode="Single" />
+                
             </smartTable:SmartTable>
         </VBox>
 

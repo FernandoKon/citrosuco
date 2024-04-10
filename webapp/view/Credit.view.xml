@@ -1,4 +1,4 @@
-<mvc:View controllerName="com.lab2dev.citrosuco.controller.Home"
+<mvc:View controllerName="com.lab2dev.citrosuco.controller.Credit"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns:l="sap.ui.layout"
     xmlns:t="sap.ui.table"
@@ -13,7 +13,7 @@
             <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="ExtrCredGet" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" header="Opções de Filtros" showRestoreOnFB="true">
                 <smartFilterBar:controlConfiguration>
                     <smartFilterBar:ControlConfiguration label="Safra" key="Safra" visibleInAdvancedArea="true" mandatory="mandatory"/>
-                    <smartFilterBar:ControlConfiguration label="Data de lançamento" key="DtLancamento" visibleInAdvancedArea="true" mandatory="mandatory"/>
+                    <smartFilterBar:ControlConfiguration label="Data de lançamento" key="DtLancamento" visibleInAdvancedArea="true"  mandatory="mandatory"/>
                     <smartFilterBar:ControlConfiguration label="Nº da proposta" key="Proposta" visibleInAdvancedArea="true"/>
                     <smartFilterBar:ControlConfiguration label="Nº do contrato" key="Contrato" visibleInAdvancedArea="true"/>
                     <smartFilterBar:ControlConfiguration label="Nº do imóvel" key="Imovel" visibleInAdvancedArea="true"/>
@@ -29,7 +29,7 @@
             <smartTable:SmartTable 
                 backgroundDesign="Solid"
                 showFullScreenButton="true"
-                id="SmartTable"
+                id="SmartTableCredit"
                 entitySet="ExtrCredGet"
                 smartFilterId="smartFilterBar" 
                 header="Crédito" 
@@ -38,16 +38,17 @@
                 alignContent="Center"
                 class="sapUiResponsiveContentPadding" 
                 persistencyKey="Credito"
+                initialNoDataText="Inicie os filtros para exibir os dados."
                 showTablePersonalisation="true"
                 useVariantManagement="true"
                 showRowCount="true"
+                initialise="onSmartTableInit($event,'SmartTableCredit')"
                 enableAutoColumnWidth="true"
                 initiallyVisibleFields="Safra,Fornecedor,NomeForn,Moeda,Proposta,Contrato,Imovel,NomeImovel"
                 >
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>
                 </smartTable:layoutData>
-                <t:Table id="oTable" selectionMode="Single" />
             </smartTable:SmartTable>
         </VBox>
 

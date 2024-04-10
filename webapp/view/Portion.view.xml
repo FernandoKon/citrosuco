@@ -1,4 +1,4 @@
-<mvc:View controllerName="com.lab2dev.citrosuco.controller.Home"
+<mvc:View controllerName="com.lab2dev.citrosuco.controller.Portion"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns:l="sap.ui.layout"
     xmlns:t="sap.ui.table"
@@ -27,7 +27,7 @@
             <smartTable:SmartTable 
                 backgroundDesign="Translucent"
                 showFullScreenButton="true"
-                id="SmartTable" 
+                id="SmartTablePortion" 
                 entitySet="EvtParcGet" 
                 smartFilterId="smartFilterBar" 
                 header="Evento Parcela" 
@@ -36,17 +36,17 @@
                 alignContent="Center"
                 class="sapUiResponsiveContentPadding" 
                 persistencyKey="Parcelas"
+                initialNoDataText="Inicie os filtros para exibir os dados."
                 showTablePersonalisation="true"
                 useVariantManagement="true"
                 showRowCount="true"
+                initialise="onSmartTableInit($event,'SmartTablePortion')"
                 enableAutoColumnWidth="true"
                 initiallyVisibleFields="Proposta,Contrato,Safra,Evento,DescEvento,DtParcela,VlrCaixa,VlrCxAcumul"
                 >
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>
                 </smartTable:layoutData>
-                <t:Table id="oTable" cellClick="handleSelectionChange($event,'PortionDetail')"
-                selectionMode="Single" />
             </smartTable:SmartTable>
         </VBox>
 

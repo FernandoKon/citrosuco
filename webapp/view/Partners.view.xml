@@ -1,4 +1,4 @@
-<mvc:View controllerName="com.lab2dev.citrosuco.controller.Home"
+<mvc:View controllerName="com.lab2dev.citrosuco.controller.Partners"
 xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns:l="sap.ui.layout"
     xmlns:t="sap.ui.table"
@@ -26,7 +26,7 @@ xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
                 <smartTable:SmartTable 
                     backgroundDesign="Translucent"
                     showFullScreenButton="true"
-                    id="SmartTable" 
+                    id="SmartTablePartner" 
                     entitySet="SociosGet" 
                     smartFilterId="smartFilterBar" 
                     header="Sócios" 
@@ -35,17 +35,17 @@ xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
                     alignContent="Center"
                     class="sapUiResponsiveContentPadding" 
                     persistencyKey="Socios"
+                    initialNoDataText="Inicie os filtros para exibir os dados."
                     showTablePersonalisation="true"
                     useVariantManagement="true"
                     showRowCount="true"
+                    initialise="onSmartTableInit($event,'SmartTablePartner')"
                     enableAutoColumnWidth="true"
                     initiallyVisibleFields="Fornecedor,NomeFornecedor,CodSocio,NomeSocio,FuncParceiro,DescFuncParc,Cpf,Rg"
                     >
                     <smartTable:layoutData>
                         <FlexItemData growFactor="2" baseSize="0%"/>
                     </smartTable:layoutData>
-                    <t:Table id="oTable" cellClick="handleSelectionChange($event,'PartnersDetail')"
-                    selectionMode="Single" />
                 </smartTable:SmartTable>
             </VBox>
 

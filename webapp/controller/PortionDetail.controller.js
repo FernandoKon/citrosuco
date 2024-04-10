@@ -11,6 +11,7 @@ sap.ui.define([
             onInit: async function () {
                 const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
                 await oRouter.getRoute("PortionDetail").attachMatched(this._onRouteMatched, this);
+                
 
             },
 

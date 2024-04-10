@@ -1,4 +1,4 @@
-<mvc:View controllerName="com.lab2dev.citrosuco.controller.Home"
+<mvc:View controllerName="com.lab2dev.citrosuco.controller.Quota"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns:l="sap.ui.layout"
     xmlns:t="sap.ui.table"
@@ -28,7 +28,7 @@
                 <smartTable:SmartTable 
                     backgroundDesign="Translucent"
                     showFullScreenButton="true"
-                    id="SmartTable" 
+                    id="SmartTableQuota" 
                     entitySet="CotasGet" 
                     smartFilterId="smartFilterBar" 
                     header="Cota" 
@@ -37,16 +37,17 @@
                     alignContent="Center"
                     class="sapUiResponsiveContentPadding" 
                     persistencyKey="Cota"
+                    initialNoDataText="Inicie os filtros para exibir os dados."
                     showTablePersonalisation="true"
                     useVariantManagement="true"
                     showRowCount="true"
+                    initialise="onSmartTableInit($event,'SmartTableQuota')"
                     enableAutoColumnWidth="true"
                     initiallyVisibleFields="DtProgramacao,Centro,CodVariedade,Regiao,Comprador,Semana,Fornecedor,Imovel,QtdCotas,QtdCxCota"
                     >
                     <smartTable:layoutData>
                         <FlexItemData growFactor="2" baseSize="0%"/>
                     </smartTable:layoutData>
-                    <t:Table id="oTable" selectionMode="Single" />
                 </smartTable:SmartTable>
             </VBox>
 
