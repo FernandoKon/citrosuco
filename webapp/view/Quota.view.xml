@@ -10,7 +10,7 @@
     <Page id="page" title="{i18n>title}" showHeader="false"> 
         
             <VBox fitContainer="true">
-                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CotasGet" class="customBorder sapUiSmallMargin" showFilterConfiguration="false" header="Opções de Filtros" showRestoreOnFB="true"> 
+                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CotasGet" class="customBorder sapUiSmallMargin" header="Opções de Filtros" showRestoreOnFB="true"> 
                     <smartFilterBar:controlConfiguration>
                         <smartFilterBar:ControlConfiguration label="Data" key="DtProgramacao" visibleInAdvancedArea="true"/>
                         <smartFilterBar:ControlConfiguration label="Semana" key="Semana" visibleInAdvancedArea="true"/>

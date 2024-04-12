@@ -16,6 +16,7 @@ sap.ui.define(
   
           oRouter.navTo(sKey);
         },
+
       });
     }
   );
