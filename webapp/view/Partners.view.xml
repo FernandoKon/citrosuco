@@ -12,7 +12,7 @@ xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
             <VBox fitContainer="true">
                 <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="SociosGet" class="customBorder sapUiSmallMargin" header="Opções de Filtros" showRestoreOnFB="true">
                     <smartFilterBar:controlConfiguration>
-                        <smartFilterBar:ControlConfiguration label="Nº do fornecedor" key="Fornecedor" visibleInAdvancedArea="true"/>
+                        <smartFilterBar:ControlConfiguration label="Nº do fornecedor" key="Fornecedor" visibleInAdvancedArea="true" />
                         <smartFilterBar:ControlConfiguration label="Nome do fornecedor" key="NomeFornecedor" visibleInAdvancedArea="true"/>
                         <smartFilterBar:ControlConfiguration label="Nome do sócio" key="NomeSocio" visibleInAdvancedArea="true"/>
                         <smartFilterBar:ControlConfiguration label="Código do sócio" key="CodSocio" visibleInAdvancedArea="true"/>

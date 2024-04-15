@@ -32,14 +32,13 @@
                 </Key>
                 <Property Name="Fornecedor" Type="Edm.String" MaxLength="10" Nullable="false"/>
                 <Property Name="CodSocio" Type="Edm.String" MaxLength="10" Nullable="false"/>
-                <Property Name="NomeFornecedor" Type="Edm.String" MaxLength="30" Nullable="false"/>
+                <Property Name="NomeFornecedor" Type="Edm.String" MaxLength="30" Nullable="false"/> 
                 <Property Name="NomeSocio" Type="Edm.String" MaxLength="30" Nullable="false"/>
                 <Property Name="FuncParceiro" Type="Edm.String" MaxLength="2" Nullable="false"/>
                 <Property Name="DescFuncParc" Type="Edm.String" MaxLength="20" Nullable="false"/>
                 <Property Name="Cpf" Type="Edm.String" MaxLength="60" Nullable="false"/>
                 <Property Name="Rg" Type="Edm.String" MaxLength="60" Nullable="false"/>
             </EntityType>
-            <EntityType Name="CxsContrGet">
                 <Key>
                     <PropertyRef Name="Proposta"/>
                     <PropertyRef Name="Contrato"/>
