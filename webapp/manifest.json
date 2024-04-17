@@ -1,312 +1,314 @@
 {
-  "_version": "1.59.0",
-  "sap.app": {
-    "id": "com.lab2dev.citrosuco",
-    "type": "application",
-    "i18n": "i18n/i18n.properties",
-    "applicationVersion": {
-      "version": "0.0.1"
-    },
-    "title": "{{appTitle}}",
-    "description": "{{appDescription}}",
-    "resources": "resources.json",
-    "sourceTemplate": {
-      "id": "@sap/generator-fiori:basic",
-      "version": "1.12.5",
-      "toolsId": "54dac88d-0d23-470b-bb2a-8829838852af"
-    },
-    "dataSources": {
-      "fluxos-caixa": {
-        "uri": "/odata/v2/fluxos-caixa/",
-        "type": "OData",
-        "settings": {
-          "annotations": [],
-          "localUri": "localService/fluxos-caixa/metadata.xml",
-          "odataVersion": "2.0"
+    "_version": "1.59.0",
+    "sap.app": {
+        "id": "com.lab2dev.citrosuco",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.12.5",
+            "toolsId": "54dac88d-0d23-470b-bb2a-8829838852af"
+        },
+        "dataSources": {
+            "fluxos-caixa": {
+                "uri": "/odata/v2/fluxos-caixa/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            }
+        },
+        "crossNavigation": {
+            "inbounds": {
+                "FluxoCaixa-Display": {
+                    "semanticObject": "FluxoCaixa",
+                    "action": "Display",
+                    "title": "{{flpTitle}}",
+                    "icon": "sap-icon://sys-monitor",
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    }
+                }
+            }
         }
-      }
     },
-    "crossNavigation": {
-      "inbounds": {
-        "FluxoCaixa-Display": {
-          "semanticObject": "FluxoCaixa",
-          "action": "Display",
-          "title": "{{flpTitle}}",
-          "icon": "sap-icon://sys-monitor",
-          "signature": {
-            "parameters": {},
-            "additionalParameters": "allowed"
-          }
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
         }
-      }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "dependencies": {
+            "minUI5Version": "1.121.1",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.f": {},
+                "sap.suite.ui.generic.template": {},
+                "sap.ui.comp": {},
+                "sap.ui.generic.app": {},
+                "sap.ui.table": {},
+                "sap.ushell": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "com.lab2dev.citrosuco.i18n.i18n"
+                }
+            },
+            "": {
+                "preload": true,
+                "dataSource": "fluxos-caixa",
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "defaultCountMode": "Inline",
+                    "refreshAfterChange": false,
+                    "metadataUrlParams": {
+                        "sap-value-list": "none"
+                    }
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "com.lab2dev.citrosuco.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "Home",
+                    "pattern": ":?query:",
+                    "target": [
+                        "TargetHome"
+                    ]
+                },
+                {
+                    "name": "Partners",
+                    "pattern": "Socios",
+                    "target": [
+                        "TargetPartners"
+                    ]
+                },
+                {
+                    "name": "Contracts",
+                    "pattern": "ContratosTransferidos",
+                    "target": [
+                        "TargetContracts"
+                    ]
+                },
+                {
+                    "name": "Portion",
+                    "pattern": "EventoParcelas",
+                    "target": [
+                        "TargetPortion"
+                    ]
+                },
+                {
+                    "name": "Event",
+                    "pattern": "EventoContraEntrega",
+                    "target": [
+                        "TargetEvent"
+                    ]
+                },
+                {
+                    "name": "Quota",
+                    "pattern": "Cota",
+                    "target": [
+                        "TargetQuota"
+                    ]
+                },
+                {
+                    "name": "Credit",
+                    "pattern": "ExtratorCredito",
+                    "target": [
+                        "TargetCredit"
+                    ]
+                },
+                {
+                    "name": "Debit",
+                    "pattern": "ExtratorDebito",
+                    "target": [
+                        "TargetDebit"
+                    ]
+                },
+                {
+                    "name": "Params",
+                    "pattern": "Parametros",
+                    "target": [
+                        "TargetParams"
+                    ]
+                },
+                {
+                    "name": "HomeDetail",
+                    "pattern": "CaixasContratada/:Safra:,:Fornecedor:,:Proposta:,:Contrato:,:Imovel:,:Grupo:,:Variedade:",
+                    "target": [
+                        "TargetHomeDetail"
+                    ]
+                },
+                {
+                    "name": "PartnersDetail",
+                    "pattern": "Socios/:Fornecedor:,:CodSocio:",
+                    "target": [
+                        "TargetPartnersDetail"
+                    ]
+                },
+                {
+                    "name": "EventDetail",
+                    "pattern": "EventoContraEntrega/:Proposta:,:Safra:",
+                    "target": [
+                        "TargetEventDetail"
+                    ]
+                },
+                {
+                    "name": "PortionDetail",
+                    "pattern": "EventoParcelas/:Proposta:,:Safra:,:Evento:",
+                    "target": [
+                        "TargetPortionDetail"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetHome": {
+                    "viewType": "XML",
+                    "transition": "fade",
+                    "clearControlAggregation": false,
+                    "viewId": "Home",
+                    "viewName": "Home"
+                },
+                "TargetPartners": {
+                    "viewType": "XML",
+                    "transition": "fade",
+                    "clearControlAggregation": false,
+                    "viewId": "Partners",
+                    "viewName": "Partners"
+                },
+                "TargetContracts": {
+                    "viewType": "XML",
+                    "transition": "fade",
+                    "clearControlAggregation": false,
+                    "viewId": "Contracts",
+                    "viewName": "Contracts"
+                },
+                "TargetPortion": {
+                    "viewType": "XML",
+                    "transition": "fade",
+                    "clearControlAggregation": false,
+                    "viewId": "Portion",
+                    "viewName": "Portion"
+                },
+                "TargetEvent": {
+                    "viewType": "XML",
+                    "transition": "fade",
+                    "clearControlAggregation": false,
+                    "viewId": "Event",
+                    "viewName": "Event"
+                },
+                "TargetQuota": {
+                    "viewType": "XML",
+                    "transition": "fade",
+                    "clearControlAggregation": false,
+                    "viewId": "Quota",
+                    "viewName": "Quota"
+                },
+                "TargetCredit": {
+                    "viewType": "XML",
+                    "transition": "fade",
+                    "clearControlAggregation": false,
+                    "viewId": "Credit",
+                    "viewName": "Credit"
+                },
+                "TargetDebit": {
+                    "viewType": "XML",
+                    "transition": "fade",
+                    "clearControlAggregation": false,
+                    "viewId": "Debit",
+                    "viewName": "Debit"
+                },
+                "TargetParams": {
+                    "viewType": "XML",
+                    "transition": "fade",
+                    "clearControlAggregation": false,
+                    "viewId": "Params",
+                    "viewName": "Params"
+                },
+                "TargetHomeDetail": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "HomeDetail",
+                    "viewName": "HomeDetail"
+                },
+                "TargetPartnersDetail": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "PartnersDetail",
+                    "viewName": "PartnersDetail"
+                },
+                "TargetEventDetail": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "EventDetail",
+                    "viewName": "EventDetail"
+                },
+                "TargetPortionDetail": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "PortionDetail",
+                    "viewName": "PortionDetail"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "com.lab2dev.citrosuco.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "app"
+        }
+    },
+    "sap.cloud": {
+        "public": true,
+        "service": "comlab2devcitrosuco"
     }
-  },
-  "sap.ui": {
-    "technology": "UI5",
-    "icons": {
-      "icon": "",
-      "favIcon": "",
-      "phone": "",
-      "phone@2": "",
-      "tablet": "",
-      "tablet@2": ""
-    },
-    "deviceTypes": {
-      "desktop": true,
-      "tablet": true,
-      "phone": true
-    }
-  },
-  "sap.ui5": {
-    "flexEnabled": false,
-    "dependencies": {
-      "minUI5Version": "1.121.1",
-      "libs": {
-        "sap.m": {},
-        "sap.ui.core": {},
-        "sap.f": {},
-        "sap.suite.ui.generic.template": {},
-        "sap.ui.comp": {},
-        "sap.ui.generic.app": {},
-        "sap.ui.table": {},
-        "sap.ushell": {}
-      }
-    },
-    "contentDensities": {
-      "compact": true,
-      "cozy": true
-    },
-    "models": {
-      "i18n": {
-        "type": "sap.ui.model.resource.ResourceModel",
-        "settings": {
-          "bundleName": "com.lab2dev.citrosuco.i18n.i18n"
-        }
-      },
-      "": {
-        "dataSource": "fluxos-caixa",
-        "preload": true,
-        "settings": {
-          "synchronizationMode": "None",
-          "operationMode": "Server",
-          "autoExpandSelect": true,
-          "earlyRequests": true
-        }
-      }
-    },
-    "resources": {
-      "css": [
-        {
-          "uri": "css/style.css"
-        }
-      ]
-    },
-    "routing": {
-      "config": {
-        "routerClass": "sap.m.routing.Router",
-        "viewType": "XML",
-        "async": true,
-        "viewPath": "com.lab2dev.citrosuco.view",
-        "controlAggregation": "pages",
-        "controlId": "app",
-        "clearControlAggregation": false
-      },
-      "routes": [
-        {
-          "name": "Home",
-          "pattern": ":?query:",
-          "target": [
-            "TargetHome"
-          ]
-        },
-        {
-          "name": "Partners",
-          "pattern": "Socios",
-          "target": [
-            "TargetPartners"
-          ]
-        },
-        {
-          "name": "Contracts",
-          "pattern": "ContratosTransferidos",
-          "target": [
-            "TargetContracts"
-          ]
-        },
-        {
-          "name": "Portion",
-          "pattern": "EventoParcelas",
-          "target": [
-            "TargetPortion"
-          ]
-        },
-        {
-          "name": "Event",
-          "pattern": "EventoContraEntrega",
-          "target": [
-            "TargetEvent"
-          ]
-        },
-        {
-          "name": "Quota",
-          "pattern": "Cota",
-          "target": [
-            "TargetQuota"
-          ]
-        },
-        {
-          "name": "Credit",
-          "pattern": "ExtratorCredito",
-          "target": [
-            "TargetCredit"
-          ]
-        },
-        {
-          "name": "Debit",
-          "pattern": "ExtratorDebito",
-          "target": [
-            "TargetDebit"
-          ]
-        },
-        {
-          "name": "Params",
-          "pattern": "Parametros",
-          "target": [
-            "TargetParams"
-          ]
-        },
-        {
-          "name": "HomeDetail",
-          "pattern": "CaixasContratada/:Safra:,:Fornecedor:,:Proposta:,:Contrato:,:Imovel:,:Grupo:",
-          "target": [
-            "TargetHomeDetail"
-          ]
-        },
-        {
-          "name": "PartnersDetail",
-          "pattern": "Socios/:Fornecedor:,:CodSocio:",
-          "target": [
-            "TargetPartnersDetail"
-          ]
-        },
-        {
-          "name": "EventDetail",
-          "pattern": "EventoContraEntrega/:Proposta:,:Safra:",
-          "target": [
-            "TargetEventDetail"
-          ]
-        },
-        {
-          "name": "PortionDetail",
-          "pattern": "EventoParcelas/:Proposta:,:Safra:,:Evento:",
-          "target": [
-            "TargetPortionDetail"
-          ]
-        }
-      ],
-      "targets": {
-        "TargetHome": {
-          "viewType": "XML",
-          "transition": "fade",
-          "clearControlAggregation": false,
-          "viewId": "Home",
-          "viewName": "Home"
-        },
-        "TargetPartners": {
-          "viewType": "XML",
-          "transition": "fade",
-          "clearControlAggregation": false,
-          "viewId": "Partners",
-          "viewName": "Partners"
-        },
-        "TargetContracts": {
-          "viewType": "XML",
-          "transition": "fade",
-          "clearControlAggregation": false,
-          "viewId": "Contracts",
-          "viewName": "Contracts"
-        },
-        "TargetPortion": {
-          "viewType": "XML",
-          "transition": "fade",
-          "clearControlAggregation": false,
-          "viewId": "Portion",
-          "viewName": "Portion"
-        },
-        "TargetEvent": {
-          "viewType": "XML",
-          "transition": "fade",
-          "clearControlAggregation": false,
-          "viewId": "Event",
-          "viewName": "Event"
-        },
-        "TargetQuota": {
-          "viewType": "XML",
-          "transition": "fade",
-          "clearControlAggregation": false,
-          "viewId": "Quota",
-          "viewName": "Quota"
-        },
-        "TargetCredit": {
-          "viewType": "XML",
-          "transition": "fade",
-          "clearControlAggregation": false,
-          "viewId": "Credit",
-          "viewName": "Credit"
-        },
-        "TargetDebit": {
-          "viewType": "XML",
-          "transition": "fade",
-          "clearControlAggregation": false,
-          "viewId": "Debit",
-          "viewName": "Debit"
-        },
-        "TargetParams": {
-          "viewType": "XML",
-          "transition": "fade",
-          "clearControlAggregation": false,
-          "viewId": "Params",
-          "viewName": "Params"
-        },
-        "TargetHomeDetail": {
-          "viewType": "XML",
-          "transition": "slide",
-          "clearControlAggregation": false,
-          "viewId": "HomeDetail",
-          "viewName": "HomeDetail"
-        },
-        "TargetPartnersDetail": {
-          "viewType": "XML",
-          "transition": "slide",
-          "clearControlAggregation": false,
-          "viewId": "PartnersDetail",
-          "viewName": "PartnersDetail"
-        },
-        "TargetEventDetail": {
-          "viewType": "XML",
-          "transition": "slide",
-          "clearControlAggregation": false,
-          "viewId": "EventDetail",
-          "viewName": "EventDetail"
-        },
-        "TargetPortionDetail": {
-          "viewType": "XML",
-          "transition": "slide",
-          "clearControlAggregation": false,
-          "viewId": "PortionDetail",
-          "viewName": "PortionDetail"
-        }
-      }
-    },
-    "rootView": {
-      "viewName": "com.lab2dev.citrosuco.view.App",
-      "type": "XML",
-      "async": true,
-      "id": "app"
-    }
-  },
-  "sap.cloud": {
-    "public": true,
-    "service": "comlab2devcitrosuco"
-  }
 }

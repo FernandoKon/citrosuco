@@ -19,6 +19,12 @@ server:
           - path: /odata
             url: https://cashflow-api.dest
             destination: cashflow-api
+          - path: /odata
+            url: https://citrosuco-s-a-agroind-stria-development-cf-lrc4hwdy-app600de81c.cfapps.us10-001.hana.ondemand.com
+            destination: cashflow-api
+          - path: /odata/v2/fluxos-caixa/
+            url: https://citrosuco-s-a-agroind-stria-development-cf-lrc4hwdy-app600de81c.cfapps.us10-001.hana.ondemand.com
+            destination: cashflow-api
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:
