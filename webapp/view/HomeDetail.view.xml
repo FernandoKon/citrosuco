@@ -188,42 +188,39 @@
             </smartForm:Group>
         </smartForm:SmartForm>
         
-        <content>
-            <VBox class="sapUiSmallMarginTop">
-                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="SociosGet" class="customBorder" visible="false">
-                    <smartFilterBar:controlConfiguration>
-                        <smartFilterBar:ControlConfiguration key="Fornecedor"  visibleInAdvancedArea="true">
-                            <smartFilterBar:defaultFilterValues>
-                                <smartFilterBar:SelectOption id="smartFilterData" low="{oModel>/supplier}"/>
-                            </smartFilterBar:defaultFilterValues>
-                        </smartFilterBar:ControlConfiguration>
-                    </smartFilterBar:controlConfiguration>    
-                    <smartFilterBar:layoutData>
-                        <FlexItemData shrinkFactor="0"/>
-                    </smartFilterBar:layoutData>
-                </smartFilterBar:SmartFilterBar>
+        <VBox class="sapUiSmallMarginTop" fitContainer="true">
+            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="SociosGet" class="customBorder" visible="false">
+                <smartFilterBar:controlConfiguration>
+                    <smartFilterBar:ControlConfiguration key="Fornecedor"  visibleInAdvancedArea="true">
+                        <smartFilterBar:defaultFilterValues>
+                            <smartFilterBar:SelectOption id="smartFilterData" low="{oModel>/supplier}"/>
+                        </smartFilterBar:defaultFilterValues>
+                    </smartFilterBar:ControlConfiguration>
+                </smartFilterBar:controlConfiguration>    
+                <smartFilterBar:layoutData>
+                    <FlexItemData shrinkFactor="0"/>
+                </smartFilterBar:layoutData>
+            </smartFilterBar:SmartFilterBar>
 
-                <smartTable:SmartTable 
-                    backgroundDesign="Translucent"
-                    id="SmartTable" 
-                    entitySet="SociosGet" 
-                    smartFilterId="smartFilterBar" 
-                    header="Sócios com o fornecedor {oModel>/supplier}" 
-                    noData="Para começar, defina os filtros relevantes."
-                    tableType="ResponsiveTable"
-                    enableAutoBinding="true"
-                    alignContent="Center"
-                    class="sapUiResponsiveContentPadding" 
-                    initiallyVisibleFields="Fornecedor,NomeFornecedor,CodSocio,NomeSocio,FuncParceiro,DescFuncParc,Cpf,Rg"
-                    >
-                    <smartTable:layoutData>
-                        <FlexItemData growFactor="2" baseSize="0%"/>
-                    </smartTable:layoutData>
-                    <Table id="oTable" selectionChange="handleSelectionChange" noDataText="Nenhum sócio para esse fornecedor."
-                    mode="SingleSelectMaster" growing="true"/>
-                </smartTable:SmartTable>
-            </VBox>
-        </content>
+            <smartTable:SmartTable 
+                backgroundDesign="Translucent"
+                id="SmartTable" 
+                entitySet="SociosGet" 
+                smartFilterId="smartFilterBar" 
+                header="Sócios com o fornecedor {oModel>/supplier}" 
+                noData="Para começar, defina os filtros relevantes."
+                tableType="Table"
+                enableAutoBinding="true"
+                initialise="onSmartTableInit($event)"
+                alignContent="Center"
+                class="sapUiResponsiveContentPadding" 
+                initiallyVisibleFields="Fornecedor,NomeFornecedor,CodSocio,NomeSocio,FuncParceiro,DescFuncParc,Cpf,Rg"
+                >
+                <smartTable:layoutData>
+                    <FlexItemData growFactor="2" baseSize="0%"/>
+                </smartTable:layoutData>
+            </smartTable:SmartTable>
+        </VBox>
 
     </Page>
 </mvc:View>

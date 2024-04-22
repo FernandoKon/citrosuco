@@ -15,6 +15,7 @@ sap.ui.define([
             },
 
             _onRouteMatched: function (oEvent) {
+                debugger
                 const params = oEvent.getParameter("arguments")
                 
                 let bindString = "/EvtContrEntrGet(";
@@ -23,7 +24,7 @@ sap.ui.define([
                     if (index > 0) {
                         bindString += ",";
                     }
-                    bindString += key + "='" + (params[key] || "") + "'";
+                    bindString += key + "=" + (key === "VlrCaixa" ? params[key].replace('m', '') : "'" + (params[key] || "") + "'");
 
                     if (key === "Proposta") {
                         this.sSupplier = params[key];

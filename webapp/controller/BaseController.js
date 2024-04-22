@@ -39,7 +39,12 @@ sap.ui.define([
             table.attachCellClick((oEvent) => {
                 const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
                 const params = utilities.bindAggregations(oEvent)
-
+                debugger
+                if (params.DtParcela) {
+                    const dtParcela = new Date(params.DtParcela.substring(8));
+                    const formattedDtParcela = dtParcela.toISOString().split('T')[0];
+                    params.DtParcela = formattedDtParcela;
+                }
                 oRouter.navTo(eventDefinition.route, params);
             })
         },

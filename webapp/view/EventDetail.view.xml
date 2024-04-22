@@ -91,40 +91,37 @@
             </smartForm:Group>
         </smartForm:SmartForm>
         
-        <content>
-            <VBox class="sapUiSmallMarginTop">
-                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CxsContrGet" class="customBorder" visible="false">
-                    <smartFilterBar:controlConfiguration>
-                        <smartFilterBar:ControlConfiguration key="Proposta"  visibleInAdvancedArea="false">
-                            <smartFilterBar:defaultFilterValues>
-                                <smartFilterBar:SelectOption id="smartFilterData" low="{oModel>/supplier}"/>
-                            </smartFilterBar:defaultFilterValues>
-                        </smartFilterBar:ControlConfiguration>
-                    </smartFilterBar:controlConfiguration>    
-                    <smartFilterBar:layoutData>
-                        <FlexItemData shrinkFactor="0"/>
-                    </smartFilterBar:layoutData>
-                </smartFilterBar:SmartFilterBar>
+        <VBox class="sapUiSmallMarginTop" fitContainer="true">
+            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CxsContrGet" class="customBorder" visible="false">
+                <smartFilterBar:controlConfiguration>
+                    <smartFilterBar:ControlConfiguration key="Proposta"  visibleInAdvancedArea="false">
+                        <smartFilterBar:defaultFilterValues>
+                            <smartFilterBar:SelectOption id="smartFilterData" low="{oModel>/supplier}"/>
+                        </smartFilterBar:defaultFilterValues>
+                    </smartFilterBar:ControlConfiguration>
+                </smartFilterBar:controlConfiguration>    
+                <smartFilterBar:layoutData>
+                    <FlexItemData shrinkFactor="0"/>
+                </smartFilterBar:layoutData>
+            </smartFilterBar:SmartFilterBar>
 
-                <smartTable:SmartTable 
-                    backgroundDesign="Solid"
-                    showFullScreenButton="true"
-                    id="SmartTable" 
-                    entitySet="CxsContrGet" 
-                    smartFilterId="smartFilterBar" 
-                    header="Caixas Contratadas com a proposta {oModel>/supplier}"
-                    tableType="Table"
-                    class="sapUiResponsiveContentPadding" 
-                    initiallyVisibleFields="Proposta,Safra,Contrato,Moeda,Fornecedor,NomeForn,TipoForn,Variedade,Grupo,Imovel"
-                    >
-                    <smartTable:layoutData>
-                        <FlexItemData growFactor="2" baseSize="0%"/>
-                    </smartTable:layoutData>
-                    <t:Table id="oTable"
-                    selectionMode="Single" />
-                </smartTable:SmartTable>
-            </VBox>
-        </content>
+            <smartTable:SmartTable 
+                backgroundDesign="Solid"
+                showFullScreenButton="true"
+                id="SmartTable" 
+                entitySet="CxsContrGet" 
+                smartFilterId="smartFilterBar" 
+                header="Caixas Contratadas com a proposta {oModel>/supplier}"
+                tableType="Table"
+                initialise="onSmartTableInit($event)"
+                class="sapUiResponsiveContentPadding" 
+                initiallyVisibleFields="Proposta,Safra,Contrato,Moeda,Fornecedor,NomeForn,TipoForn,Variedade,Grupo,Imovel"
+                >
+                <smartTable:layoutData>
+                    <FlexItemData growFactor="2" baseSize="0%"/>
+                </smartTable:layoutData>
+            </smartTable:SmartTable>
+        </VBox>
 
     </Page>
 </mvc:View>

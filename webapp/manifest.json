@@ -193,14 +193,14 @@
                 },
                 {
                     "name": "EventDetail",
-                    "pattern": "EventoContraEntrega/:Proposta:,:Safra:",
+                    "pattern": "EventoContraEntrega/:Proposta:,:Safra:,:Contrato:,:VlrCaixa:,:Periodo:,:Dias:,:CondPag:",
                     "target": [
                         "TargetEventDetail"
                     ]
                 },
                 {
                     "name": "PortionDetail",
-                    "pattern": "EventoParcelas/:Proposta:,:Safra:,:Evento:",
+                    "pattern": "EventoParcelas/:Proposta:,:Safra:,:Contrato:,:DtParcela:",
                     "target": [
                         "TargetPortionDetail"
                     ]

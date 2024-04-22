@@ -16,6 +16,7 @@ sap.ui.define([
             },
 
             _onRouteMatched: function (oEvent) {
+                debugger
                 const params = oEvent.getParameter("arguments")
                 
                 let bindString = "/EvtParcGet(";
@@ -24,7 +25,7 @@ sap.ui.define([
                     if (index > 0) {
                         bindString += ",";
                     }
-                    bindString += key + "='" + (params[key] || "") + "'";
+                    bindString += key + "=" + (key === "DtParcela" ? params[key] : "'" + (params[key] || "") + "'");
 
                     if (key === "Proposta") {
                         this.sSupplier = params[key];
