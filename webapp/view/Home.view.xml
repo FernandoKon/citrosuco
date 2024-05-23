@@ -5,6 +5,7 @@
     xmlns:core="sap.ui.core"
     xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
 	xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:smartchart="sap.ui.comp.smartchart"
     xmlns="sap.m"
     xmlns:f="sap.f"
     height="100%">
@@ -54,6 +55,16 @@
                     <FlexItemData growFactor="2" baseSize="0%"/>
                 </smartTable:layoutData>
             </smartTable:SmartTable>
+
+            <!-- <smartchart:SmartChart id ="smartChartCxs" enableAutoBinding="true"
+                entitySet="CxsContrGet" useVariantManagement="true"
+                persistencyKey="SmartChartCxs" useChartPersonalisation="true"
+                header="Gráficos" showFullScreenButton="true" selectionMode="Multi"
+                showChartTooltip="true" showDrillBreadcrumbs="false"
+                showDetailsButton="false" showDrillButtons="true"
+                showSemanticNavigationButton="true"
+                height="100%">
+            </smartchart:SmartChart> -->
         </VBox>
         
     </Page>

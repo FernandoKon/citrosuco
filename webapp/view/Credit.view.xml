@@ -13,7 +13,7 @@
             <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="ExtrCredGet" class="customBorder sapUiSmallMargin" header="Opções de Filtros" showRestoreOnFB="true">
                 <smartFilterBar:controlConfiguration>
                     <smartFilterBar:ControlConfiguration label="Safra" key="Safra" visibleInAdvancedArea="true" mandatory="mandatory"/>
-                    <smartFilterBar:ControlConfiguration label="Data de lançamento" key="DtLancamento" visibleInAdvancedArea="true"  mandatory="mandatory"/>
+                    <smartFilterBar:ControlConfiguration label="Data de lançamento" key="DtLancamento" visibleInAdvancedArea="true"/>
                     <smartFilterBar:ControlConfiguration label="Nº da proposta" key="Proposta" visibleInAdvancedArea="true"/>
                     <smartFilterBar:ControlConfiguration label="Nº do contrato" key="Contrato" visibleInAdvancedArea="true"/>
                     <smartFilterBar:ControlConfiguration label="Nº do imóvel" key="Imovel" visibleInAdvancedArea="true"/>
