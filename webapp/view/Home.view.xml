@@ -39,16 +39,15 @@
                 entitySet="CxsContrGet" 
                 smartFilterId="smartFilterBar" 
                 header="Caixas Contratadas"
-                tableType="Table"
+                tableType="AnalyticalTable"
                 useTablePersonalisation="true"
-                beforeExport="onBeforeExport"
                 class="sapUiResponsiveContentPadding" 
                 persistencyKey="CxsContratadas"
                 initialNoDataText="Inicie os filtros para exibir os dados."
                 showTablePersonalisation="true"
                 useVariantManagement="true"
                 showRowCount="true"
-                initialise="onSmartTableInit($event)"
+                initialise="onSmartTableInit($event, 'AnalyticalTable')"
                 enableAutoColumnWidth="true"
                 initiallyVisibleFields="Proposta,Safra,Contrato,Moeda,Fornecedor,NomeForn,TipoForn,Variedade,Grupo,Imovel">
                 <smartTable:layoutData>
@@ -56,15 +55,6 @@
                 </smartTable:layoutData>
             </smartTable:SmartTable>
 
-            <!-- <smartchart:SmartChart id ="smartChartCxs" enableAutoBinding="true"
-                entitySet="CxsContrGet" useVariantManagement="true"
-                persistencyKey="SmartChartCxs" useChartPersonalisation="true"
-                header="Gráficos" showFullScreenButton="true" selectionMode="Multi"
-                showChartTooltip="true" showDrillBreadcrumbs="false"
-                showDetailsButton="false" showDrillButtons="true"
-                showSemanticNavigationButton="true"
-                height="100%">
-            </smartchart:SmartChart> -->
         </VBox>
         
     </Page>

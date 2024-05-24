@@ -33,7 +33,7 @@
                     smartFilterId="smartFilterBar" 
                     header="Cota" 
                     noData="Para começar, defina os filtros relevantes."
-                    tableType="Table"
+                    tableType="AnalyticalTable"
                     alignContent="Center"
                     class="sapUiResponsiveContentPadding" 
                     persistencyKey="Cota"
@@ -41,7 +41,7 @@
                     showTablePersonalisation="true"
                     useVariantManagement="true"
                     showRowCount="true"
-                    initialise="onSmartTableInit($event)"
+                    initialise="onSmartTableInit($event. 'AnalyticalTable')"
                     enableAutoColumnWidth="true"
                     initiallyVisibleFields="DtProgramacao,Centro,CodVariedade,Regiao,Comprador,Semana,Fornecedor,Imovel,QtdCotas,QtdCxCota"
                     >

@@ -49,9 +49,9 @@ sap.ui.define([
             })
         },
 
-        onSmartTableInit: function (oEvent) {
+        onSmartTableInit: function (oEvent, type) {
             const table = oEvent.getSource()
-            this.getAggregationOfType(table, "sap.ui.table.Table").setSelectionMode(sap.ui.table.SelectionMode.Single);
+            this.getAggregationOfType(table, `sap.ui.table.${type}`).setSelectionMode(sap.ui.table.SelectionMode.Single);
         },
 
         getAggregationOfType: function (control, type) {
