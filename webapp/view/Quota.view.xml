@@ -41,13 +41,24 @@
                     showTablePersonalisation="true"
                     useVariantManagement="true"
                     showRowCount="true"
-                    initialise="onSmartTableInit($event. 'AnalyticalTable')"
+                    initialise="onSmartTableInit($event, 'AnalyticalTable')"
                     enableAutoColumnWidth="true"
                     initiallyVisibleFields="DtProgramacao,Centro,CodVariedade,Regiao,Comprador,Semana,Fornecedor,Imovel,QtdCotas,QtdCxCota"
                     >
                     <smartTable:layoutData>
                         <FlexItemData growFactor="2" baseSize="0%"/>
                     </smartTable:layoutData>
+                </smartTable:SmartTable>
+
+                <smartTable:SmartTable 
+                    id="tableTest"
+                    entitySet="CotasGet"
+                    tableType="AnalyticalTable"
+                    enableAutoBinding="true"
+                    editable="false"
+                    initiallyVisibleFields="DtProgramacao,Centro,CodVariedade,Regiao,Comprador,Semana,Fornecedor,Imovel,QtdCotas,QtdCxCota"
+                    >
+                    <t:AnalyticalTable id="analyticalTable" alternateRowColors="true" selectionMode="Single" fieldGroupIds="AnalyticalId"/>
                 </smartTable:SmartTable>
             </VBox>
 
