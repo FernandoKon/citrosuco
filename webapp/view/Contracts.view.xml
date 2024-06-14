@@ -44,7 +44,7 @@
                 showTablePersonalisation="true"
                 useVariantManagement="true"
                 showRowCount="true"
-                initialise="onSmartTableInit($event)"
+                initialise="onSmartTableInit($event, 'Table')"
                 enableAutoColumnWidth="true"
                 initiallyVisibleFields="PropAnt,PropNov,ContrAnt,ContrNov,Imovel,NomeImovel,Safra"
                 >

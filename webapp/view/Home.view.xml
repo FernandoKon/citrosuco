@@ -39,7 +39,7 @@
                 entitySet="CxsContrGet" 
                 smartFilterId="smartFilterBar" 
                 header="Caixas Contratadas"
-                tableType="AnalyticalTable"
+                tableType="Table"
                 useTablePersonalisation="true"
                 class="sapUiResponsiveContentPadding" 
                 persistencyKey="CxsContratadas"
@@ -47,7 +47,7 @@
                 showTablePersonalisation="true"
                 useVariantManagement="true"
                 showRowCount="true"
-                initialise="onSmartTableInit($event, 'AnalyticalTable')"
+                initialise="onSmartTableInit($event, 'Table')"
                 enableAutoColumnWidth="true"
                 initiallyVisibleFields="Proposta,Safra,Contrato,Moeda,Fornecedor,NomeForn,TipoForn,Variedade,Grupo,Imovel">
                 <smartTable:layoutData>

@@ -42,7 +42,7 @@
                 showTablePersonalisation="true"
                 useVariantManagement="true"
                 showRowCount="true"
-                initialise="onSmartTableInit($event)"
+                initialise="onSmartTableInit($event, 'Table')"
                 enableAutoColumnWidth="true"
                 initiallyVisibleFields="Safra,Fornecedor,NomeForn,Moeda,Proposta,Contrato,Imovel,NomeImovel"
                 >

@@ -101,7 +101,7 @@
                 smartFilterId="smartFilterBar" 
                 header="Caixas Contratadas com a proposta {oModel>/supplier}"
                 tableType="Table"
-                initialise="onSmartTableInit($event)"
+                initialise="onSmartTableInit($event, 'Table')"
                 class="sapUiResponsiveContentPadding" 
                 initiallyVisibleFields="Proposta,Safra,Contrato,Moeda,Fornecedor,NomeForn,TipoForn,Variedade,Grupo,Imovel"
                 >

@@ -211,7 +211,7 @@
                 noData="Para começar, defina os filtros relevantes."
                 tableType="Table"
                 enableAutoBinding="true"
-                initialise="onSmartTableInit($event)"
+                initialise="onSmartTableInit($event, 'Table')"
                 alignContent="Center"
                 class="sapUiResponsiveContentPadding" 
                 initiallyVisibleFields="Fornecedor,NomeFornecedor,CodSocio,NomeSocio,FuncParceiro,DescFuncParc,Cpf,Rg"
