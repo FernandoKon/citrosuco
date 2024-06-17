@@ -171,6 +171,13 @@
                     ]
                 },
                 {
+                    "name": "Fruit",
+                    "pattern": "PlanoMacroProcessamentoDeFruta",
+                    "target": [
+                        "TargetFruit"
+                    ]
+                },
+                {
                     "name": "Params",
                     "pattern": "Parametros",
                     "target": [
@@ -262,6 +269,13 @@
                     "clearControlAggregation": false,
                     "viewId": "Debit",
                     "viewName": "Debit"
+                },
+                "TargetFruit": {
+                    "viewType": "XML",
+                    "transition": "fade",
+                    "clearControlAggregation": false,
+                    "viewId": "Fruit",
+                    "viewName": "Fruit"
                 },
                 "TargetParams": {
                     "viewType": "XML",
