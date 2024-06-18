@@ -8,87 +8,90 @@
     height="100%">
     <Page id="page" title="{i18n>title}" showHeader="false"> 
         
-        <HBox class="sapUiSmallMargin">
-            <VBox class="sapUiSmallMarginEnd customBorder" backgroundDesign="Transparent">
-                <table:Table
-                    class="sapUiTinyMarginTopBottom"
-                    id="credit"
-                    rows="{credit>/}"
-                    enableColumnReordering="false"
-                    rowMode="Interactive"
-                >
-                    <table:extension>
-                        <OverflowToolbar height="3rem">
-                            <Title
-                                class="sapUiTinyMargin"
-                                text="Parâmetros de Crédito"
-                            />
-                            <ToolbarSpacer />
-                            <Button 
-                                id="addButton" 
-                                icon="sap-icon://add"
-                                type="Transparent"
-                                press="onOpenAddDialog('credit')" />
-                            <Button 
-                                id="editButton" 
-                                text="Editar" 
-                                type="Transparent"
-                                press="onEdit('credit')" 
-                                visible="{= !${viewDetailC>/bEnableEditParam}}"/>
-                            <Button 
-                                id="saveButton" 
-                                text="Salvar" 
-                                type="Accept"
-                                press="onSave('credit')" 
-                                visible="{viewDetailC>/bEnableEditParam}" />
-                            <Button 
-                                id="cancelButton" 
-                                text="Cancelar" 
-                                type="Reject"
-                                press="onCancel('credit')" 
-                                visible="{viewDetailC>/bEnableEditParam}" />
-                            <Button 
-                                text="Deletar" 
-                                press="onDelete('credit')" 
-                                type="Emphasized" />
-                        </OverflowToolbar>
-                    </table:extension>
+        <FlexBox class="sapUiSmallMargin" justifyContent="SpaceBetween" fitContainer="true" >
+            <Panel class="sapUiSmallMargin customBorder sapUiNoContentPadding">
+                <VBox backgroundDesign="Transparent">
+                    <table:Table
+                        class="sapUiTinyMarginTopBottom"
+                        id="credit"
+                        rows="{credit>/}"
+                        enableColumnReordering="false"
+                        rowMode="Interactive"
+                    >
+                        <table:extension>
+                            <OverflowToolbar height="3rem">
+                                <Title
+                                    class="sapUiTinyMargin"
+                                    text="Parâmetros de Crédito"
+                                />
+                                <ToolbarSpacer />
+                                <Button 
+                                    id="addButton" 
+                                    icon="sap-icon://add"
+                                    type="Transparent"
+                                    press="onOpenAddDialog('credit')" />
+                                <Button 
+                                    id="editButton" 
+                                    text="Editar" 
+                                    type="Transparent"
+                                    press="onEdit('credit')" 
+                                    visible="{= !${viewDetailC>/bEnableEditParam}}"/>
+                                <Button 
+                                    id="saveButton" 
+                                    text="Salvar" 
+                                    type="Accept"
+                                    press="onSave('credit')" 
+                                    visible="{viewDetailC>/bEnableEditParam}" />
+                                <Button 
+                                    id="cancelButton" 
+                                    text="Cancelar" 
+                                    type="Reject"
+                                    press="onCancel('credit')" 
+                                    visible="{viewDetailC>/bEnableEditParam}" />
+                                <Button 
+                                    text="Deletar" 
+                                    press="onDelete('credit')" 
+                                    type="Emphasized" />
+                            </OverflowToolbar>
+                        </table:extension>
 
-                    <table:dragDropConfig>
-                        <dnd:DragDropInfo sourceAggregation="rows"/>
-                        <dnd:DropInfo dropPosition="Between" targetAggregation="rows" drop="onDropPriority($event,'credit')"/>
-                    </table:dragDropConfig>
+                        <table:dragDropConfig>
+                            <dnd:DragDropInfo sourceAggregation="rows"/>
+                            <dnd:DropInfo dropPosition="Between" targetAggregation="rows" drop="onDropPriority($event,'credit')"/>
+                        </table:dragDropConfig>
 
-                    <table:columns>
-                        <table:Column resizable="false">
-                            <Label
-                                design="Bold"
-                                text="DE"
-                            />
-                            <table:template> 
-                                        <VBox>
-                                            <Text text="{credit>Fillter}" visible="{= !${credit>bEditable}}"/>
-                                            <Input id="inputFrom" value="{credit>Fillter}" visible="{credit>bEditable}"/>
-                                        </VBox>
-                            </table:template>
-                        </table:Column>
-                        <table:Column resizable="false">
-                            <Label
-                                design="Bold"
-                                text="PARA"
-                            />
-                            <table:template>
-                                <VBox>
-                                    <Text text="{credit>Text}" visible="{= !${credit>bEditable}}"/>
-                                    <Input id="inputTo" value="{credit>Text}" visible="{credit>bEditable}"/>
-                                </VBox>
-                            </table:template>
-                        </table:Column>
-                    </table:columns>
-                </table:Table>
-            </VBox>
+                        <table:columns>
+                            <table:Column resizable="false">
+                                <Label
+                                    design="Bold"
+                                    text="DE"
+                                />
+                                <table:template> 
+                                            <VBox>
+                                                <Text text="{credit>Fillter}" visible="{= !${credit>bEditable}}"/>
+                                                <Input id="inputFrom" value="{credit>Fillter}" visible="{credit>bEditable}"/>
+                                            </VBox>
+                                </table:template>
+                            </table:Column>
+                            <table:Column resizable="false">
+                                <Label
+                                    design="Bold"
+                                    text="PARA"
+                                />
+                                <table:template>
+                                    <VBox>
+                                        <Text text="{credit>Text}" visible="{= !${credit>bEditable}}"/>
+                                        <Input id="inputTo" value="{credit>Text}" visible="{credit>bEditable}"/>
+                                    </VBox>
+                                </table:template>
+                            </table:Column>
+                        </table:columns>
+                    </table:Table>
+                </VBox>
+            </Panel>
 
-            <VBox class="customBorder" backgroundDesign="Transparent">
+            <Panel class="sapUiSmallMargin customBorder sapUiNoContentPadding"> 
+                <VBox class="customBorder" backgroundDesign="Transparent">
                 <table:Table
                     class="sapUiTinyMarginTopBottom"
                     id="debit"
@@ -165,8 +168,9 @@
                         </table:Column>
                     </table:columns>
                 </table:Table>
-            </VBox>
-        </HBox>
+                </VBox>
+            </Panel>
+        </FlexBox>
 
     </Page>
 </mvc:View>

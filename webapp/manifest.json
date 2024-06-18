@@ -178,6 +178,20 @@
                     ]
                 },
                 {
+                    "name": "TotalFlowBoxes",
+                    "pattern": "CaixasTotaisFluxo",
+                    "target": [
+                        "TargetTotalFlowBoxes"
+                    ]
+                },
+                {
+                    "name": "FruitCadence",
+                    "pattern": "CadenciaDeFruta",
+                    "target": [
+                        "TargetFruitCadence"
+                    ]
+                },
+                {
                     "name": "Params",
                     "pattern": "Parametros",
                     "target": [
@@ -276,6 +290,20 @@
                     "clearControlAggregation": false,
                     "viewId": "Fruit",
                     "viewName": "Fruit"
+                },
+                "TargetTotalFlowBoxes": {
+                    "viewType": "XML",
+                    "transition": "fade",
+                    "clearControlAggregation": false,
+                    "viewId": "TotalFlowBoxes",
+                    "viewName": "TotalFlowBoxes"
+                },
+                "TargetFruitCadence": {
+                    "viewType": "XML",
+                    "transition": "fade",
+                    "clearControlAggregation": false,
+                    "viewId": "FruitCadence",
+                    "viewName": "FruitCadence"
                 },
                 "TargetParams": {
                     "viewType": "XML",

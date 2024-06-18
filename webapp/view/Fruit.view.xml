@@ -29,7 +29,7 @@
                 entitySet="" 
                 smartFilterId="smartFilterBar" 
                 header="Plano Macro Processamento de Frutas"
-                tableType="Table"
+                tableType="AnalyticalTable"
                 useTablePersonalisation="true"
                 class="sapUiResponsiveContentPadding" 
                 persistencyKey="Fruits"
@@ -37,15 +37,13 @@
                 showTablePersonalisation="true"
                 useVariantManagement="true"
                 showRowCount="true"
-                initialise="onSmartTableInit($event, 'Table')"
+                initialise="onSmartTableInit($event, 'AnalyticalTable')"
                 enableAutoColumnWidth="true"
-                initiallyVisibleFields="Proposta,Safra,Contrato,Moeda,Fornecedor,NomeForn,TipoForn,Variedade,Grupo,Imovel">
+                initiallyVisibleFields="">
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>
                 </smartTable:layoutData>
             </smartTable:SmartTable>
-
         </VBox>
-        
     </Page>
 </mvc:View>

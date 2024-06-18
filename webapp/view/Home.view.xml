@@ -41,7 +41,7 @@
                 header="Caixas Contratadas"
                 tableType="Table"
                 useTablePersonalisation="true"
-                class="sapUiResponsiveContentPadding" 
+                class="sapUiResponsiveContentPadding"
                 persistencyKey="CxsContratadas"
                 initialNoDataText="Inicie os filtros para exibir os dados."
                 showTablePersonalisation="true"

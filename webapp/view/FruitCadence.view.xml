@@ -1,4 +1,4 @@
-<mvc:View controllerName="com.lab2dev.citrosuco.controller.Quota"
+<mvc:View controllerName="com.lab2dev.citrosuco.controller.FruitCadence"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns:l="sap.ui.layout"
     xmlns:t="sap.ui.table"
@@ -10,15 +10,8 @@
     <Page id="page" title="{i18n>title}" showHeader="false"> 
         
             <VBox fitContainer="true">
-                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CotasGet" class="customBorder sapUiSmallMargin" header="Opções de Filtros" showRestoreOnFB="true"> 
+                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="" class="customBorder sapUiSmallMargin" header="Opções de Filtros" showRestoreOnFB="true"> 
                     <smartFilterBar:controlConfiguration>
-                        <smartFilterBar:ControlConfiguration label="Data" key="DtProgramacao" visibleInAdvancedArea="true"/>
-                        <smartFilterBar:ControlConfiguration label="Semana" key="Semana" visibleInAdvancedArea="true"/>
-                        <smartFilterBar:ControlConfiguration label="Centro" key="Centro" visibleInAdvancedArea="true"/>
-                        <smartFilterBar:ControlConfiguration label="Nº do fornecedor" key="Fornecedor" visibleInAdvancedArea="true"/>
-                        <smartFilterBar:ControlConfiguration label="Nome do fornecedor" key="NomeForn" visibleInAdvancedArea="true"/>
-                        <smartFilterBar:ControlConfiguration label="Nº do imóvel" key="Imovel" visibleInAdvancedArea="true"/>
-                        <smartFilterBar:ControlConfiguration label="Nome do imóvel" key="NomeImovel" visibleInAdvancedArea="true"/>
                     </smartFilterBar:controlConfiguration>
                     <smartFilterBar:layoutData>
                         <FlexItemData shrinkFactor="0"/>
@@ -26,21 +19,24 @@
                 </smartFilterBar:SmartFilterBar>
 
                 <smartTable:SmartTable 
-                    backgroundDesign="Solid"
+                    backgroundDesign="Translucent"
                     showFullScreenButton="true"
-                    id="SmartTableQuota"
-                    entitySet="CotasGet"
+                    id="SmartTableFlow"
+                    entitySet=""
                     smartFilterId="smartFilterBar"
-                    header="Cota"
+                    header="Cadência de Fruta"
                     noData="Para começar, defina os filtros relevantes."
                     tableType="AnalyticalTable"
+                    alignContent="Center"
                     class="sapUiResponsiveContentPadding"
-                    persistencyKey="Cota"
+                    persistencyKey="Flow"
                     initialNoDataText="Inicie os filtros para exibir os dados."
+                    showTablePersonalisation="true"
+                    useVariantManagement="true"
                     showRowCount="true"
                     initialise="onSmartTableInit($event, 'AnalyticalTable')"
                     enableAutoColumnWidth="true"
-                    initiallyVisibleFields="DtProgramacao,Centro,CodVariedade,Regiao,Comprador,Semana,Fornecedor,Imovel,QtdCotas,QtdCxCota"
+                    initiallyVisibleFields=""
                     >
                     <smartTable:layoutData>
                         <FlexItemData growFactor="2" baseSize="0%"/>
