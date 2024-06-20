@@ -34,7 +34,7 @@
                 smartFilterId="smartFilterBar" 
                 header="Débito" 
                 noData="Para começar, defina os filtros relevantes."
-                tableType="Table"
+                tableType="AnalyticalTable"
                 alignContent="Center"
                 class="sapUiResponsiveContentPadding" 
                 persistencyKey="Debito"
@@ -42,7 +42,7 @@
                 showTablePersonalisation="true"
                 useVariantManagement="true"
                 showRowCount="true"
-                initialise="onSmartTableInit($event, 'Table')"
+                initialise="onSmartTableInit($event, 'AnalyticalTable')"
                 enableAutoColumnWidth="true"
                 initiallyVisibleFields="Safra,Fornecedor,NomeForn,Moeda,Proposta,Contrato,Imovel,NomeImovel,TpDocumento,DtLancamento"
                 >

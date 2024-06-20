@@ -50,19 +50,29 @@ sap.ui.define([
 		},
 
 		extractParamsObject: function (paramsString) {
-			const cleanString = paramsString.replace(/^.*\(|\)$/g, '');
+			// const cleanString = paramsString.replace(/^.*\(|\)$/g, '');
 
-			const keyValuePairs = cleanString.split(',');
+			// const keyValuePairs = cleanString.split(',');
 
-			const paramsObject = {};
+			// const paramsObject = {};
 
-			keyValuePairs.forEach(pair => {
-				const [key, value] = pair.split('=');
-				const cleanedValue = value.replace(/'/g, '');
-				paramsObject[key] = cleanedValue;
-			});
+			// keyValuePairs.forEach(pair => {
+			// 	const [key, value] = pair.split('=');
+			// 	const cleanedValue = value.replace(/'/g, '');
+			// 	paramsObject[key] = cleanedValue;
+			// });
 
-			return paramsObject;
+			let jsonString = paramsString.match(/aggregation'(.*)'\)/)[1];
+			let jsonObj = JSON.parse(jsonString);
+
+			let extractedObj = {};
+
+			for (let key in jsonObj.key) {
+				let value = jsonObj.key[key];
+				extractedObj[key] = value.replace(/^'|'$/g, '');
+			}
+
+			return extractedObj;
 		},
 
 		bindAggregations: function (oEvent) {

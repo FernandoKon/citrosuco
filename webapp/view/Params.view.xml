@@ -8,8 +8,8 @@
     height="100%">
     <Page id="page" title="{i18n>title}" showHeader="false"> 
         
-        <FlexBox class="sapUiSmallMargin" justifyContent="SpaceBetween" fitContainer="true" >
-            <Panel class="sapUiSmallMargin customBorder sapUiNoContentPadding">
+        <HBox class="sapUiSmallMargin" fitContainer="true" >
+            <Panel class=" customBorder sapUiNoContentPadding">
                 <VBox backgroundDesign="Transparent">
                     <table:Table
                         class="sapUiTinyMarginTopBottom"
@@ -90,7 +90,7 @@
                 </VBox>
             </Panel>
 
-            <Panel class="sapUiSmallMargin customBorder sapUiNoContentPadding"> 
+            <Panel class="sapUiTinyMarginBegin customBorder sapUiNoContentPadding"> 
                 <VBox class="customBorder" backgroundDesign="Transparent">
                 <table:Table
                     class="sapUiTinyMarginTopBottom"
@@ -170,7 +170,7 @@
                 </table:Table>
                 </VBox>
             </Panel>
-        </FlexBox>
+        </HBox>
 
     </Page>
 </mvc:View>

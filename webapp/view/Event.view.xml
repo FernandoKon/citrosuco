@@ -31,7 +31,7 @@
                 smartFilterId="smartFilterBar" 
                 header="Contra Entrega" 
                 noData="Para começar, defina os filtros relevantes."
-                tableType="Table"
+                tableType="AnalyticalTable"
                 alignContent="Center"
                 class="sapUiResponsiveContentPadding" 
                 persistencyKey="ContraEntrega"
@@ -39,7 +39,7 @@
                 showTablePersonalisation="true"
                 useVariantManagement="true"
                 showRowCount="true"
-                initialise="onSmartTableInit($event, 'Table')"
+                initialise="onSmartTableInit($event, 'AnalyticalTable')"
                 enableAutoColumnWidth="true"
                 initiallyVisibleFields="Proposta,Contrato,Safra,TpEvento,DescTpEvento,Periodo,DescPeriodo,NomeRecebedor"
                 >

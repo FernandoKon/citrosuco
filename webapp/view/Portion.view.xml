@@ -32,7 +32,7 @@
                 smartFilterId="smartFilterBar" 
                 header="Evento Parcela" 
                 noData="Para começar, defina os filtros relevantes."
-                tableType="Table"
+                tableType="AnalyticalTable"
                 alignContent="Center"
                 class="sapUiResponsiveContentPadding" 
                 persistencyKey="Parcelas"
@@ -40,7 +40,7 @@
                 showTablePersonalisation="true"
                 useVariantManagement="true"
                 showRowCount="true"
-                initialise="onSmartTableInit($event, 'Table')"
+                initialise="onSmartTableInit($event, 'AnalyticalTable')"
                 enableAutoColumnWidth="true"
                 initiallyVisibleFields="Proposta,Contrato,Safra,Evento,DescEvento,DtParcela,VlrCaixa,VlrCxAcumul"
                 >

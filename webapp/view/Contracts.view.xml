@@ -35,7 +35,7 @@
                 useTablePersonalisation="true" 
                 header="Contratos Transferidos"
                 noData="Para começar, defina os filtros relevantes."
-                tableType="Table"
+                tableType="AnalyticalTable"
                 enableAutoBinding="false" 
                 alignContent="Center"
                 class="sapUiResponsiveContentPadding" 
@@ -44,7 +44,7 @@
                 showTablePersonalisation="true"
                 useVariantManagement="true"
                 showRowCount="true"
-                initialise="onSmartTableInit($event, 'Table')"
+                initialise="onSmartTableInit($event, 'AnalyticalTable')"
                 enableAutoColumnWidth="true"
                 initiallyVisibleFields="PropAnt,PropNov,ContrAnt,ContrNov,Imovel,NomeImovel,Safra"
                 >
