@@ -15,6 +15,7 @@ sap.ui.define([
             },
 
             _onRouteMatched: function (oEvent) {
+                debugger
                 const params = oEvent.getParameter("arguments")
                 
                 let bindString = "/EvtContrEntrGet(";

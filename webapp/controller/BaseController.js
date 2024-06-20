@@ -35,18 +35,39 @@ sap.ui.define([
         },
 
         attachSmartTableClickEvent: function (eventDefinition) {
-            const [table] = this.byId(eventDefinition.tableId).getAggregation("items")
+            const [table] = this.byId(eventDefinition.tableId).getAggregation("items");
             table.attachCellClick((oEvent) => {
                 const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                const params = utilities.bindAggregations(oEvent)
-                
-                if (params.DtParcela) {
-                    const dtParcela = new Date(params.DtParcela.substring(8));
-                    const formattedDtParcela = dtParcela.toISOString().split('T')[0];
-                    params.DtParcela = formattedDtParcela;
+                const params = utilities.bindAggregations(oEvent);
+
+                if (!this.verifyColumns(eventDefinition, params)) {
+                    return;
                 }
+        
+                if (params.DtParcela) {
+                    const timestampMatch = params.DtParcela.match(/\/Date\((\d+)\)\//);
+                    if (timestampMatch) {
+                        const timestamp = parseInt(timestampMatch[1], 10);
+                        const dtParcela = new Date(timestamp);
+                        const formattedDtParcela = dtParcela.toISOString().split('T')[0];
+                        params.DtParcela = formattedDtParcela;
+                    }
+                }
+        
                 oRouter.navTo(eventDefinition.route, params);
-            })
+            });
+        },
+
+        verifyColumns: function (eventDefinition, params) {
+            const requiredColumns = eventDefinition.keyColumns;
+        
+            const missingColumns = requiredColumns.filter(column => !params.hasOwnProperty(column));
+    
+            if (missingColumns.length > 0) {
+                sap.m.MessageToast.show(`As seguintes colunas chave estão faltando: ${missingColumns.join(', ')}`);
+                return false;
+            }
+            return true;
         },
 
         onSmartTableInit: function (oEvent, type) {

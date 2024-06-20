@@ -12,7 +12,8 @@ sap.ui.define([
             onInit: function () {
                 this.attachSmartTableClickEvent({
                     tableId: "SmartTableHome",
-                    route: "HomeDetail"
+                    route: "HomeDetail",
+                    keyColumns: ["Safra","Fornecedor","Proposta","Contrato","Imovel","Grupo","Variedade"]
                 });
             },
         });

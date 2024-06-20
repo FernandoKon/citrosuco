@@ -50,18 +50,6 @@ sap.ui.define([
 		},
 
 		extractParamsObject: function (paramsString) {
-			// const cleanString = paramsString.replace(/^.*\(|\)$/g, '');
-
-			// const keyValuePairs = cleanString.split(',');
-
-			// const paramsObject = {};
-
-			// keyValuePairs.forEach(pair => {
-			// 	const [key, value] = pair.split('=');
-			// 	const cleanedValue = value.replace(/'/g, '');
-			// 	paramsObject[key] = cleanedValue;
-			// });
-
 			let jsonString = paramsString.match(/aggregation'(.*)'\)/)[1];
 			let jsonObj = JSON.parse(jsonString);
 
@@ -71,6 +59,12 @@ sap.ui.define([
 				let value = jsonObj.key[key];
 				extractedObj[key] = value.replace(/^'|'$/g, '');
 			}
+
+			jsonObj.value.forEach((key) => {
+				if (!extractedObj.hasOwnProperty(key)) {
+					extractedObj[key] = '';
+				}
+			});
 
 			return extractedObj;
 		},

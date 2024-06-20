@@ -13,7 +13,8 @@ sap.ui.define([
             onInit: function () {
                 this.attachSmartTableClickEvent({
                     tableId: "SmartTablePartner",
-                    route: "PartnersDetail"
+                    route: "PartnersDetail",
+                    keyColumns: ["Fornecedor", "CodSocio"]
                 });
             },
 
