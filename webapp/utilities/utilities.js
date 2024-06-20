@@ -49,29 +49,34 @@ sap.ui.define([
 			}
 		},
 
-		extractParamsObject: function (paramsString) {
-			let jsonString = paramsString.match(/aggregation'(.*)'\)/)[1];
-			let jsonObj = JSON.parse(jsonString);
+		extractParamsObject: function (oEvent, fullPath) {
+			// let jsonString = paramsString.match(/aggregation'(.*)'\)/)[1];
+			// let jsonObj = JSON.parse(jsonString);
 
-			let extractedObj = {};
+			// let extractedObj = {};
 
-			for (let key in jsonObj.key) {
-				let value = jsonObj.key[key];
-				extractedObj[key] = value.replace(/^'|'$/g, '');
-			}
+			// for (let key in jsonObj.key) {
+			// 	let value = jsonObj.key[key];
+			// 	extractedObj[key] = value.replace(/^'|'$/g, '');
+			// 	// extractedObj[key] = value;
+			// }
 
-			jsonObj.value.forEach((key) => {
-				if (!extractedObj.hasOwnProperty(key)) {
-					extractedObj[key] = '';
-				}
-			});
+			// jsonObj.value.forEach((key) => {
+			// 	if (!extractedObj.hasOwnProperty(key)) {
+			// 		extractedObj[key] = '';
+			// 	}
+			// });
+			const oData = fullPath.replace("/", "");
+			const extractedObj = oEvent.getParameter("rowBindingContext").oModel.oData[oData];
 
 			return extractedObj;
 		},
 
 		bindAggregations: function (oEvent) {
-			const fullPath = oEvent.getParameter("rowBindingContext").sPath
-			const paramsString = this.extractParamsObject(fullPath)
+			const fullPath = oEvent.getParameter("rowBindingContext").sPath;
+			// const oData = fullPath.replace("/", "");
+			// const VlrCaixa = oEvent.getParameter("rowBindingContext").oModel.oData[oData].VlrCaixa;
+			const paramsString = this.extractParamsObject(oEvent, fullPath);
 
 			return paramsString
 		}
