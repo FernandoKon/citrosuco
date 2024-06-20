@@ -43,20 +43,30 @@ sap.ui.define([
                 if (!this.verifyColumns(eventDefinition, params)) {
                     return;
                 }
-        
-                if (params.DtParcela) {
-                    const timestampMatch = params.DtParcela.match(/\/Date\((\d+)\)\//);
-                    if (timestampMatch) {
-                        const timestamp = parseInt(timestampMatch[1], 10);
-                        const dtParcela = new Date(timestamp);
-                        const formattedDtParcela = dtParcela.toISOString().split('T')[0];
-                        params.DtParcela = formattedDtParcela;
-                    }
-                }
+    
+                this.extractDtParcela(params);
         
                 oRouter.navTo(eventDefinition.route, params);
             });
         },
+
+        extractDtParcela: function (params) {
+            if (params.ID__) {
+                try {
+                    // Match the DtParcela part in the params.ID
+                    const dtParcelaMatch = params.ID__.match(/"DtParcela":"datetime'%2FDate\((\d+)\)%2FT00:00:00'/);
+                    if (dtParcelaMatch) {
+                        const timestamp = parseInt(dtParcelaMatch[1], 10);
+                        const dtParcela = new Date(timestamp);
+                        const formattedDtParcela = dtParcela.toISOString().split('T')[0];
+                        params.DtParcela = formattedDtParcela;
+                    }
+                } catch (e) {
+                    console.error("Erro ao processar o ID:", e);
+                }
+            }
+        },
+        
 
         verifyColumns: function (eventDefinition, params) {
             const requiredColumns = eventDefinition.keyColumns;
