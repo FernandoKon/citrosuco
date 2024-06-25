@@ -21,7 +21,16 @@
                 "type": "OData",
                 "settings": {
                     "annotations": [],
-                    "localUri": "localService/metadata.xml",
+                    "localUri": "localService/fluxos-caixa/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            },
+            "planos-caixa": {
+                "uri": "/odata/v2/planos-caixa/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/planos-caixa/metadata.xml",
                     "odataVersion": "2.0"
                 }
             }
@@ -86,6 +95,18 @@
             "": {
                 "preload": true,
                 "dataSource": "fluxos-caixa",
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "defaultCountMode": "Inline",
+                    "refreshAfterChange": false,
+                    "metadataUrlParams": {
+                        "sap-value-list": "none"
+                    }
+                }
+            },
+            "planos-caixa": {
+                "dataSource": "planos-caixa",
+                "preload": true,
                 "settings": {
                     "defaultBindingMode": "TwoWay",
                     "defaultCountMode": "Inline",
@@ -189,6 +210,13 @@
                     "pattern": "CadenciaDeFruta",
                     "target": [
                         "TargetFruitCadence"
+                    ]
+                },
+                {
+                    "name": "QuotasSeg",
+                    "pattern": "CotasSeg",
+                    "target": [
+                        "TargetQuotasSeg"
                     ]
                 },
                 {
@@ -304,6 +332,13 @@
                     "clearControlAggregation": false,
                     "viewId": "FruitCadence",
                     "viewName": "FruitCadence"
+                },
+                "TargetQuotasSeg": {
+                    "viewType": "XML",
+                    "transition": "fade",
+                    "clearControlAggregation": false,
+                    "viewId": "QuotasSeg",
+                    "viewName": "QuotasSeg"
                 },
                 "TargetParams": {
                     "viewType": "XML",

@@ -10,7 +10,7 @@
     <Page id="page" title="{i18n>title}" showHeader="false"> 
         
             <VBox fitContainer="true">
-                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="" class="customBorder sapUiSmallMargin" header="Opções de Filtros" showRestoreOnFB="true"> 
+                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CaixasTotais" class="customBorder sapUiSmallMargin" header="Opções de Filtros" showRestoreOnFB="true"> 
                     <smartFilterBar:controlConfiguration>
                     </smartFilterBar:controlConfiguration>
                     <smartFilterBar:layoutData>
@@ -22,7 +22,7 @@
                     backgroundDesign="Translucent"
                     showFullScreenButton="true"
                     id="SmartTableFlow"
-                    entitySet=""
+                    entitySet="CaixasTotais"
                     smartFilterId="smartFilterBar"
                     header="Caixas Totais Fluxo"
                     noData="Para começar, defina os filtros relevantes."

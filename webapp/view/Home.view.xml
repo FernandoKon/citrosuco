@@ -49,7 +49,7 @@
                 showRowCount="true"
                 initialise="onSmartTableInit($event, 'AnalyticalTable')"
                 enableAutoColumnWidth="true"
-                initiallyVisibleFields="Proposta,Safra,Contrato,Moeda,Fornecedor,NomeForn,TipoForn,Variedade,Grupo,Imovel">
+                >
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>
                 </smartTable:layoutData>

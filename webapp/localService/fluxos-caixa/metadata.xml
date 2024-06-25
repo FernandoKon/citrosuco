@@ -1147,7 +1147,7 @@
                     <PropertyRef Name="ID__"/>
                 </Key>
                 <Property Name="ID__" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="VlrCaixa" Type="Edm.Decimal" Precision="12" Scale="3" Nullable="false" sap:label="Valor/Cxa."/>
+                <Property Name="VlrCaixa" Type="Edm.Decimal" Precision="12" Scale="3" Nullable="false" sap:aggregation-role="measure" sap:label="Valor/Cxa."/>
             </EntityType>
             <EntityType Name="EvtContrEntrGetGPDias" sap:semantics="aggregate">
                 <Key>
@@ -4390,6 +4390,7 @@
                     </Record>
                 </Annotation>
                 <Annotation Term="Common.Label" String="Valor/Cxa."/>
+                <Annotation Term="Analytics.Measure" Bool="true"/>
             </Annotations>
             <Annotations Target="fluxosCaixa.EvtContrEntrGet/Periodo" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Common.Label" String="Período"/>
@@ -12252,6 +12253,7 @@
                 <Annotation Term="UI.Hidden" Bool="true"/>
             </Annotations>
             <Annotations Target="fluxosCaixa.EvtContrEntrGetGPVlrCaixa/VlrCaixa" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Analytics.Measure" Bool="true"/>
                 <Annotation Term="Common.Label" String="Valor/Cxa."/>
             </Annotations>
             <Annotations Target="fluxosCaixa.EvtContrEntrGetGPDias" xmlns="http://docs.oasis-open.org/odata/ns/edm">

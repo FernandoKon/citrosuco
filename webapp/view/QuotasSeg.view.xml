@@ -1,4 +1,4 @@
-<mvc:View controllerName="com.lab2dev.citrosuco.controller.FruitCadence"
+<mvc:View controllerName="com.lab2dev.citrosuco.controller.QuotasSeg"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns:l="sap.ui.layout"
     xmlns:t="sap.ui.table"
@@ -10,7 +10,7 @@
     <Page id="page" title="{i18n>title}" showHeader="false"> 
         
             <VBox fitContainer="true">
-                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CadenciaFrutas" class="customBorder sapUiSmallMargin" header="Opções de Filtros" showRestoreOnFB="true"> 
+                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CotasSeg" class="customBorder sapUiSmallMargin" header="Opções de Filtros" showRestoreOnFB="true"> 
                     <smartFilterBar:controlConfiguration>
                     </smartFilterBar:controlConfiguration>
                     <smartFilterBar:layoutData>
@@ -22,9 +22,9 @@
                     backgroundDesign="Translucent"
                     showFullScreenButton="true"
                     id="SmartTableFlow"
-                    entitySet="CadenciaFrutas"
+                    entitySet="CotasSeg"
                     smartFilterId="smartFilterBar"
-                    header="Cadência de Fruta"
+                    header="Cotas-Seg"
                     noData="Para começar, defina os filtros relevantes."
                     tableType="AnalyticalTable"
                     alignContent="Center"
@@ -36,7 +36,7 @@
                     showRowCount="true"
                     initialise="onSmartTableInit($event, 'AnalyticalTable')"
                     enableAutoColumnWidth="true"
-                    initiallyVisibleFields=""
+                    initiallyVisibleFields="Centro"
                     >
                     <smartTable:layoutData>
                         <FlexItemData growFactor="2" baseSize="0%"/>
