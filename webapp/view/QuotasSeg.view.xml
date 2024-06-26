@@ -12,6 +12,13 @@
             <VBox fitContainer="true">
                 <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CotasSeg" class="customBorder sapUiSmallMargin" header="Opções de Filtros" showRestoreOnFB="true"> 
                     <smartFilterBar:controlConfiguration>
+                        <smartFilterBar:ControlConfiguration label="Data" key="DtProgramacao" visibleInAdvancedArea="true"/>
+                        <smartFilterBar:ControlConfiguration label="Semana" key="Semana" visibleInAdvancedArea="true"/>
+                        <smartFilterBar:ControlConfiguration label="Centro" key="Centro" visibleInAdvancedArea="true"/>
+                        <smartFilterBar:ControlConfiguration label="Nº do fornecedor" key="Fornecedor" visibleInAdvancedArea="true"/>
+                        <smartFilterBar:ControlConfiguration label="Nome do fornecedor" key="NomeForn" visibleInAdvancedArea="true"/>
+                        <smartFilterBar:ControlConfiguration label="Nº do imóvel" key="Imovel" visibleInAdvancedArea="true"/>
+                        <smartFilterBar:ControlConfiguration label="Nome do imóvel" key="NomeImovel" visibleInAdvancedArea="true"/>
                     </smartFilterBar:controlConfiguration>
                     <smartFilterBar:layoutData>
                         <FlexItemData shrinkFactor="0"/>
@@ -21,7 +28,7 @@
                 <smartTable:SmartTable 
                     backgroundDesign="Translucent"
                     showFullScreenButton="true"
-                    id="SmartTableFlow"
+                    id="SmartTableQuotasSeg"
                     entitySet="CotasSeg"
                     smartFilterId="smartFilterBar"
                     header="Cotas-Seg"
@@ -31,12 +38,11 @@
                     class="sapUiResponsiveContentPadding"
                     persistencyKey="Flow"
                     initialNoDataText="Inicie os filtros para exibir os dados."
-                    showTablePersonalisation="true"
-                    useVariantManagement="true"
                     showRowCount="true"
                     initialise="onSmartTableInit($event, 'AnalyticalTable')"
                     enableAutoColumnWidth="true"
-                    initiallyVisibleFields="Centro"
+                    ignoredFields="ID"
+                    initiallyVisibleFields="Centro,CodVariedade,Regiao,Comprador,Semana,Fornecedor,Imovel,NomeVariedade,NomeForn,NomeImovel,QtdCotas"
                     >
                     <smartTable:layoutData>
                         <FlexItemData growFactor="2" baseSize="0%"/>

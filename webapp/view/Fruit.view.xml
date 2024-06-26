@@ -12,10 +12,13 @@
     <Page id="Page" title="{i18n>title}" showHeader="false"> 
 
         <VBox fitContainer="true">
-            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="ProcessamentoFruta" class="customBorder sapUiSmallMargin"  header="Opções de Filtros" showRestoreOnFB="true">
+            <smartFilterBar:SmartFilterBar id="smartFilterBarFruit" entitySet="ProcessamentoFruta" class="customBorder sapUiSmallMargin"  header="Opções de Filtros" showRestoreOnFB="true">
                 <smartFilterBar:controlConfiguration>
-                    <smartFilterBar:ControlConfiguration label="Nº da proposta" key="Proposta" visibleInAdvancedArea="true"/>
-                    
+                    <smartFilterBar:ControlConfiguration label="Versão" key="VersaoPlano" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Safra" key="SafraPlano" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Código do Setor" key="CodSetorPlano" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Ano" key="AnoPlano" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration label="Mês" key="MesPlano" visibleInAdvancedArea="true"/>
                 </smartFilterBar:controlConfiguration>
                 <smartFilterBar:layoutData>
                     <FlexItemData shrinkFactor="0"/>
@@ -27,7 +30,7 @@
                 showFullScreenButton="true"
                 id="SmartTableFruit" 
                 entitySet="ProcessamentoFruta" 
-                smartFilterId="smartFilterBar" 
+                smartFilterId="smartFilterBarFruit" 
                 header="Plano Macro Processamento de Frutas"
                 tableType="AnalyticalTable"
                 useTablePersonalisation="true"
@@ -39,7 +42,7 @@
                 showRowCount="true"
                 initialise="onSmartTableInit($event, 'AnalyticalTable')"
                 enableAutoColumnWidth="true"
-                initiallyVisibleFields="">
+                initiallyVisibleFields="VersaoPlano,SafraPlano,CodSetorPlano,DescSetorPlano,MesPlano,GrpVariedadePlano,AnoPlano,CaixasPlano">
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>
                 </smartTable:layoutData>

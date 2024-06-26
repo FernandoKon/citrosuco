@@ -12,6 +12,18 @@
             <VBox fitContainer="true">
                 <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="CaixasTotais" class="customBorder sapUiSmallMargin" header="Opções de Filtros" showRestoreOnFB="true"> 
                     <smartFilterBar:controlConfiguration>
+                        <smartFilterBar:ControlConfiguration label="Nº da proposta" key="Proposta" visibleInAdvancedArea="true"/>
+                        <smartFilterBar:ControlConfiguration label="Nº do contrato" key="Contrato" visibleInAdvancedArea="true"/>
+                        <smartFilterBar:ControlConfiguration label="Nº da safra" key="Safra" visibleInAdvancedArea="true"/>
+                        <smartFilterBar:ControlConfiguration label="Nº do fornecedor" key="Fornecedor" visibleInAdvancedArea="true"/>
+                        <smartFilterBar:ControlConfiguration label="Data de criação" key="DataCriacao" visibleInAdvancedArea="true"/>
+                        <smartFilterBar:ControlConfiguration label="Nome do fornecedor" key="NomeForn" visibleInAdvancedArea="true"/>
+                        <smartFilterBar:ControlConfiguration label="Nº do imóvel" key="Imovel" visibleInAdvancedArea="true"/>
+                        <smartFilterBar:ControlConfiguration label="Nome do imóvel" key="NomeImovel" visibleInAdvancedArea="true"/>
+                        <smartFilterBar:ControlConfiguration label="Nº da variedade" key="Variedade" visibleInAdvancedArea="true"/>
+                        <smartFilterBar:ControlConfiguration label="Nome da variedade" key="NomeVariedade" visibleInAdvancedArea="true"/>
+                        <smartFilterBar:ControlConfiguration label="Nº do grupo" key="Grupo" visibleInAdvancedArea="true"/>
+                        <smartFilterBar:ControlConfiguration label="Nome do grupo" key="NomeGrupo" visibleInAdvancedArea="true"/>
                     </smartFilterBar:controlConfiguration>
                     <smartFilterBar:layoutData>
                         <FlexItemData shrinkFactor="0"/>
@@ -36,7 +48,7 @@
                     showRowCount="true"
                     initialise="onSmartTableInit($event, 'AnalyticalTable')"
                     enableAutoColumnWidth="true"
-                    initiallyVisibleFields=""
+                    initiallyVisibleFields="Proposta,Contrato,Fornecedor,Imovel,Safra,Grupo,Variedade,Moeda,NomeForn,NomeImovel,NomeVariedade,CaixasContratadas"
                     >
                     <smartTable:layoutData>
                         <FlexItemData growFactor="2" baseSize="0%"/>
