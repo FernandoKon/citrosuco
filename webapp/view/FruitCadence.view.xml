@@ -41,6 +41,7 @@
                     showRowCount="true"
                     initialise="onSmartTableInit($event, 'AnalyticalTable')"
                     enableAutoColumnWidth="true"
+                    ignoredFields="ID"
                     initiallyVisibleFields="SafraPlano,CodSetorPlano,DescSetorPlano,Contrato,Fornecedor,NomeForn,Imovel,NomeImovel,Variedade,NomeVariedade,GrpVariedade,DescGrpVar"
                     >
                     <smartTable:layoutData>

@@ -42,6 +42,7 @@
                 showRowCount="true"
                 initialise="onSmartTableInit($event, 'AnalyticalTable')"
                 enableAutoColumnWidth="true"
+                ignoredFields="ID"
                 initiallyVisibleFields="VersaoPlano,SafraPlano,CodSetorPlano,DescSetorPlano,MesPlano,GrpVariedadePlano,AnoPlano,CaixasPlano">
                 <smartTable:layoutData>
                     <FlexItemData growFactor="2" baseSize="0%"/>
