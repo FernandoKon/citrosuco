@@ -53,7 +53,6 @@ sap.ui.define([
         extractDtParcela: function (params) {
             if (params.ID__) {
                 try {
-                    // Match the DtParcela part in the params.ID
                     const dtParcelaMatch = params.ID__.match(/"DtParcela":"datetime'%2FDate\((\d+)\)%2FT00:00:00'/);
                     if (dtParcelaMatch) {
                         const timestamp = parseInt(dtParcelaMatch[1], 10);

@@ -14,5 +14,17 @@ sap.ui.define([
                 
             },
 
+            onBeforeExport: function (oEvent) {
+
+                const dataUrl = oEvent.mParameters.exportSettings.dataSource.dataUrl;
+                
+                if(dataUrl.includes("orderby")){
+                    oEvent.mParameters.exportSettings.dataSource.dataUrl = dataUrl.replace(/\$orderby.*?(?=&|$)/, "$orderby=Contrato%20asc")
+                    return 
+                } 
+
+                oEvent.mParameters.exportSettings.dataSource.dataUrl = dataUrl.concat("&$orderby=Contrato%20asc")
+            },
+
         });
     });
