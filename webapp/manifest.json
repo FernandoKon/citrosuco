@@ -40,7 +40,7 @@
                 "FluxoCaixa-Display": {
                     "semanticObject": "FluxoCaixa",
                     "action": "Display",
-                    "title": "{{flpTitle}}",
+                    "title": "Base de Dados",
                     "icon": "sap-icon://sys-monitor",
                     "signature": {
                         "parameters": {},
@@ -192,34 +192,6 @@
                     ]
                 },
                 {
-                    "name": "Fruit",
-                    "pattern": "PlanoMacroProcessamentoDeFruta",
-                    "target": [
-                        "TargetFruit"
-                    ]
-                },
-                {
-                    "name": "TotalFlowBoxes",
-                    "pattern": "CaixasTotaisFluxo",
-                    "target": [
-                        "TargetTotalFlowBoxes"
-                    ]
-                },
-                {
-                    "name": "FruitCadence",
-                    "pattern": "CadenciaDeFruta",
-                    "target": [
-                        "TargetFruitCadence"
-                    ]
-                },
-                {
-                    "name": "QuotasSeg",
-                    "pattern": "CotasSeg",
-                    "target": [
-                        "TargetQuotasSeg"
-                    ]
-                },
-                {
                     "name": "Params",
                     "pattern": "Parametros",
                     "target": [
@@ -311,34 +283,6 @@
                     "clearControlAggregation": false,
                     "viewId": "Debit",
                     "viewName": "Debit"
-                },
-                "TargetFruit": {
-                    "viewType": "XML",
-                    "transition": "fade",
-                    "clearControlAggregation": false,
-                    "viewId": "Fruit",
-                    "viewName": "Fruit"
-                },
-                "TargetTotalFlowBoxes": {
-                    "viewType": "XML",
-                    "transition": "fade",
-                    "clearControlAggregation": false,
-                    "viewId": "TotalFlowBoxes",
-                    "viewName": "TotalFlowBoxes"
-                },
-                "TargetFruitCadence": {
-                    "viewType": "XML",
-                    "transition": "fade",
-                    "clearControlAggregation": false,
-                    "viewId": "FruitCadence",
-                    "viewName": "FruitCadence"
-                },
-                "TargetQuotasSeg": {
-                    "viewType": "XML",
-                    "transition": "fade",
-                    "clearControlAggregation": false,
-                    "viewId": "QuotasSeg",
-                    "viewName": "QuotasSeg"
                 },
                 "TargetParams": {
                     "viewType": "XML",
