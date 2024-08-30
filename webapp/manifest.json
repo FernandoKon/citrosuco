@@ -40,7 +40,7 @@
                 "FluxoCaixa-Display": {
                     "semanticObject": "FluxoCaixa",
                     "action": "Display",
-                    "title": "Base de Dados",
+                    "title": "{{flpTitle}}",
                     "icon": "sap-icon://sys-monitor",
                     "signature": {
                         "parameters": {},
