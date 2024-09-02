@@ -192,13 +192,6 @@
                     ]
                 },
                 {
-                    "name": "Params",
-                    "pattern": "Parametros",
-                    "target": [
-                        "TargetParams"
-                    ]
-                },
-                {
                     "name": "HomeDetail",
                     "pattern": "CaixasContratada/:Safra:,:Fornecedor:,:Proposta:,:Contrato:,:Imovel:,:Grupo:,:Variedade:",
                     "target": [
@@ -283,13 +276,6 @@
                     "clearControlAggregation": false,
                     "viewId": "Debit",
                     "viewName": "Debit"
-                },
-                "TargetParams": {
-                    "viewType": "XML",
-                    "transition": "fade",
-                    "clearControlAggregation": false,
-                    "viewId": "Params",
-                    "viewName": "Params"
                 },
                 "TargetHomeDetail": {
                     "viewType": "XML",

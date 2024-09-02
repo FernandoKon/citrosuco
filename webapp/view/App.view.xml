@@ -22,7 +22,6 @@
             <IconTabFilter key="Quota" text="Cota"/>
             <IconTabFilter key="Credit" text="Extrator Crédito"/>
             <IconTabFilter key="Debit" text="Extrator Débito"/>
-            <IconTabFilter key="Params" text="Parâmetro"/>
         </items>
     </IconTabBar>
 
