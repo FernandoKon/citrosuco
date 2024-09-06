@@ -7,10 +7,10 @@
 	xmlns:smartTable="sap.ui.comp.smarttable"
     xmlns="sap.m"
     height="100%">
-    <Page id="page" title="{i18n>title}" showHeader="false"> 
+    <Page title="{i18n>title}" showHeader="false"> 
         
-            <VBox fitContainer="true">
-                <smartFilterBar:SmartFilterBar id="smartFilterBarFlow" entitySet="CadenciaFrutas" class="customBorder sapUiSmallMargin" header="Opções de Filtros" showRestoreOnFB="true"> 
+           <VBox fitContainer="true">
+                <smartFilterBar:SmartFilterBar id="smartFilterBarCadence" entitySet="CadenciaFrutas" class="customBorder sapUiSmallMargin" header="Opções de Filtros" showRestoreOnFB="true"> 
                     <smartFilterBar:controlConfiguration>
                         <smartFilterBar:ControlConfiguration label="Contrato" key="Contrato" visibleInAdvancedArea="true"/>
                         <smartFilterBar:ControlConfiguration label="Fornecedor" key="Fornecedor" visibleInAdvancedArea="true"/>
@@ -24,12 +24,13 @@
                 </smartFilterBar:SmartFilterBar>
 
                 <smartTable:SmartTable 
-                    backgroundDesign="Translucent"
+                    backgroundDesign="Solid"
                     showFullScreenButton="true"
-                    id="SmartTableFlow"
+                    id="SmartTableCadence"
                     beforeExport="onBeforeExport"   
                     entitySet="CadenciaFrutas"
-                    smartFilterId="smartFilterBarFlow"
+                    enableExport="false"
+                    smartFilterId="smartFilterBarCadence"
                     header="Cadência de Fruta"
                     noData="Para começar, defina os filtros relevantes."
                     tableType="AnalyticalTable"
@@ -47,6 +48,10 @@
                     <smartTable:layoutData>
                         <FlexItemData growFactor="2" baseSize="0%"/>
                     </smartTable:layoutData>
+                    <OverflowToolbar design="Transparent">
+                        <ToolbarSpacer/>
+                        <Button id="export" press="onExport" icon="sap-icon://excel-attachment"/>
+                    </OverflowToolbar>
                 </smartTable:SmartTable>
             </VBox>
 

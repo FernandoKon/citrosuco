@@ -21,6 +21,10 @@ sap.ui.define([
                 return oModel;
             },
 
+            get: async function(options){
+                return connector.read("dataSource", "/CadenciaFrutas", options)
+            },
+
             getParams: async function(){
                 return connector.read("dataSource", "/ComparisonGet")
             },
